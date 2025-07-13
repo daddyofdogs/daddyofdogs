@@ -9,6 +9,7 @@
     --footer-text: #f2f2f2;
     --footer-link: #bdbdbd;
     --footer-link-hover: #fff;
+    --hero-gradient: linear-gradient(90deg, #232324 0%, #444 60%, #bdbdbd 100%);
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     font-family: 'Inter', Arial, sans-serif;
     background: var(--light-bg);
     color: var(--primary);
+    line-height: 1.6;
 }
 
 .container {
@@ -116,7 +118,11 @@ nav {
     letter-spacing: -0.03em;
     margin-bottom: 0.2em;
     margin-top: 0.8em;
-    color: #444;
+    background: var(--hero-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
     line-height: 1.08;
 }
 
@@ -148,6 +154,98 @@ nav {
     transform: translateY(-2px) scale(1.03);
 }
 
+/* Services */
+.section-title {
+    font-size: 1.38rem;
+    margin-bottom: 14px;
+    color: var(--cta);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+.section-subtitle {
+    color: #666;
+    font-size: 1.08rem;
+    margin-bottom: 26px;
+    text-align: center;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px;
+    margin-bottom: 18px;
+}
+@media (max-width: 700px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.service-card {
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 1px 8px rgba(50,50,50,0.07);
+    padding: 22px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.06rem;
+    transition: box-shadow 0.2s, transform 0.17s;
+}
+.service-card h3 {
+    margin: 10px 0 4px 0;
+    color: var(--cta);
+    font-size: 1.09rem;
+    font-weight: 600;
+}
+.service-icon {
+    font-size: 1.4rem;
+    margin-bottom: 7px;
+}
+
+/* Kontaktformular */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 420px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 22px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(50,50,50,0.04);
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 12px;
+    border: 1px solid #d8d8d8;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fafafc;
+    color: var(--primary);
+}
+.contact-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+.contact-form button,
+.submit-button {
+    background: var(--cta);
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.13s;
+}
+.contact-form button:hover, .submit-button:hover {
+    background: var(--cta-hover);
+    transform: scale(1.03);
+}
+
+/* Schwarzer Footer */
 .footer-info {
     border-top: 1px solid #232324;
     background: var(--footer-bg);
@@ -156,13 +254,11 @@ nav {
     width: 100%;
     margin-top: 60px;
 }
-
 .footer-info-wrapper {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
 }
-
 .footer-heading {
     color: #fff;
     font-size: 1.19rem;
@@ -170,7 +266,6 @@ nav {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
-
 .footer-links {
     display: flex;
     flex-wrap: wrap;
@@ -180,11 +275,9 @@ nav {
     padding: 0;
     list-style: none;
 }
-
 .footer-links li {
     margin: 0;
 }
-
 .footer-links a {
     color: var(--footer-link);
     text-decoration: none;
@@ -194,12 +287,10 @@ nav {
     border-radius: 5px;
     background: none;
 }
-
 .footer-links a:hover {
     color: var(--footer-link-hover);
     background: #23232444;
 }
-
 .footer-copyright {
     color: #bdbdbd;
     font-size: 0.97rem;
