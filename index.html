@@ -6,7 +6,6 @@
     <title>DADDYOFDOGS - Premium Social Media für Hundeliebhaber</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --apple-dark: #1d1d1f;
             --apple-gray: #86868b;
@@ -20,7 +19,7 @@
             --footer-link-hover: #fff;
         }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system,BlinkMacSystemFont, 'Segoe UI', Roboto, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
             background-color: var(--apple-white);
             color: var(--apple-dark);
             line-height: 1.47;
@@ -77,30 +76,36 @@
             background: linear-gradient(135deg, var(--apple-light-gray) 0%, var(--apple-white) 100%);
             overflow: hidden;
         }
+        /* Floating Apple Emoji Elements */
         .floating-elements {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             pointer-events: none;
             z-index: 1;
-            overflow: hidden;
         }
-        .paw-print, .bone-icon, .dog-icon {
+        .floating-emoji {
             position: absolute;
-            font-size: 24px;
-            opacity: 0.15;
-            animation: floatDog 8s infinite ease-in-out;
+            font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+            font-size: 52px;
+            user-select: none;
+            opacity: 0.13;
+            filter: blur(0.5px);
+            will-change: transform;
         }
-        .paw-1 { top: 20%; left: 10%; animation-delay: 0s; }
-        .paw-2 { top: 60%; right: 15%; animation-delay: 2s; }
-        .paw-3 { bottom: 30%; left: 20%; animation-delay: 4s; }
-        .bone-1 { top: 40%; left: 5%; animation-delay: 1s; }
-        .bone-2 { top: 80%; right: 10%; animation-delay: 3s; }
-        .dog-1 { top: 10%; right: 25%; animation-delay: 5s; }
-        @keyframes floatDog {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
+        /* Animierte Keyframes für verschiedene Richtungen */
+        .emoji-1 { top: 14%; left: 10%; animation: float1 8s infinite ease-in-out;}
+        .emoji-2 { top: 22%; right: 13%; animation: float2 9s infinite ease-in-out;}
+        .emoji-3 { bottom: 19%; left: 18%; animation: float3 10s infinite ease-in-out;}
+        .emoji-4 { top: 54%; left: 6%; animation: float4 12s infinite ease-in-out;}
+        .emoji-5 { bottom: 10%; right: 9%; animation: float5 11s infinite ease-in-out;}
+        .emoji-6 { top: 42%; right: 20%; animation: float6 13s infinite ease-in-out;}
+        @keyframes float1 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-20px) scale(1.04);} }
+        @keyframes float2 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(18px) scale(0.96);} }
+        @keyframes float3 { 0%,100%{transform:translateX(0) scale(1);} 50%{transform:translateX(18px) scale(1.06);} }
+        @keyframes float4 { 0%,100%{transform:translate(-10px,0);} 50%{transform:translate(10px,12px);} }
+        @keyframes float5 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-14px) scale(1.1);} }
+        @keyframes float6 { 0%,100%{transform:translateX(0);} 50%{transform:translateX(-14px);} }
         .hero-content {
             position: relative;
             z-index: 2;
@@ -136,12 +141,14 @@
             transition: all 0.4s var(--apple-easing);
             box-shadow: var(--apple-shadow);
             animation: fadeIn 1.4s var(--apple-easing);
+            will-change: transform, box-shadow;
         }
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.17);
+            background: #232324;
         }
-        .services { padding: 120px 0; background: var(--apple-white); }
+        .services { padding: 120px 0 80px 0; background: var(--apple-white); }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -175,15 +182,23 @@
             box-shadow: var(--apple-shadow);
             transition: all 0.4s var(--apple-easing);
             border: 1px solid rgba(134, 134, 139, 0.1);
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+        }
+        .service-card.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1.01);
+            transition: all 0.7s cubic-bezier(.25,.8,.25,1);
         }
         .service-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-12px) scale(1.04);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.13);
         }
         .service-icon {
             font-size: 48px;
             margin-bottom: 24px;
             display: block;
+            font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Noto Color Emoji", sans-serif;
         }
         .service-card h3 {
             font-size: 24px;
@@ -240,13 +255,39 @@
             justify-content: center;
             font-size: 64px;
             box-shadow: var(--apple-shadow);
+            font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+            will-change: transform;
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.8s var(--apple-easing);
         }
-        .contact { padding: 120px 0; background: var(--apple-white); }
+        .about-image.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1.04);
+        }
+        .about-text {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.8s var(--apple-easing);
+        }
+        .about-text.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1.03);
+        }
+        /* Kontaktbereich mit mehr Abstand nach oben */
+        .contact { padding: 170px 0 120px 0; background: var(--apple-white); }
         .contact-container { max-width: 600px; margin: 0 auto; text-align: center; }
         .contact-form {
             display: grid;
             gap: 24px;
             margin-top: 40px;
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.8s var(--apple-easing);
+        }
+        .contact-form.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1.02);
         }
         .form-group { display: flex; flex-direction: column; text-align: left; }
         .form-group label {
@@ -282,10 +323,12 @@
             cursor: pointer;
             transition: all 0.3s var(--apple-easing);
             box-shadow: var(--apple-shadow);
+            will-change: transform, box-shadow;
         }
         .submit-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.05);
             box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            background: #232324;
         }
         /* Neuer schwarzer Informationsfooter */
         .footer-info {
@@ -357,7 +400,6 @@
                 align-items: center;
             }
         }
-        /* Cookie Banner */
         .cookie-banner {
             position: fixed;
             bottom: 20px;
@@ -398,7 +440,6 @@
             border-color: var(--apple-dark);
         }
         .cookie-button:hover { transform: translateY(-1px);}
-        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -440,11 +481,9 @@
         .modal ul { color: var(--apple-gray); margin-bottom: 15px; padding-left: 20px;}
         .modal li { margin-bottom: 8px;}
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
         }
-        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--apple-easing);}
-        .animate-on-scroll.animated { opacity: 1; transform: translateY(0);}
     </style>
 </head>
 <body>
@@ -463,12 +502,12 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="floating-elements">
-            <div class="paw-print paw-1">🐾</div>
-            <div class="paw-print paw-2">🐾</div>
-            <div class="paw-print paw-3">🐾</div>
-            <div class="bone-icon bone-1">🦴</div>
-            <div class="bone-icon bone-2">🦴</div>
-            <div class="dog-icon dog-1">🐕</div>
+            <span class="floating-emoji emoji-1" role="img" aria-label="Pfote">🐾</span>
+            <span class="floating-emoji emoji-2" role="img" aria-label="Knochen">🦴</span>
+            <span class="floating-emoji emoji-3" role="img" aria-label="Hund">🐕</span>
+            <span class="floating-emoji emoji-4" role="img" aria-label="Pfote">🐾</span>
+            <span class="floating-emoji emoji-5" role="img" aria-label="Knochen">🦴</span>
+            <span class="floating-emoji emoji-6" role="img" aria-label="Hund">🐕‍🦺</span>
         </div>
         <div class="hero-content">
             <h1 class="hero-title">DADDYOFDOGS</h1>
@@ -482,32 +521,32 @@
             <h2 class="section-title">Social Media</h2>
             <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
             <div class="services-grid">
-                <div class="service-card" data-animation="slide-left">
+                <div class="service-card">
                     <div class="service-icon">📱</div>
                     <h3>TikTok</h3>
                     <p>Virale Hundecontent und Trends</p>
                 </div>
-                <div class="service-card" data-animation="slide-right">
+                <div class="service-card">
                     <div class="service-icon">📷</div>
                     <h3>Instagram</h3>
                     <p>Professionelle Hundefotos & Stories</p>
                 </div>
-                <div class="service-card" data-animation="slide-left">
+                <div class="service-card">
                     <div class="service-icon">📘</div>
                     <h3>Facebook</h3>
                     <p>Community Building für Hundeliebhaber</p>
                 </div>
-                <div class="service-card" data-animation="slide-right">
+                <div class="service-card">
                     <div class="service-icon">🎥</div>
                     <h3>YouTube</h3>
                     <p>Hundetraining & Lifestyle Videos</p>
                 </div>
-                <div class="service-card" data-animation="slide-left">
+                <div class="service-card">
                     <div class="service-icon">💼</div>
                     <h3>LinkedIn</h3>
                     <p>Professionelle Hundebetreuung</p>
                 </div>
-                <div class="service-card" data-animation="slide-right">
+                <div class="service-card">
                     <div class="service-icon">🐦</div>
                     <h3>Twitter</h3>
                     <p>Schnelle Updates & Hundetipps</p>
@@ -621,33 +660,36 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({behavior: 'smooth', block: 'start'});
                 }
             });
         });
-        // Animation on scroll
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.classList.add('animate-on-scroll');
-            card.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(card);
-        });
+
+        // Animations beim Scrollen
+        function animateOnScroll(selector) {
+            const elements = document.querySelectorAll(selector);
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            elements.forEach(el => { obs.observe(el); });
+        }
+        animateOnScroll('.service-card');
+        animateOnScroll('.about-image');
+        animateOnScroll('.about-text');
+        animateOnScroll('.contact-form');
+
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Vielen Dank für Ihre Nachricht! Wir melden uns bald bei Ihnen.');
             this.reset();
         });
+
         // Cookie banner
         function showCookieBanner() {
             const banner = document.getElementById('cookieBanner');
@@ -664,6 +706,7 @@
             banner.style.display = 'none';
         }
         setTimeout(showCookieBanner, 2000);
+
         // Modal functions
         function showModal(type) {
             const modal = document.getElementById('legalModal');
