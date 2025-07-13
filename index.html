@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DADDYOFDOGS - Premium Social Media für Hundeliebhaber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="#" class="logo">DADDYOFDOGS</a>
+            <span class="logo">DADDYOFDOGS</span>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -19,6 +19,7 @@
             </ul>
         </div>
     </nav>
+
     <main>
         <section class="hero" id="home">
             <div class="floating-elements">
@@ -35,9 +36,61 @@
                 <a href="#contact" class="cta-button">Jetzt anfragen</a>
             </div>
         </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">Social Media</h2>
+                <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3>TikTok</h3>
+                        <p>Virale Hundecontent und Trends</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📷</div>
+                        <h3>Instagram</h3>
+                        <p>Professionelle Hundefotos & Stories</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📘</div>
+                        <h3>Facebook</h3>
+                        <p>Community Building für Hundeliebhaber</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎥</div>
+                        <h3>YouTube</h3>
+                        <p>Hundetraining & Lifestyle Videos</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h3>LinkedIn</h3>
+                        <p>Professionelle Hundebetreuung</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🐦</div>
+                        <h3>Twitter</h3>
+                        <p>Schnelle Updates & Hundetipps</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2 class="section-title">Kontakt</h2>
+                <p class="section-subtitle">Starten Sie noch heute Ihr Social Media Projekt</p>
+                <form class="contact-form" autocomplete="off">
+                    <input type="text" name="name" placeholder="Name*" required>
+                    <input type="email" name="email" placeholder="E-Mail*" required>
+                    <input type="text" name="betreff" placeholder="Betreff*" required>
+                    <textarea name="message" placeholder="Nachricht*" required></textarea>
+                    <button type="submit" class="submit-button">Nachricht senden</button>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <!-- Schwarzer Footer: Information -->
     <footer class="footer-info">
         <div class="footer-info-wrapper">
             <h3 class="footer-heading">Information</h3>
@@ -54,5 +107,16 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Floating-Emoji-Animation auf Startseite
+        // (Die Animation ist rein CSS, kein JS nötig)
+
+        // Kontaktformular-Feedback
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Vielen Dank für Ihre Nachricht! Wir melden uns bald bei Ihnen.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
