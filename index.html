@@ -4,13 +4,454 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DADDYOFDOGS - Premium Social Media für Hundeliebhaber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --apple-dark: #1d1d1f;
+            --apple-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-white: #fbfbfd;
+            --apple-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --apple-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --footer-bg: #18181a;
+            --footer-text: #f2f2f2;
+            --footer-link: #bdbdbd;
+            --footer-link-hover: #fff;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--apple-white);
+            color: var(--apple-dark);
+            line-height: 1.47;
+            letter-spacing: -0.022em;
+            overflow-x: hidden;
+        }
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(134, 134, 139, 0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--apple-dark);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--apple-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.4s var(--apple-easing);
+            position: relative;
+        }
+        .nav-links a:hover {
+            color: var(--apple-dark);
+            transform: translateY(-2px);
+        }
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--apple-light-gray) 0%, var(--apple-white) 100%);
+            overflow: hidden;
+        }
+        .floating-elements {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .paw-print, .bone-icon, .dog-icon {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.15;
+            animation: floatDog 8s infinite ease-in-out;
+        }
+        .paw-1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .paw-2 { top: 60%; right: 15%; animation-delay: 2s; }
+        .paw-3 { bottom: 30%; left: 20%; animation-delay: 4s; }
+        .bone-1 { top: 40%; left: 5%; animation-delay: 1s; }
+        .bone-2 { top: 80%; right: 10%; animation-delay: 3s; }
+        .dog-1 { top: 10%; right: 25%; animation-delay: 5s; }
+        @keyframes floatDog {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 40px;
+        }
+        .hero-title {
+            font-size: 72px;
+            font-weight: 800;
+            letter-spacing: -0.055em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--apple-dark) 0%, var(--apple-gray) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeIn 1s var(--apple-easing);
+        }
+        .hero-subtitle {
+            font-size: 28px;
+            color: var(--apple-gray);
+            line-height: 1.3;
+            margin-bottom: 40px;
+            animation: fadeIn 1.2s var(--apple-easing);
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--apple-dark);
+            color: var(--apple-white);
+            padding: 16px 32px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s var(--apple-easing);
+            box-shadow: var(--apple-shadow);
+            animation: fadeIn 1.4s var(--apple-easing);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        .services { padding: 120px 0; background: var(--apple-white); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--apple-dark);
+        }
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--apple-gray);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .service-card {
+            background: var(--apple-white);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--apple-shadow);
+            transition: all 0.4s var(--apple-easing);
+            border: 1px solid rgba(134, 134, 139, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            display: block;
+        }
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--apple-dark);
+        }
+        .service-card p { color: var(--apple-gray); line-height: 1.6; }
+        .stats { padding: 120px 0; background: var(--apple-dark); color: var(--apple-white); }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 60px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--apple-white);
+        }
+        .stat-label {
+            font-size: 16px;
+            color: var(--apple-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .about { padding: 120px 0; background: var(--apple-light-gray); }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--apple-dark);
+            letter-spacing: -0.02em;
+        }
+        .about-text p {
+            font-size: 18px;
+            color: var(--apple-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .about-image {
+            background: linear-gradient(135deg, var(--apple-white) 0%, var(--apple-light-gray) 100%);
+            border-radius: 32px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            box-shadow: var(--apple-shadow);
+        }
+        .contact { padding: 120px 0; background: var(--apple-white); }
+        .contact-container { max-width: 600px; margin: 0 auto; text-align: center; }
+        .contact-form {
+            display: grid;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .form-group { display: flex; flex-direction: column; text-align: left; }
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--apple-dark);
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 16px;
+            border: 1px solid rgba(134, 134, 139, 0.3);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            background: var(--apple-white);
+            transition: all 0.3s var(--apple-easing);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--apple-dark);
+            box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.1);
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .submit-button {
+            background: var(--apple-dark);
+            color: var(--apple-white);
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s var(--apple-easing);
+            box-shadow: var(--apple-shadow);
+        }
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        /* Neuer schwarzer Informationsfooter */
+        .footer-info {
+            border-top: 1px solid #232324;
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 48px 0 28px 0;
+            width: 100%;
+            margin-top: 0;
+        }
+        .footer-info-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .footer-heading {
+            color: #fff;
+            font-size: 1.19rem;
+            margin-bottom: 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 28px;
+            justify-content: center;
+            margin: 0 0 24px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .footer-links li { margin: 0; }
+        .footer-links a {
+            color: var(--footer-link);
+            text-decoration: none;
+            font-size: 1.01rem;
+            transition: color 0.19s, background 0.19s;
+            padding: 2px 7px;
+            border-radius: 5px;
+            background: none;
+        }
+        .footer-links a:hover {
+            color: var(--footer-link-hover);
+            background: #23232444;
+        }
+        .footer-copyright {
+            color: #bdbdbd;
+            font-size: 0.97rem;
+            margin-top: 13px;
+        }
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 20px;}
+            .nav-links { gap: 20px; }
+            .hero-title { font-size: 48px; }
+            .hero-subtitle { font-size: 20px; }
+            .container { padding: 0 20px;}
+            .services-grid { grid-template-columns: 1fr; gap: 20px;}
+            .about-content { grid-template-columns: 1fr; gap: 40px;}
+            .stats-grid { grid-template-columns: repeat(2, 1fr);}
+        }
+        @media (max-width: 600px) {
+            .footer-info-wrapper {
+                max-width: 99vw;
+                padding: 0 4px;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 8px 0;
+                align-items: center;
+            }
+        }
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: var(--apple-white);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--apple-shadow);
+            z-index: 1000;
+            display: none;
+        }
+        .cookie-banner.show {
+            display: block;
+            animation: slideUp 0.5s var(--apple-easing);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .cookie-button {
+            padding: 8px 16px;
+            border: 1px solid var(--apple-gray);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--apple-dark);
+            cursor: pointer;
+            transition: all 0.3s var(--apple-easing);
+        }
+        .cookie-button.primary {
+            background: var(--apple-dark);
+            color: var(--apple-white);
+            border-color: var(--apple-dark);
+        }
+        .cookie-button:hover { transform: translateY(-1px);}
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: var(--apple-white);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--apple-gray);
+            transition: color 0.3s var(--apple-easing);
+        }
+        .close:hover { color: var(--apple-dark);}
+        .modal h1 { color: var(--apple-dark); margin-bottom: 30px; font-size: 32px; font-weight: 700;}
+        .modal h2 { color: var(--apple-dark); margin: 30px 0 15px 0; font-size: 24px; font-weight: 600;}
+        .modal h3 { color: var(--apple-dark); margin: 20px 0 10px 0; font-size: 20px; font-weight: 600;}
+        .modal p { color: var(--apple-gray); margin-bottom: 15px; line-height: 1.6;}
+        .modal ul { color: var(--apple-gray); margin-bottom: 15px; padding-left: 20px;}
+        .modal li { margin-bottom: 8px;}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--apple-easing);}
+        .animate-on-scroll.animated { opacity: 1; transform: translateY(0);}
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <div class="container nav-container">
-            <span class="logo">DADDYOFDOGS</span>
+        <div class="nav-container">
+            <a href="#" class="logo">DADDYOFDOGS</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -19,104 +460,329 @@
             </ul>
         </div>
     </nav>
-
-    <main>
-        <section class="hero" id="home">
-            <div class="floating-elements">
-                <div class="paw-print paw-1">🐾</div>
-                <div class="paw-print paw-2">🐾</div>
-                <div class="paw-print paw-3">🐾</div>
-                <div class="bone-icon bone-1">🦴</div>
-                <div class="bone-icon bone-2">🦴</div>
-                <div class="dog-icon dog-1">🐕</div>
-            </div>
-            <div class="container hero-content">
-                <h1 class="hero-title">DADDYOFDOGS</h1>
-                <p class="hero-subtitle">Premium Social Media Management für Hundeliebhaber in Düsseldorf</p>
-                <a href="#contact" class="cta-button">Jetzt anfragen</a>
-            </div>
-        </section>
-
-        <section class="services" id="services">
-            <div class="container">
-                <h2 class="section-title">Social Media</h2>
-                <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">📱</div>
-                        <h3>TikTok</h3>
-                        <p>Virale Hundecontent und Trends</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📷</div>
-                        <h3>Instagram</h3>
-                        <p>Professionelle Hundefotos & Stories</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📘</div>
-                        <h3>Facebook</h3>
-                        <p>Community Building für Hundeliebhaber</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🎥</div>
-                        <h3>YouTube</h3>
-                        <p>Hundetraining & Lifestyle Videos</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">💼</div>
-                        <h3>LinkedIn</h3>
-                        <p>Professionelle Hundebetreuung</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🐦</div>
-                        <h3>Twitter</h3>
-                        <p>Schnelle Updates & Hundetipps</p>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="paw-print paw-1">🐾</div>
+            <div class="paw-print paw-2">🐾</div>
+            <div class="paw-print paw-3">🐾</div>
+            <div class="bone-icon bone-1">🦴</div>
+            <div class="bone-icon bone-2">🦴</div>
+            <div class="dog-icon dog-1">🐕</div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">DADDYOFDOGS</h1>
+            <p class="hero-subtitle">Premium Social Media Management für Hundeliebhaber in Düsseldorf</p>
+            <a href="#contact" class="cta-button">Jetzt anfragen</a>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Social Media</h2>
+            <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
+            <div class="services-grid">
+                <div class="service-card" data-animation="slide-left">
+                    <div class="service-icon">📱</div>
+                    <h3>TikTok</h3>
+                    <p>Virale Hundecontent und Trends</p>
+                </div>
+                <div class="service-card" data-animation="slide-right">
+                    <div class="service-icon">📷</div>
+                    <h3>Instagram</h3>
+                    <p>Professionelle Hundefotos & Stories</p>
+                </div>
+                <div class="service-card" data-animation="slide-left">
+                    <div class="service-icon">📘</div>
+                    <h3>Facebook</h3>
+                    <p>Community Building für Hundeliebhaber</p>
+                </div>
+                <div class="service-card" data-animation="slide-right">
+                    <div class="service-icon">🎥</div>
+                    <h3>YouTube</h3>
+                    <p>Hundetraining & Lifestyle Videos</p>
+                </div>
+                <div class="service-card" data-animation="slide-left">
+                    <div class="service-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Professionelle Hundebetreuung</p>
+                </div>
+                <div class="service-card" data-animation="slide-right">
+                    <div class="service-icon">🐦</div>
+                    <h3>Twitter</h3>
+                    <p>Schnelle Updates & Hundetipps</p>
                 </div>
             </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="container">
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Zufriedene Kunden</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Jahre Erfahrung</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Verfügbarkeit</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Zufriedenheit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Über DADDYOFDOGS</h2>
+                    <p>Wir sind Ihre Experten für Social Media Management im Hundebereich. Mit jahrelanger Erfahrung und einer Leidenschaft für Hunde erstellen wir einzigartigen Content, der Ihr Publikum begeistert.</p>
+                    <p>Unser Team versteht die Bedürfnisse von Hundebesitzern und weiß, wie man authentische Geschichten erzählt, die in den sozialen Medien viral gehen.</p>
+                    <p>Vertrauen Sie auf unsere Expertise und lassen Sie uns gemeinsam Ihre Online-Präsenz aufbauen.</p>
+                </div>
+                <div class="about-image">
+                    🐕‍🦺
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
                 <h2 class="section-title">Kontakt</h2>
                 <p class="section-subtitle">Starten Sie noch heute Ihr Social Media Projekt</p>
-                <form class="contact-form" autocomplete="off">
-                    <input type="text" name="name" placeholder="Name*" required>
-                    <input type="email" name="email" placeholder="E-Mail*" required>
-                    <input type="text" name="betreff" placeholder="Betreff*" required>
-                    <textarea name="message" placeholder="Nachricht*" required></textarea>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Betreff</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
                     <button type="submit" class="submit-button">Nachricht senden</button>
                 </form>
             </div>
-        </section>
-    </main>
-
+        </div>
+    </section>
+    <!-- Neuer schwarzer Informationsfooter -->
     <footer class="footer-info">
         <div class="footer-info-wrapper">
             <h3 class="footer-heading">Information</h3>
             <ul class="footer-links">
-                <li><a href="#">Barrierefreiheit</a></li>
+                <li><a href="#" onclick="showModal('barrierefreiheit');return false;">Barrierefreiheit</a></li>
                 <li><a href="impressum.html" target="_blank">Impressum (extern)</a></li>
-                <li><a href="#">Impressum (Modal)</a></li>
-                <li><a href="#">Datenschutz</a></li>
-                <li><a href="#">AGB</a></li>
-                <li><a href="#">Cookie-Richtlinie</a></li>
+                <li><a href="#" onclick="showModal('impressum');return false;">Impressum (Modal)</a></li>
+                <li><a href="#" onclick="showModal('datenschutz');return false;">Datenschutz</a></li>
+                <li><a href="#" onclick="showModal('agb');return false;">AGB</a></li>
+                <li><a href="#" onclick="showModal('cookie');return false;">Cookie-Richtlinie</a></li>
             </ul>
             <div class="footer-copyright">
                 © 2025 DADDYOFDOGS. Alle Rechte vorbehalten.
             </div>
         </div>
     </footer>
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>Wir verwenden Cookies, um Ihnen die beste Erfahrung zu bieten. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-button" onclick="declineCookies()">Ablehnen</button>
+            <button class="cookie-button primary" onclick="acceptCookies()">Akzeptieren</button>
+        </div>
+    </div>
+    <!-- Modal für Rechtliches -->
+    <div class="modal" id="legalModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
     <script>
-        // Floating-Emoji-Animation auf Startseite
-        // (Die Animation ist rein CSS, kein JS nötig)
-
-        // Kontaktformular-Feedback
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        // Animation on scroll
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.classList.add('animate-on-scroll');
+            card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+        // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Vielen Dank für Ihre Nachricht! Wir melden uns bald bei Ihnen.');
             this.reset();
         });
+        // Cookie banner
+        function showCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            if (!localStorage.getItem('cookieConsent')) {
+                banner.classList.add('show');
+            }
+        }
+        function acceptCookies() {
+            const banner = document.getElementById('cookieBanner');
+            banner.style.display = 'none';
+        }
+        function declineCookies() {
+            const banner = document.getElementById('cookieBanner');
+            banner.style.display = 'none';
+        }
+        setTimeout(showCookieBanner, 2000);
+        // Modal functions
+        function showModal(type) {
+            const modal = document.getElementById('legalModal');
+            const content = document.getElementById('modalContent');
+            let html = '';
+            switch(type) {
+                case 'impressum':
+                    html = `<h1>Impressum</h1>
+                            <h2>Angaben gemäß § 5 TMG</h2>
+                            <p><strong>DADDYOFDOGS</strong><br>Musterstraße 123<br>40210 Düsseldorf<br>Deutschland</p>
+                            <h2>Kontakt</h2>
+                            <p>E-Mail: kontakt@daddyofdogs.de<br>Telefon: +49 (0) 211 123456</p>
+                            <h2>Umsatzsteuer-ID</h2>
+                            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>DE123456789</p>
+                            <h2>Redaktionell verantwortlich</h2>
+                            <p>Max Mustermann<br>Musterstraße 123<br>40210 Düsseldorf</p>
+                            <h2>EU-Streitschlichtung</h2>
+                            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                            <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a><br>
+                            Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+                            <h2>Verbraucher­streit­beilegung/Universal­schlichtungs­stelle</h2>
+                            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>`;
+                    break;
+                case 'datenschutz':
+                    html = `<h1>Datenschutzerklärung</h1>
+                        <h2>1. Datenschutz auf einen Blick</h2>
+                        <h3>Allgemeine Hinweise</h3>
+                        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+                        <h3>Datenerfassung auf dieser Website</h3>
+                        <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+                        <h2>2. Hosting</h2>
+                        <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:<br>Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert.</p>
+                        <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
+                        <h3>Datenschutz</h3>
+                        <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                        <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+                        <p>Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen.</p>
+                        <h2>4. Datenerfassung auf dieser Website</h2>
+                        <h3>Kontaktformular</h3>
+                        <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.</p>
+                        <h2>5. Ihre Rechte</h2>
+                        <p>Sie haben das Recht:<br>• Auskunft über Ihre gespeicherten personenbezogenen Daten zu verlangen<br>• Berichtigung unrichtiger Daten zu verlangen<br>• Löschung Ihrer Daten zu verlangen<br>• Einschränkung der Datenverarbeitung zu verlangen<br>• Widerspruch gegen die Datenverarbeitung einzulegen<br>• Datenübertragbarkeit zu verlangen</p>`;
+                    break;
+                case 'agb':
+                    html = `<h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
+                        <h2>1. Geltungsbereich</h2>
+                        <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen DADDYOFDOGS und unseren Kunden über die Erbringung von Social Media Management Dienstleistungen.</p>
+                        <h2>2. Vertragsschluss</h2>
+                        <p>Der Vertrag kommt durch die Annahme unseres Angebots durch den Kunden zustande. Die Annahme kann schriftlich, per E-Mail oder durch konkludentes Verhalten erfolgen.</p>
+                        <h2>3. Leistungen</h2>
+                        <p>Wir erbringen Social Media Management Dienstleistungen nach den vereinbarten Spezifikationen. Der Umfang der Leistungen ergibt sich aus der jeweiligen Leistungsbeschreibung.</p>
+                        <h2>4. Mitwirkungspflichten des Kunden</h2>
+                        <p>Der Kunde ist verpflichtet, uns alle für die Leistungserbringung erforderlichen Informationen, Unterlagen und Zugänge rechtzeitig zur Verfügung zu stellen.</p>
+                        <h2>5. Vergütung und Zahlungsbedingungen</h2>
+                        <p>Die Vergütung richtet sich nach der vereinbarten Preisliste. Rechnungen sind binnen 14 Tagen nach Rechnungsstellung ohne Abzug zu bezahlen.</p>
+                        <h2>6. Urheberrecht und Nutzungsrechte</h2>
+                        <p>An allen von uns erstellten Inhalten räumen wir dem Kunden die für die vereinbarten Zwecke erforderlichen Nutzungsrechte ein.</p>
+                        <h2>7. Haftung</h2>
+                        <p>Wir haften nur für Vorsatz und grobe Fahrlässigkeit. Die Haftung für leichte Fahrlässigkeit ist ausgeschlossen, soweit nicht wesentliche Vertragspflichten verletzt werden.</p>
+                        <h2>8. Kündigung</h2>
+                        <p>Der Vertrag kann von beiden Parteien mit einer Frist von 4 Wochen zum Monatsende gekündigt werden.</p>
+                        <h2>9. Schlussbestimmungen</h2>
+                        <p>Es gilt deutsches Recht. Gerichtsstand ist Düsseldorf. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>`;
+                    break;
+                case 'cookie':
+                    html = `<h1>Cookie-Richtlinie</h1>
+                        <h2>Was sind Cookies?</h2>
+                        <p>Cookies sind kleine Textdateien, die von Websites auf Ihrem Computer oder Mobilgerät gespeichert werden. Sie helfen dabei, die Website funktionsfähig zu machen und Ihre Erfahrung zu verbessern.</p>
+                        <h2>Welche Cookies verwenden wir?</h2>
+                        <h3>Notwendige Cookies</h3>
+                        <p>Diese Cookies sind für das Funktionieren der Website erforderlich und können nicht deaktiviert werden:</p>
+                        <ul>
+                            <li>Session-Cookies für die Grundfunktionen der Website</li>
+                            <li>Cookies für die Formularübermittlung</li>
+                            <li>Cookies für die Cookie-Einstellungen</li>
+                        </ul>
+                        <h3>Analyse-Cookies</h3>
+                        <p>Diese Cookies helfen uns zu verstehen, wie Sie unsere Website nutzen:</p>
+                        <ul>
+                            <li>Google Analytics (falls aktiviert)</li>
+                            <li>Besucherzählungs-Cookies</li>
+                            <li>Performance-Monitoring-Cookies</li>
+                        </ul>
+                        <h3>Marketing-Cookies</h3>
+                        <p>Diese Cookies werden verwendet, um Ihnen relevante Werbung zu zeigen:</p>
+                        <ul>
+                            <li>Social Media Plugins</li>
+                            <li>Remarketing-Cookies</li>
+                            <li>Conversion-Tracking-Cookies</li>
+                        </ul>
+                        <h2>Wie können Sie Cookies verwalten?</h2>
+                        <p>Sie können Ihre Cookie-Einstellungen jederzeit in Ihrem Browser ändern. Beachten Sie, dass das Deaktivieren von Cookies die Funktionalität der Website beeinträchtigen kann.</p>
+                        <h2>Cookie-Einstellungen</h2>
+                        <p>Wenn Sie diese Website besuchen, werden Sie gefragt, ob Sie Cookies akzeptieren möchten. Sie können Ihre Entscheidung jederzeit ändern, indem Sie die Cookie-Einstellungen in Ihrem Browser anpassen.</p>
+                        <h2>Kontakt</h2>
+                        <p>Wenn Sie Fragen zu unserer Cookie-Richtlinie haben, kontaktieren Sie uns unter: kontakt@daddyofdogs.de</p>`;
+                    break;
+                case 'barrierefreiheit':
+                    html = `<h1>Barrierefreiheit</h1>
+                        <p>Wir achten auf eine möglichst barrierearme Gestaltung. Sollten Sie Hinweise oder Anmerkungen haben, kontaktieren Sie uns gerne!</p>`;
+                    break;
+            }
+            content.innerHTML = html;
+            modal.style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('legalModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            const modal = document.getElementById('legalModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+        // Reduced motion support
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            document.documentElement.style.setProperty('--apple-easing', 'ease');
+        }
     </script>
 </body>
 </html>
