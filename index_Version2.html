@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>DADDYOFDOGS - Premium Hundebetreuung in Düsseldorf</title>
+    <meta name="description" content="Premium Social Media Management für Hundeliebhaber in Düsseldorf">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">DADDYOFDOGS</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">DADDYOFDOGS</h1>
+            <p class="hero-subtitle">Premium Social Media Management für Hundeliebhaber in Düsseldorf</p>
+            <a href="#contact" class="cta-button">Jetzt anfragen</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Social Media</h2>
+            <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
+            <div class="services-grid">
+                <div class="service-card">📱<h3>TikTok</h3><p>Virale Hundecontent und Trends</p></div>
+                <div class="service-card">📷<h3>Instagram</h3><p>Professionelle Hundefotos & Stories</p></div>
+                <div class="service-card">📘<h3>Facebook</h3><p>Community Building für Hundeliebhaber</p></div>
+                <div class="service-card">🎥<h3>YouTube</h3><p>Hundetraining & Lifestyle Videos</p></div>
+                <div class="service-card">💼<h3>LinkedIn</h3><p>Professionelle Hundebetreuung</p></div>
+                <div class="service-card">🐦<h3>Twitter</h3><p>Schnelle Updates & Hundetipps</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Über DADDYOFDOGS</h2>
+            <p>Wir sind Ihre Experten für Social Media Management im Hundebereich. Unsere Leidenschaft für Hunde und digitales Marketing macht uns zum perfekten Partner für Ihren Online-Auftritt.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <form class="contact-form" autocomplete="off">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required>
+                <label for="subject">Betreff</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Nachricht senden</button>
+            </form>
+            <div id="form-success" class="form-success" style="display:none;">
+                <p>Danke für deine Nachricht! Wir melden uns zeitnah bei dir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>Information</h3>
+                <a href="#" onclick="showModal('barrierefreiheit');return false;">Barrierefreiheit</a>
+                <a href="impressum.html" target="_blank">Impressum (extern)</a>
+                <a href="#" onclick="showModal('impressum');return false;">Impressum (Modal)</a>
+                <a href="#" onclick="showModal('datenschutz');return false;">Datenschutz</a>
+                <a href="#" onclick="showModal('agb');return false;">AGB</a>
+                <a href="#" onclick="showModal('cookie');return false;">Cookie-Richtlinie</a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 DADDYOFDOGS. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="legalModal" aria-modal="true" role="dialog" tabindex="-1">
+        <div class="modal-content">
+            <button class="close" aria-label="Schließen" onclick="closeModal()">&times;</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Kontaktformular: Zeigt nach dem Absenden eine Erfolgsnachricht (Mockup)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        });
+
+        // Modal-Handling
+        function showModal(type) {
+            const modal = document.getElementById('legalModal');
+            const content = document.getElementById('modalContent');
+            let html = '';
+            if (type === 'barrierefreiheit') {
+                html = '<h1>Barrierefreiheit</h1><p>Wir achten auf eine möglichst barrierearme Gestaltung. Sollten Sie Hinweise oder Anmerkungen haben, kontaktieren Sie uns gerne!</p>';
+            } else if (type === 'impressum') {
+                html = '<h1>Impressum</h1><p>Dies ist ein Beispiel-Impressum. Die rechtlich korrekten Angaben müssen noch ergänzt werden.</p>';
+            } else if (type === 'datenschutz') {
+                html = '<h1>Datenschutz</h1><p>Wir nehmen Datenschutz ernst. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>';
+            } else if (type === 'agb') {
+                html = '<h1>AGB</h1><p>Unsere Allgemeinen Geschäftsbedingungen können Sie gerne bei uns anfordern.</p>';
+            } else if (type === 'cookie') {
+                html = '<h1>Cookie-Richtlinie</h1><p>Wir verwenden nur technisch notwendige Cookies.</p>';
+            }
+            content.innerHTML = html;
+            modal.style.display = 'block';
+            modal.focus();
+        }
+
+        function closeModal() {
+            document.getElementById('legalModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('legalModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // ESC zum Schließen des Modals
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
