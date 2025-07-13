@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DADDYOFDOGS - Big Family 👋❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet>
     <style>
         :root {
             --apple-dark: #1d1d1f;
@@ -110,6 +110,7 @@
             max-width: 800px;
             padding: 0 40px;
         }
+        /* KORREKTUR für das abgeschnittene "S" */
         .hero-title {
             font-size: 72px;
             font-weight: 800;
@@ -120,6 +121,16 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: fadeIn 1s var(--apple-easing);
+            padding-right: 15px; /* Extra Platz für das "S" */
+            overflow: visible !important;
+            white-space: nowrap;
+            font-family: 'Inter', sans-serif; /* Konsistente Schriftart */
+        }
+        /* Spezifische Korrektur für das "S" */
+        .hero-title::after {
+            content: "";
+            display: inline-block;
+            width: 5px; /* Extra Platz für das "S" */
         }
         .hero-subtitle {
             font-size: 28px;
@@ -382,7 +393,10 @@
         @media (max-width: 768px) {
             .nav-container { padding: 0 20px;}
             .nav-links { gap: 20px; }
-            .hero-title { font-size: 48px; }
+            .hero-title { 
+                font-size: 48px;
+                padding-right: 10px; /* Angepasst für Mobile */
+            }
             .hero-subtitle { font-size: 20px; }
             .container { padding: 0 20px;}
             .services-grid { grid-template-columns: 1fr; gap: 20px;}
