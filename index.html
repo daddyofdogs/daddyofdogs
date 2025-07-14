@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DADDYOFDOGS - Big Family 👋❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Fonts für schönes S im Titel -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --apple-dark: #1d1d1f;
@@ -112,6 +113,7 @@
             padding: 0 40px;
         }
         .hero-title {
+            font-family: 'Montserrat', 'Inter', sans-serif;
             font-size: 60px;
             font-weight: 800;
             letter-spacing: -0.055em;
@@ -166,6 +168,9 @@
             color: var(--apple-gray);
             text-align: center;
             margin-bottom: 40px;
+        }
+        .services {
+            margin-bottom: 50px; /* Abstand nach unten zum Balken */
         }
         .services-grid {
             display: grid;
@@ -230,6 +235,7 @@
         .service-card p { color: var(--apple-gray); font-size: 0.98rem; line-height: 1.5; }
         .stats {
             padding: 90px 0 90px 0;
+            margin-top: 50px; /* Abstand nach oben zum Social Media Bereich */
             background: var(--apple-dark);
             color: var(--apple-white);
             border: none;
@@ -265,7 +271,7 @@
             text-transform: uppercase;
             letter-spacing: 0.06em;
         }
-        .about { padding: 70px 0; background: var(--apple-light-gray); }
+        .about { padding: 40px 0; }
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -313,7 +319,7 @@
             opacity: 1;
             transform: translateY(0) scale(1.03);
         }
-        .contact { padding: 70px 0 70px 0; background: var(--apple-white); }
+        .contact { padding: 40px 0 40px 0; }
         .contact-container { max-width: 390px; margin: 0 auto; text-align: center; }
         .contact-form {
             display: grid;
