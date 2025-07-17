@@ -1,1006 +1,237 @@
-<!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DADDYOFDOGS - Big Family 👋❤️</title>
-    <!-- Fonts für schönes S im Titel -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --apple-dark: #1d1d1f;
-            --apple-gray: #86868b;
-            --apple-light-gray: #f5f5f7;
-            --apple-white: #fbfbfd;
-            --apple-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --apple-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --footer-bg: #18181a;
-            --footer-text: #f2f2f2;
-            --footer-link: #bdbdbd;
-            --footer-link-hover: #fff;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system,BlinkMacSystemFont, 'Segoe UI', Roboto, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-            background-color: var(--apple-white);
-            color: var(--apple-dark);
-            line-height: 1.47;
-            letter-spacing: -0.022em;
-            overflow-x: hidden;
-            cursor: default;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: rgba(251, 251, 253, 0.8);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(134, 134, 139, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--apple-dark);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--apple-gray);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.4s var(--apple-easing);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--apple-dark);
-            transform: translateY(-2px);
-        }
-
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: var(--apple-white);
-            overflow: hidden;
-        }
-
-        .floating-elements {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .floating-emoji {
-            position: absolute;
-            font-size: 42px;
-            user-select: none;
-            opacity: 0.13;
-            filter: blur(0.5px);
-            will-change: transform;
-        }
-
-        .emoji-1 { top: 14%; left: 10%; animation: float1 8s infinite ease-in-out;}
-        .emoji-2 { top: 22%; right: 13%; animation: float2 9s infinite ease-in-out;}
-        .emoji-3 { bottom: 19%; left: 18%; animation: float3 10s infinite ease-in-out;}
-        .emoji-4 { top: 54%; left: 6%; animation: float4 12s infinite ease-in-out;}
-        .emoji-5 { bottom: 10%; right: 9%; animation: float5 11s infinite ease-in-out;}
-        .emoji-6 { top: 42%; right: 20%; animation: float6 13s infinite ease-in-out;}
-
-        @keyframes float1 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-20px) scale(1.04);} }
-        @keyframes float2 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(18px) scale(0.96);} }
-        @keyframes float3 { 0%,100%{transform:translateX(0) scale(1);} 50%{transform:translateX(18px) scale(1.06);} }
-        @keyframes float4 { 0%,100%{transform:translate(-10px,0);} 50%{transform:translate(10px,12px);} }
-        @keyframes float5 { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-14px) scale(1.1);} }
-        @keyframes float6 { 0%,100%{transform:translateX(0);} 50%{transform:translateX(-14px);} }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 40px;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-family: 'Montserrat', 'Inter', sans-serif;
-            font-size: 60px;
-            font-weight: 800;
-            letter-spacing: -0.055em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--apple-dark) 0%, var(--apple-gray) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeIn 1s var(--apple-easing);
-            white-space: nowrap;
-            overflow: visible;
-            display: inline-block;
-            padding: 0 10px !important;
-            box-sizing: content-box !important;
-        }
-
-        .hero-subtitle {
-            font-size: 24px;
-            color: var(--apple-gray);
-            line-height: 1.3;
-            margin-bottom: 40px;
-            animation: fadeIn 1.2s var(--apple-easing);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--apple-dark);
-            color: var(--apple-white);
-            padding: 14px 28px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.4s var(--apple-easing);
-            box-shadow: var(--apple-shadow);
-            animation: fadeIn 1.4s var(--apple-easing);
-            will-change: transform, box-shadow;
-            font-size: 1.1rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px) scale(1.04);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.17);
-            background: #232324;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        .section-title {
-            font-size: 36px;
-            font-weight: 700;
-            letter-spacing: -0.035em;
-            text-align: center;
-            margin-bottom: 12px;
-            color: var(--apple-dark);
-        }
-
-        .section-subtitle {
-            font-size: 16px;
-            color: var(--apple-gray);
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .services {
-            margin-bottom: 50px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin-top: 36px;
-        }
-
-        .service-card {
-            background: var(--apple-white);
-            border-radius: 16px;
-            padding: 22px 10px;
-            text-align: center;
-            box-shadow: var(--apple-shadow);
-            transition: all 0.4s var(--apple-easing), transform 0.3s cubic-bezier(.25,.8,.25,1);
-            border: 1px solid rgba(134, 134, 139, 0.1);
-            opacity: 0;
-            transform: translateY(40px) scale(0.95);
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .service-card.animated {
-            opacity: 1;
-            transform: translateY(0) scale(1.01);
-            transition: all 0.7s cubic-bezier(.25,.8,.25,1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.04) rotate(-1deg);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.13);
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: inline-block;
-            transition: all 0.3s var(--apple-easing);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.13) rotate(7deg);
-        }
-
-        .service-icon.x-gradient-bg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--apple-dark) 0%, var(--apple-gray) 100%);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin: 0 auto 10px auto;
-        }
-
-        .service-icon.x-gradient-bg svg {
-            width: 26px;
-            height: 26px;
-            display: block;
-        }
-
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--apple-dark);
-        }
-
-        .service-card p {
-            color: var(--apple-gray);
-            font-size: 0.98rem;
-            line-height: 1.5;
-        }
-
-        .stats {
-            padding: 90px 0 90px 0;
-            margin-top: 50px;
-            background: var(--apple-dark);
-            color: var(--apple-white);
-            border: none;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 36px;
-            text-align: center;
-            margin-top: 0;
-        }
-
-        .stat-item {
-            background: rgba(255,255,255,0.07);
-            border-radius: 12px;
-            padding: 22px 4px;
-            opacity: 0;
-            transform: translateY(40px) scale(0.95);
-            transition: all 0.7s cubic-bezier(.25,.8,.25,1);
-        }
-
-        .stat-item.animated {
-            opacity: 1;
-            transform: translateY(0) scale(1.01);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--apple-white);
-        }
-
-        .stat-label {
-            font-size: 0.97rem;
-            color: var(--apple-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .about {
-            padding: 40px 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-text {
-            opacity: 0;
-            transform: translateY(30px) scale(0.98);
-            transition: all 0.8s var(--apple-easing);
-        }
-
-        .about-text.animated {
-            opacity: 1;
-            transform: translateY(0) scale(1.03);
-        }
-
-        .about-text h2 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: var(--apple-dark);
-            letter-spacing: -0.02em;
-        }
-
-        .about-text p {
-            font-size: 1rem;
-            color: var(--apple-gray);
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-
-        .about-image {
-            background: linear-gradient(135deg, var(--apple-white) 0%, var(--apple-light-gray) 100%);
-            border-radius: 22px;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 42px;
-            box-shadow: var(--apple-shadow);
-            font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-            will-change: transform;
-            opacity: 0;
-            transform: translateY(30px) scale(0.98);
-            transition: all 0.8s var(--apple-easing);
-        }
-
-        .about-image.animated {
-            opacity: 1;
-            transform: translateY(0) scale(1.04);
-        }
-
-        .contact {
-            padding: 40px 0 40px 0;
-        }
-
-        .contact-container {
-            max-width: 390px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 16px;
-            margin-top: 20px;
-            opacity: 0;
-            transform: translateY(30px) scale(0.97);
-            transition: all 0.8s var(--apple-easing);
-        }
-
-        .contact-form.animated {
-            opacity: 1;
-            transform: translateY(0) scale(1.02);
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-group label {
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: var(--apple-dark);
-            font-size: 0.97rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 9px;
-            border: 1px solid rgba(134, 134, 139, 0.3);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.97rem;
-            background: var(--apple-white);
-            transition: all 0.3s var(--apple-easing);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--apple-dark);
-            box-shadow: 0 0 0 3px rgba(29, 29, 31, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 60px;
-        }
-
-        .submit-button {
-            background: var(--apple-dark);
-            color: var(--apple-white);
-            padding: 12px 22px;
-            border: none;
-            border-radius: 9px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s var(--apple-easing);
-            box-shadow: var(--apple-shadow);
-            will-change: transform, box-shadow;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-            background: #232324;
-        }
-
-        .footer-info {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 48px 0 28px 0;
-            width: 100%;
-            margin-top: 0;
-            border: none;
-        }
-
-        .footer-info-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer-heading {
-            color: #fff;
-            font-size: 1.19rem;
-            margin-bottom: 18px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px 28px;
-            justify-content: center;
-            margin: 0 0 24px 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .footer-links li { margin: 0; }
-
-        .footer-links a {
-            color: var(--footer-link);
-            text-decoration: none;
-            font-size: 1.01rem;
-            transition: color 0.19s, background 0.19s;
-            padding: 2px 7px;
-            border-radius: 5px;
-            background: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--footer-link-hover);
-            background: #23232444;
-        }
-
-        .footer-copyright {
-            color: #bdbdbd;
-            font-size: 0.97rem;
-            margin-top: 13px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container { padding: 0 20px; }
-            .nav-links { gap: 20px; }
-            .hero-title { font-size: 38px; }
-            .hero-subtitle { font-size: 16px; }
-            .container { padding: 0 10px; }
-            .services-grid { grid-template-columns: 1fr; gap: 12px; }
-            .about-content { grid-template-columns: 1fr; gap: 20px; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 600px) {
-            .footer-info-wrapper {
-                max-width: 99vw;
-                padding: 0 4px;
-            }
-            .footer-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .cookie-banner {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: var(--apple-white);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: var(--apple-shadow);
-            z-index: 1000;
-            display: none;
-        }
-
-        .cookie-banner.show {
-            display: block;
-            animation: slideUp 0.5s var(--apple-easing);
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .cookie-buttons {
-            display: flex;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .cookie-button {
-            padding: 8px 16px;
-            border: 1px solid var(--apple-gray);
-            border-radius: 8px;
-            background: transparent;
-            color: var(--apple-dark);
-            cursor: pointer;
-            transition: all 0.3s var(--apple-easing);
-        }
-
-        .cookie-button.primary {
-            background: var(--apple-dark);
-            color: var(--apple-white);
-            border-color: var(--apple-dark);
-        }
-
-        .cookie-button:hover {
-            transform: translateY(-1px);
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: var(--apple-white);
-            margin: 5% auto;
-            padding: 40px;
-            border-radius: 24px;
-            width: 90%;
-            max-width: 800px;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .close {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 32px;
-            font-weight: bold;
-            cursor: pointer;
-            color: var(--apple-gray);
-            transition: color 0.3s var(--apple-easing);
-        }
-
-        .close:hover {
-            color: var(--apple-dark);
-        }
-
-        .modal h1 {
-            color: var(--apple-dark);
-            margin-bottom: 30px;
-            font-size: 32px;
-            font-weight: 700;
-        }
-
-        .modal h2 {
-            color: var(--apple-dark);
-            margin: 30px 0 15px 0;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        .modal h3 {
-            color: var(--apple-dark);
-            margin: 20px 0 10px 0;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .modal p {
-            color: var(--apple-gray);
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .modal ul {
-            color: var(--apple-gray);
-            margin-bottom: 15px;
-            padding-left: 20px;
-        }
-
-        .modal li {
-            margin-bottom: 8px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* SVG Gradient Style */
-        .gradient-icon {
-            background: linear-gradient(135deg, var(--apple-dark) 0%, var(--apple-gray) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .gradient-icon svg {
-            fill: url(#gradient);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DADDYOFDOGS – Big Family 👋❤️</title>
+  <!-- SEO & Social -->
+  <meta name="description" content="DADDYOFDOGS: Die größte Hunde-Community mit Reichweite auf TikTok, Instagram und mehr. Professionelles Social Media Management für Hundeliebhaber." />
+  <meta property="og:title" content="DADDYOFDOGS – Big Family" />
+  <meta property="og:description" content="Social Media mit Herz: Hundevideos, Expertenwissen und Community-Building." />
+  <meta property="og:image" content="URL_der_Vorschau_Grafik.jpg" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Externes CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- SVG Gradient Definition (wird für alle Icons verwendet) -->
+<!-- SVG Gradient Definition -->
 <svg width="0" height="0" style="position:absolute;">
-    <defs>
-        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="var(--apple-dark)" />
-            <stop offset="100%" stop-color="var(--apple-gray)" />
-        </linearGradient>
-    </defs>
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="var(--apple-dark)" />
+      <stop offset="100%" stop-color="var(--apple-gray)" />
+    </linearGradient>
+  </defs>
 </svg>
 
 <!-- Navigation -->
-<nav>
-    <div class="nav-container">
-        <a href="#" class="logo">DADDYOFDOGS</a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Social Media</a></li>
-            <li><a href="#about">Über uns</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-    </div>
+<nav aria-label="Hauptnavigation">
+  <div class="nav-container">
+    <a href="#" class="logo" aria-label="Startseite von DADDYOFDOGS">DADDYOFDOGS</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Social Media</a></li>
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-    <div class="floating-elements">
-        <span class="floating-emoji emoji-1" role="img" aria-label="Pfote">🐾</span>
-        <span class="floating-emoji emoji-2" role="img" aria-label="Knochen">🦴</span>
-        <span class="floating-emoji emoji-3" role="img" aria-label="Hund">🐕</span>
-        <span class="floating-emoji emoji-4" role="img" aria-label="Hund">🦮</span>
-        <span class="floating-emoji emoji-5" role="img" aria-label="Hund">🐩</span>
-        <span class="floating-emoji emoji-6" role="img" aria-label="Hund">🐕‍🦺</span>
+<main>
+  <!-- Hero Section -->
+  <section class="hero" id="home" aria-label="Einstieg DADDYOFDOGS">
+    <div class="floating-elements" aria-hidden="true">
+      <span class="floating-emoji emoji-1">🐾</span>
+      <span class="floating-emoji emoji-2">🦴</span>
+      <span class="floating-emoji emoji-3">🐕</span>
+      <span class="floating-emoji emoji-4">🦮</span>
+      <span class="floating-emoji emoji-5">🐩</span>
+      <span class="floating-emoji emoji-6">🐕‍🦺</span>
     </div>
     <div class="hero-content">
-        <h1 class="hero-title">DADDYOFDOGS</h1>
-        <p class="hero-subtitle">Big Family 👋❤️</p>
-        <a href="#contact" class="cta-button">Kontakt</a>
+      <h1 class="hero-title">DADDYOFDOGS</h1>
+      <p class="hero-subtitle">Big Family 👋❤️</p>
+      <a href="#contact" class="cta-button">Kontakt</a>
     </div>
-</section>
+  </section>
 
-<!-- Social Media Section -->
-<section class="services" id="services">
+  <!-- Social Media Section -->
+  <section class="services" id="services" aria-label="Unsere Social Media Plattformen">
     <div class="container">
-        <h2 class="section-title">Social Media</h2>
-        <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
-        <div class="services-grid">
-
-            <!-- TikTok -->
-            <a class="service-card" href=" https://www.tiktok.com/ @daddyofdogs" target="_blank" rel="noopener">
-                <div class="service-icon gradient-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                        <title>TikTok</title>
-                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="url(#gradient)"/>
-                    </svg>
-                </div>
-                <h3>TikTok</h3>
-                <p>Virale Hundecontent und Trends</p>
-            </a>
-
-            <!-- Instagram -->
-            <a class="service-card" href="https://www.instagram.com/daddyofdogs " target="_blank" rel="noopener">
-                <div class="service-icon gradient-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                        <title>Instagram</title>
-                        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" fill="url(#gradient)"/>
-                    </svg>
-                </div>
-                <h3>Instagram</h3>
-                <p>Professionelle Hundefotos & Stories</p>
-            </a>
-
-            <!-- Facebook -->
-            <a class="service-card" href="https://www.facebook.com/daddyofdogsofficial " target="_blank" rel="noopener">
-                <div class="service-icon gradient-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                        <title>Facebook</title>
-                        <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" fill="url(#gradient)"/>
-                    </svg>
-                </div>
-                <h3>Facebook</h3>
-                <p>Community Building für Hundeliebhaber</p>
-            </a>
-
-            <!-- YouTube -->
-            <a class="service-card" href="https://www.youtube.com/ @daddyofdogs" target="_blank" rel="noopener">
-                <div class="service-icon gradient-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                        <title>YouTube</title>
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186c-.505 1.885-.955 3.469-.92 6.61-.02 3.146.02 3.526.502 4.947.021 1.256.027 1.655.021 4.947.0062 3.2586-.006 3.6671-.0206 4.947-.002.046 1.25.02 1.64.007 2.01.021 2.35.18.096 1.308.29.308 2.1228.13.6679.665 1.3365 1.0743 2.1285.11 1.2765.072 1.6447.069 4.849-.007 3.2586-.0206 3.667-.0817 4.947-.056 1.2765-.245 2.148-.408 2.9107-.308.7889-.72 1.457-.895 2.1228-1.38.6652-.6682 1.3365-1.0743 2.127-.97.57-.26-1.1.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-2.58 3.17-3.65 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-2.58 3.17-3.65 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87.4217.4194.8176.6816 1.38.9.216.5604.4762.96.895 1.3816.4188.4178.8184.6811 1.38.2954.7638.4956 1.6365.552 2.914.0564 1.2775.0689 1.6882.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.665 1.3365 1.0743 2.1285.422.419.8176.4178 1.3783.9.4217.419.8184.6814 1.38.9.216.5604.4763.96.895 1.3816.419.419.8176.6811 1.38.9.05.51-.15 1.07-.09 1.61.24 1.64 1.82 3.02 3.5 2.87.1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-2.58 3.17-3.65 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87.4217.4194.8181.6811 1.38.9.216.5604.4762.96 1.3819.422.4194.8176.6811 1.38.9.05.51-.15 1.07-.09 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-2.58 3.17-3.65 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87.4217.4194.8176.6816 1.38.9.05.51-.15 1.07-.09 1.61.24 1.64 1.82 3.02 3.5 2.87.4217.4194.8184.68.9.476.895 1.38.679.665 1.3365.074 2.1228.665 0.6677 1.3365.074 2.1228.665 0.96.476 1.38.681.074 1.75.195 1.38.021 2.127.0825 2.9134.14 3.94.138 5.8.042 6.627.069 8.2.083 9.06.02 12.07.006 15.236.0207 15.68.0825 16.9244.063 18.61.02 19.153.01 20.644h2.039L6.486 3.24H4.298Z" fill="url(#gradient)"/>
-                    </svg>
-                </div>
-                <h3>YouTube</h3>
-                <p>Hundetraining & Lifestyle Videos</p>
-            </a>
-
-            <!-- Threads -->
-            <a class="service-card" href="https://www.threads.net/ @daddyofdogs" target="_blank" rel="noopener">
-                <div class="service-icon gradient-icon">
-                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
-                        <title>Threads</title>
-                        <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z" fill="url(#gradient)"/>
-                    </svg>
-                </div>
-                <h3>Threads</h3>
-                <p>Professionelle Hundebetreuung</p>
-            </a>
-
-            <!-- X (Twitter) -->
-            <a class="service-card" href="https://x.com/daddyofdogs " target="_blank" rel="noopener">
-                <div class="service-icon x-gradient-bg">
-                    <svg role="img" viewBox="0 0 24 24" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
-                        <title>X</title>
-                        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" fill="white"/>
-                    </svg>
-                </div>
-                <h3>X (Twitter)</h3>
-                <p>Aktuelle News & Updates</p>
-            </a>
-        </div>
+      <h2 class="section-title">Social Media</h2>
+      <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
+      <div class="services-grid">
+        <!-- Social Media Cards wie gehabt -->
+        <!-- Icons nach SVG-Tausch noch optimierbar -->
+        <a class="service-card glow-border animated" href="https://www.tiktok.com/@daddyofdogs" target="_blank" aria-label="TikTok">
+          <div class="service-icon">🎵</div>
+          <h3>TikTok</h3>
+          <p>Virale Hundecontent und Trends</p>
+        </a>
+        <a class="service-card glow-border animated" href="https://www.instagram.com/daddyofdogs" target="_blank" aria-label="Instagram">
+          <div class="service-icon">📷</div>
+          <h3>Instagram</h3>
+          <p>Professionelle Hundefotos & Stories</p>
+        </a>
+        <a class="service-card glow-border animated" href="https://www.facebook.com/daddyofdogsofficial" target="_blank" aria-label="Facebook">
+          <div class="service-icon">👥</div>
+          <h3>Facebook</h3>
+          <p>Community Building für Hundeliebhaber</p>
+        </a>
+        <a class="service-card glow-border animated" href="https://www.youtube.com/@daddyofdogs" target="_blank" aria-label="YouTube">
+          <div class="service-icon">🎥</div>
+          <h3>YouTube</h3>
+          <p>Hundetraining & Lifestyle Videos</p>
+        </a>
+        <a class="service-card glow-border animated" href="https://www.threads.net/@daddyofdogs" target="_blank" aria-label="Threads">
+          <div class="service-icon">💬</div>
+          <h3>Threads</h3>
+          <p>Professionelle Hundebetreuung</p>
+        </a>
+        <a class="service-card glow-border animated" href="https://x.com/daddyofdogs" target="_blank" aria-label="X (Twitter)">
+          <div class="service-icon">🐦</div>
+          <h3>X (Twitter)</h3>
+          <p>Aktuelle News & Updates</p>
+        </a>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Stats Section -->
-<section class="stats">
+  <!-- Stats Section -->
+  <section class="stats" aria-label="Reichweite und Erfahrung">
     <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">1M+</div>
-                <div class="stat-label">Zufriedene Follower</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Jahre Erfahrung</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Verfügbarkeit</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Zufriedenheit</div>
-            </div>
-        </div>
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-number">1M+</div><div class="stat-label">Zufriedene Follower</div></div>
+        <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Jahre Erfahrung</div></div>
+        <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Verfügbarkeit</div></div>
+        <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Zufriedenheit</div></div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Über Uns -->
-<section class="about" id="about">
+  <!-- Über uns Section -->
+  <section class="about" id="about" aria-label="Über DADDYOFDOGS">
     <div class="container">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Über DADDYOFDOGS</h2>
-                <p>Wir sind Ihre Experten für Social Media Management im Hundebereich. Mit jahrelanger Erfahrung erstellen wir Content, der Ihr Publikum begeistert.</p>
-            </div>
-            <div class="about-image">
-                🐕‍🦺
-            </div>
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Über DADDYOFDOGS</h2>
+          <p>Wir sind Ihre Experten für Social Media Management im Hundebereich. Mit jahrelanger Erfahrung erstellen wir Content, der Ihr Publikum begeistert.</p>
         </div>
+        <div class="about-image" aria-label="Servicehund">🐕‍🦺</div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- Kontakt -->
-<section class="contact" id="contact">
+  <!-- Kontakt Section -->
+  <section class="contact" id="contact" aria-label="Kontaktformular">
     <div class="container">
-        <div class="contact-container">
-            <h2 class="section-title">Kontakt</h2>
-            <p class="section-subtitle">Starten Sie noch heute Ihr Social Media Projekt</p>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Betreff</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Nachricht</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-button">Nachricht senden</button>
-            </form>
-        </div>
+      <div class="contact-container">
+        <h2 class="section-title">Kontakt</h2>
+        <p class="section-subtitle">Starten Sie noch heute Ihr Social Media Projekt</p>
+        <form class="contact-form" autocomplete="off">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="subject">Betreff</label>
+            <input type="text" id="subject" name="subject" required autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" required autocomplete="off"></textarea>
+          </div>
+          <button type="submit" class="submit-button">Nachricht senden</button>
+        </form>
+      </div>
     </div>
-</section>
+  </section>
+</main>
 
 <!-- Footer -->
 <footer class="footer-info">
-    <div class="footer-info-wrapper">
-        <h3 class="footer-heading">Information</h3>
-        <ul class="footer-links">
-            <li><a href="#">Barrierefreiheit</a></li>
-            <li><a href="impressum.html" target="_blank">Impressum (extern)</a></li>
-            <li><a href="#" onclick="showModal('impressum');return false;">Impressum (Modal)</a></li>
-            <li><a href="#" onclick="showModal('datenschutz');return false;">Datenschutz</a></li>
-            <li><a href="#" onclick="showModal('agb');return false;">AGB</a></li>
-            <li><a href="#" onclick="showModal('cookie');return false;">Cookie-Richtlinie</a></li>
-        </ul>
-        <div class="footer-copyright">© 2025 DADDYOFDOGS. Alle Rechte vorbehalten.</div>
-    </div>
+  <div class="footer-info-wrapper">
+    <h3 class="footer-heading">Information</h3>
+    <ul class="footer-links">
+      <li><a href="barrierefreiheit.html" target="_blank" rel="noopener">Barrierefreiheit</a></li>
+      <li><a href="impressum.html" target="_blank" rel="noopener">Impressum</a></li>
+      <li><a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></li>
+      <li><a href="agb.html" target="_blank" rel="noopener">AGB</a></li>
+      <li><a href="cookie.html" target="_blank" rel="noopener">Cookie-Richtlinie</a></li>
+    </ul>
+    <div class="footer-copyright">© 2025 DADDYOFDOGS. Alle Rechte vorbehalten.</div>
+  </div>
 </footer>
 
 <!-- Cookie Banner -->
-<div class="cookie-banner" id="cookieBanner">
-    <p>Wir verwenden Cookies, um Ihnen die beste Erfahrung zu bieten.</p>
-    <div class="cookie-buttons">
-        <button class="cookie-button" onclick="acceptCookies()">Akzeptieren</button>
-        <button class="cookie-button primary" onclick="declineCookies()">Ablehnen</button>
-    </div>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-modal="true" aria-label="Cookies Hinweis">
+  <p>Wir verwenden Cookies, um Ihnen die beste Erfahrung zu bieten.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-button" onclick="acceptCookies()">Akzeptieren</button>
+    <button class="cookie-button primary" onclick="declineCookies()">Ablehnen</button>
+  </div>
 </div>
 
-<!-- Modal für Rechtliches -->
-<div class="modal" id="legalModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div id="modalContent"></div>
-    </div>
-</div>
-
+<!-- JS für Grundfunktionen -->
 <script>
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-
-    // Scroll Animationen
-    function animateOnScroll(selector) {
-        const elements = document.querySelectorAll(selector);
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        elements.forEach(el => obs.observe(el));
-    }
-
-    animateOnScroll('.service-card');
-    animateOnScroll('.about-image');
-    animateOnScroll('.about-text');
-    animateOnScroll('.contact-form');
-    animateOnScroll('.stat-item');
-
-    // Kontaktformular
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) {
         e.preventDefault();
-        alert('Vielen Dank! Wir melden uns bald.');
-        this.reset();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
+  });
 
-    // Cookie Banner
-    function showCookieBanner() {
-        const banner = document.getElementById('cookieBanner');
-        if (!localStorage.getItem('cookieConsent')) {
-            banner.style.display = 'block';
+  // Animate on Scroll
+  function animateOnScroll(selector) {
+    const elements = document.querySelectorAll(selector);
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          obs.unobserve(entry.target);
         }
-    }
+      });
+    }, { threshold: 0.1 });
+    elements.forEach(el => obs.observe(el));
+  }
+  animateOnScroll('.service-card');
+  animateOnScroll('.about-image');
+  animateOnScroll('.about-text');
+  animateOnScroll('.contact-form');
+  animateOnScroll('.stat-item');
 
-    function acceptCookies() {
-        localStorage.setItem('cookieConsent', 'true');
-        document.getElementById('cookieBanner').style.display = 'none';
-    }
+  // Kontaktformular
+  document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Vielen Dank! Wir melden uns bald.');
+    this.reset();
+  });
 
-    function declineCookies() {
-        localStorage.setItem('cookieConsent', 'false');
-        document.getElementById('cookieBanner').style.display = 'none';
-    }
-
-    setTimeout(showCookieBanner, 2000);
-
-    // Modals öffnen
-    function showModal(type) {
-        const modal = document.getElementById('legalModal');
-        const content = document.getElementById('modalContent');
-        let html = '';
-        switch (type) {
-            case 'impressum':
-                html = `<h1>Impressum</h1><p><strong>DADDYOFDOGS</strong><br>Musterstraße 123<br>40210 Düsseldorf</p>`;
-                break;
-            case 'datenschutz':
-                html = `<h1>Datenschutz</h1><p>Ihre Daten werden sicher behandelt.</p>`;
-                break;
-            case 'agb':
-                html = `<h1>AGB</h1><p>Weitere Informationen folgen hier.</p>`;
-                break;
-            case 'cookie':
-                html = `<h1>Cookie-Richtlinie</h1><p>Cookies zur Optimierung der Benutzererfahrung.</p>`;
-                break;
-            case 'barrierefreiheit':
-                html = `<h1>Barrierefreiheit</h1><p>Wir achten auf barrierefreie Gestaltung.</p>`;
-                break;
-        }
-        content.innerHTML = html;
-        modal.style.display = 'block';
-    }
-
-    function closeModal() {
-        document.getElementById('legalModal').style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        const modal = document.getElementById('legalModal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    };
+  // Cookie Banner
+  function showCookieBanner() {
+    const banner = document.getElementById("cookieBanner");
+    if (!localStorage.getItem("cookieConsent")) banner.style.display = "block";
+  }
+  function acceptCookies() {
+    localStorage.setItem("cookieConsent", "true");
+    document.getElementById("cookieBanner").style.display = "none";
+  }
+  function declineCookies() {
+    localStorage.setItem("cookieConsent", "false");
+    document.getElementById("cookieBanner").style.display = "none";
+  }
+  setTimeout(showCookieBanner, 2000);
 </script>
 
 </body>
