@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Impressum - DADDYOFDOGS</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – DADDYOFDOGS</title>
+  <meta name="description" content="Impressum und rechtliche Informationen zu DADDYOFDOGS." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .legal-main { animation: fadein 1.2s cubic-bezier(.3,.93,.5,1.08); max-width:650px; margin:8vh auto 4vh; background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 8px 32px rgba(20,22,28,0.12); padding:3rem 2rem 2rem; }
+    @keyframes fadein { 0% {opacity:0; transform:translateY(40px);} 100% {opacity:1; transform:translateY(0);} }
+    @media (max-width:540px){ .legal-main {padding:1.1rem 0.9rem 1.8rem;} }
+  </style>
 </head>
 <body>
-    <section class="container" style="max-width: 700px; margin-top: 60px;">
-        <h1>Impressum</h1>
-        <p>Dies ist eine separate Impressum-Seite gemäß § 5 TMG.<br>
-        <strong>Hinweis:</strong> Bitte trage hier deine echten Kontaktdaten & Pflichtangaben gemäß § 5 TMG ein!</p>
-        <a href="index.html" class="cta-button" style="margin-top:32px;display:inline-block;">Zurück zur Startseite</a>
-    </section>
+  <nav aria-label="Hauptnavigation">
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="Startseite von DADDYOFDOGS">DADDYOFDOGS</a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#services">Social Media</a></li>
+        <li><a href="index.html#about">Über uns</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="legal-main">
+    <h1>Impressum</h1>
+    <p>DADDYOFDOGS<br>
+    Musterstraße 123<br>
+    40210 Düsseldorf<br>
+    Deutschland</p>
+    <p><strong>Vertreten durch:</strong> Max Mustermann</p>
+    <p><strong>Kontakt:</strong><br>
+    Telefon: 01234 / 567890<br>
+    E-Mail: info@daddyofdogs.de</p>
+    <p><strong>Umsatzsteuer-ID:</strong> DE123456789</p>
+    <p>Verantwortlich nach §55 Abs.2 RStV:<br>
+    Max Mustermann, Anschrift wie oben</p>
+  </main>
+  <footer class="footer-info">
+    <div class="footer-info-wrapper">
+      <h3 class="footer-heading">Information</h3>
+      <ul class="footer-links">
+        <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
+        <li><a href="impressum.html" aria-current="page">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="agb.html">AGB</a></li>
+        <li><a href="cookie.html">Cookie-Richtlinie</a></li>
+      </ul>
+      <div class="footer-copyright">
+        © 2025 DADDYOFDOGS. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
