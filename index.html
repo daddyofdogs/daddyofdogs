@@ -14,8 +14,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <!-- Externes CSS -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Scroll Indicator */
+    #scroll-indicator {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 5px;
+      background: linear-gradient(90deg, #ff3366, #00ffff);
+      z-index: 9999;
+      transition: width 0.25s ease;
+    }
+    /* Gradient Logo in Navigation */
+    :root {
+      --accent: #ff3366;
+      --accent-2: #00ffff;
+    }
+    nav .logo {
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(45deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
+
+<div id="scroll-indicator"></div>
 
 <!-- SVG Gradient Definition -->
 <svg width="0" height="0" style="position:absolute;">
@@ -64,34 +94,33 @@
       <h2 class="section-title">Social Media</h2>
       <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
       <div class="services-grid">
-        <!-- Social Media Cards wie gehabt -->
-        <!-- Icons nach SVG-Tausch noch optimierbar -->
-        <a class="service-card glow-border animated" href="https://www.tiktok.com/@daddyofdogs" target="_blank" aria-label="TikTok">
+        <!-- Social Media Cards -->
+        <a class="service-card glow-border animated" href="https://www.tiktok.com/@daddyofdogs" target="_blank" aria-label="TikTok" rel="noopener">
           <div class="service-icon">🎵</div>
           <h3>TikTok</h3>
           <p>Virale Hundecontent und Trends</p>
         </a>
-        <a class="service-card glow-border animated" href="https://www.instagram.com/daddyofdogs" target="_blank" aria-label="Instagram">
+        <a class="service-card glow-border animated" href="https://www.instagram.com/daddyofdogs" target="_blank" aria-label="Instagram" rel="noopener">
           <div class="service-icon">📷</div>
           <h3>Instagram</h3>
           <p>Professionelle Hundefotos & Stories</p>
         </a>
-        <a class="service-card glow-border animated" href="https://www.facebook.com/daddyofdogsofficial" target="_blank" aria-label="Facebook">
+        <a class="service-card glow-border animated" href="https://www.facebook.com/daddyofdogsofficial" target="_blank" aria-label="Facebook" rel="noopener">
           <div class="service-icon">👥</div>
           <h3>Facebook</h3>
           <p>Community Building für Hundeliebhaber</p>
         </a>
-        <a class="service-card glow-border animated" href="https://www.youtube.com/@daddyofdogs" target="_blank" aria-label="YouTube">
+        <a class="service-card glow-border animated" href="https://www.youtube.com/@daddyofdogs" target="_blank" aria-label="YouTube" rel="noopener">
           <div class="service-icon">🎥</div>
           <h3>YouTube</h3>
           <p>Hundetraining & Lifestyle Videos</p>
         </a>
-        <a class="service-card glow-border animated" href="https://www.threads.net/@daddyofdogs" target="_blank" aria-label="Threads">
+        <a class="service-card glow-border animated" href="https://www.threads.net/@daddyofdogs" target="_blank" aria-label="Threads" rel="noopener">
           <div class="service-icon">💬</div>
           <h3>Threads</h3>
           <p>Professionelle Hundebetreuung</p>
         </a>
-        <a class="service-card glow-border animated" href="https://x.com/daddyofdogs" target="_blank" aria-label="X (Twitter)">
+        <a class="service-card glow-border animated" href="https://x.com/daddyofdogs" target="_blank" aria-label="X (Twitter)" rel="noopener">
           <div class="service-icon">🐦</div>
           <h3>X (Twitter)</h3>
           <p>Aktuelle News & Updates</p>
@@ -181,7 +210,7 @@
 
 <!-- JS für Grundfunktionen -->
 <script>
-  // Smooth scroll
+  // Smooth scroll für interne Links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -195,15 +224,15 @@
   // Animate on Scroll
   function animateOnScroll(selector) {
     const elements = document.querySelectorAll(selector);
-    const obs = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting) {
           entry.target.classList.add('animated');
-          obs.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
-    elements.forEach(el => obs.observe(el));
+    elements.forEach(el => observer.observe(el));
   }
   animateOnScroll('.service-card');
   animateOnScroll('.about-image');
@@ -211,14 +240,14 @@
   animateOnScroll('.contact-form');
   animateOnScroll('.stat-item');
 
-  // Kontaktformular
+  // Kontaktformular - Alert und Reset
   document.querySelector('.contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Vielen Dank! Wir melden uns bald.');
     this.reset();
   });
 
-  // Cookie Banner
+  // Cookie Banner anzeigen
   function showCookieBanner() {
     const banner = document.getElementById("cookieBanner");
     if (!localStorage.getItem("cookieConsent")) banner.style.display = "block";
@@ -232,6 +261,14 @@
     document.getElementById("cookieBanner").style.display = "none";
   }
   setTimeout(showCookieBanner, 2000);
+
+  // Scroll-Indikator
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollTop = window.scrollY;
+    const scrollPercent = docHeight ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('scroll-indicator').style.width = scrollPercent + '%';
+  });
 </script>
 
 </body>
