@@ -764,3 +764,16 @@ nav .logo {
   height: 2px !important;
   transition: width 0.18s ease !important;
 }
+/* Feinjustierung: Logo oben kleiner & dezenter */
+nav .logo {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em;
+  line-height: 1 !important;
+}
+
+/* Feinjustierung: Scroll-Indikator oben flüssiger & schmaler */
+#scroll-indicator {
+  height: 2px !important;
+  transition: width 0.3s cubic-bezier(0.33, 1, 0.68, 1) !important;
+}
