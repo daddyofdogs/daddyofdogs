@@ -751,3 +751,16 @@ section.contact {
     from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+/* ...alter CSS-Code... */
+
+/* Anpassung: Logo-Größe */
+nav .logo {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+/* Anpassung: Scroll Indicator */
+#scroll-indicator {
+  height: 2px !important;
+  transition: width 0.18s ease !important;
+}
