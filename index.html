@@ -339,38 +339,30 @@
 }
 
 .services-grid {
-    display: flex !important;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+    gap: 20px 30px;
+    max-width: 400px; /* kleinerer Container für Icons */
     margin: 0 auto;
     padding: 0 16px;
 }
 
 .service-card {
-    background: transparent;
-    border-radius: 0;
     padding: 0;
     box-shadow: none;
     border: none;
+    background: transparent;
     opacity: 1;
     filter: none;
     transform: none;
-    transition: transform 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    display: block;
-    width: 48px;
-    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .service-card img {
-    width: 100%;
-    height: 100%;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
-    display: block;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
@@ -378,6 +370,7 @@
 .service-card:hover img {
     transform: scale(1.1);
 }
+
 
         }
         @property --angle {
@@ -980,24 +973,24 @@
     <div class="diagonal-layer"></div>
     <div class="diagonal-layer"></div>
   </div>
-  <div class="services-grid" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-  <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" style="display: block;">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/tiktok.png" alt="TikTok" style="width:48px; height:48px; object-fit: contain;"/>
+ <div class="services-grid">
+  <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/tiktok.png" alt="TikTok Icon" class="service-icon" />
   </a>
-  <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" style="display: block;">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/instagram.png" alt="Instagram" style="width:48px; height:48px; object-fit: contain;"/>
+  <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/instagram.png" alt="Instagram Icon" class="service-icon" />
   </a>
-  <a href="https://facebook.com/daddyofdogs" target="_blank" rel="noopener" style="display: block;">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/facebook.png" alt="Facebook" style="width:48px; height:48px; object-fit: contain;"/>
+  <a href="https://facebook.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/facebook.png" alt="Facebook Icon" class="service-icon" />
   </a>
-  <a href="https://youtube.com/@daddyofdogs" target="_blank" rel="noopener" style="display: block;">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/youtube.png" alt="YouTube" style="width:48px; height:48px; object-fit: contain;"/>
+  <a href="https://youtube.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/youtube.png" alt="YouTube Icon" class="service-icon" />
   </a>
-  <a href="https://threads.net/@daddyofdogs" target="_blank" rel="noopener" style="display: block;">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/threads.png" alt="Threads" style="width:48px; height:48px; object-fit: contain;"/>
+  <a href="https://threads.net/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/threads.png" alt="Threads Icon" class="service-icon" />
   </a>
-  <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" style="display: block;">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/x.png" alt="X" style="width:48px; height:48px; object-fit: contain;"/>
+  <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/x.png" alt="X Icon" class="service-icon" />
   </a>
 </div>
 
