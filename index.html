@@ -50,7 +50,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Bestehende Stile für Scroll-Indicator, Navigation, Hero, etc. unverändert */
         #scroll-indicator {
             position: fixed;
             top: 0;
@@ -69,12 +68,8 @@
             margin: 0;
         }
         @media (max-width: 700px) {
-            section {
-                margin: 26px 0;
-            }
-            section.services, section.stats, section.about, section.contact {
-                margin: 0;
-            }
+            section { margin: 26px 0; }
+            section.services, section.stats, section.about, section.contact { margin: 0; }
         }
 
         nav {
@@ -402,6 +397,7 @@
         .service-icon {
             width: 36px;
             height: 36px;
+            object-fit: contain;
             margin-bottom: 9px;
             transition: transform 0.3s var(--apple-easing);
         }
@@ -425,23 +421,15 @@
                 padding: 0 4vw;
                 gap: 15px;
             }
-            .section-title-social {
-                font-size: clamp(2rem, 10vw, 3.5rem);
-            }
-            .glow-line {
-                width: 150px;
-            }
-            .service-icon {
-                width: 30px;
-                height: 30px;
-            }
+            .section-title-social { font-size: clamp(2rem, 10vw, 3.5rem); }
+            .glow-line { width: 150px; }
+            .service-icon { width: 30px; height: 30px; }
         }
         @media (max-width: 480px) {
             .service-card { padding: 1.2rem 1.5rem; }
             .service-icon { width: 28px; height: 28px; }
         }
 
-        /* Rest der CSS-Stile für stats, about, contact, footer, cookie-banner unverändert */
         .stats {
             background: #1d1d1f;
             color: #fff;
@@ -977,32 +965,32 @@
                 <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
                 <div class="services-grid">
                     <a href="#" class="service-card glow-border">
-                        <img src="assets/tiktok.png" alt="TikTok Icon" class="service-icon">
+                        <img src="Bilder/tiktok.png" alt="TikTok Icon" class="service-icon">
                         <h3>TikTok</h3>
                         <p>Virale Hundecontent und Trends</p>
                     </a>
                     <a href="#" class="service-card glow-border">
-                        <img src="assets/instagram.png" alt="Instagram Icon" class="service-icon">
+                        <img src="Bilder/instagram.png" alt="Instagram Icon" class="service-icon">
                         <h3>Instagram</h3>
                         <p>Professionelle Hundefotos & Stories</p>
                     </a>
                     <a href="#" class="service-card glow-border">
-                        <img src="assets/facebook.png" alt="Facebook Icon" class="service-icon">
+                        <img src="Bilder/facebook.png" alt="Facebook Icon" class="service-icon">
                         <h3>Facebook</h3>
                         <p>Community Building für Hundeliebhaber</p>
                     </a>
                     <a href="#" class="service-card glow-border">
-                        <img src="assets/youtube.png" alt="YouTube Icon" class="service-icon">
+                        <img src="Bilder/youtube.png" alt="YouTube Icon" class="service-icon">
                         <h3>YouTube</h3>
                         <p>Hundetraining & Lifestyle Videos</p>
                     </a>
                     <a href="#" class="service-card glow-border">
-                        <img src="assets/threads.png" alt="Threads Icon" class="service-icon">
+                        <img src="Bilder/threads.png" alt="Threads Icon" class="service-icon">
                         <h3>Threads</h3>
                         <p>Professionelle Hundebetreuung</p>
                     </a>
                     <a href="#" class="service-card glow-border">
-                        <img src="assets/x.png" alt="X Icon" class="service-icon">
+                        <img src="Bilder/x.png" alt="X Icon" class="service-icon">
                         <h3>X (Twitter)</h3>
                         <p>Aktuelle News & Updates</p>
                     </a>
