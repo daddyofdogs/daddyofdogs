@@ -27,10 +27,6 @@
             --footer-text: #f2f2f2;
             --footer-link: #bdbdbd;
             --footer-link-hover: #fff;
-            --white-soft: #f8f8f8;
-            --black-soft: #1a1a1a;
-            --gradient-accent: linear-gradient(90deg, #ff3366, #00ffff);
-            --gradient-text: linear-gradient(180deg, var(--white-soft) 0%, var(--black-soft) 100%);
             font-size: 16px;
         }
 
@@ -47,7 +43,6 @@
             overflow-x: hidden;
             min-height: 400vh;
             -webkit-font-smoothing: antialiased;
-            scroll-behavior: smooth;
         }
 
         #scroll-indicator {
@@ -56,7 +51,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient-accent);
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
             z-index: 9999;
             transition: width 0.4s ease-out;
         }
@@ -64,12 +59,19 @@
         section {
             margin: 38px 0;
         }
+        section:first-of-type {
+            margin-top: 0;
+        }
         section.services, section.stats, section.about, section.contact {
             margin: 0;
         }
         @media (max-width: 700px) {
-            section { margin: 26px 0; }
-            section.services, section.stats, section.about, section.contact { margin: 0; }
+            section {
+                margin: 26px 0;
+            }
+            section.services, section.stats, section.about, section.contact {
+                margin: 0;
+            }
         }
 
         nav {
@@ -97,7 +99,7 @@
         .logo {
             font-size: 1rem;
             font-weight: 600;
-            background: var(--gradient-accent);
+            background: linear-gradient(45deg, var(--accent), var(--accent-2));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -259,119 +261,81 @@
         }
 
         .services {
-            background: var(--black-soft);
+            background: #1d1d1f;
             color: #fff;
             padding: 6rem 0;
             position: relative;
-            overflow: hidden;
         }
         .services .container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 10px;
             z-index: 2;
-        }
-        .diagonal-layers {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        .diagonal-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-        }
-        .diagonal-layer:nth-child(1) {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%, rgba(0, 0, 0, 0.03) 100%);
-        }
-        .diagonal-layer:nth-child(2) {
-            background: linear-gradient(35deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%, rgba(0, 0, 0, 0.02) 100%);
-        }
-        .diagonal-layer:nth-child(3) {
-            background: linear-gradient(235deg, rgba(255, 255, 255, 0.025) 0%, transparent 50%, rgba(0, 0, 0, 0.025) 100%);
-        }
-        .diagonal-layer:nth-child(4) {
-            background: linear-gradient(80deg, rgba(255, 255, 255, 0.015) 0%, transparent 50%, rgba(0, 0, 0, 0.015) 100%);
         }
         .section-title-social {
             font-family: 'Inter', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 200;
-            letter-spacing: 0.03em;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: .1em;
             text-transform: uppercase;
-            text-align: center;
             margin-bottom: 2rem;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
-            background: var(--gradient-text);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 100% 200%;
+            text-align: center;
+            text-shadow: 0 0 1px rgba(255,255,255,.1);
         }
-        .glow-line {
-            width: 250px;
-            height: 3px;
-            margin: 30px auto;
-            border-radius: 2px;
-            background: var(--gradient-accent);
-            filter: blur(2px);
-            animation: pulse-glow 3s ease-in-out infinite alternate;
+        .radial-glow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 4px;
+            margin-bottom: 3rem;
         }
-        @keyframes pulse-glow {
-            0% { transform: scaleX(0.7); opacity: 0.5; filter: blur(1.5px); }
-            100% { transform: scaleX(1); opacity: 0.9; filter: blur(2.5px); }
+        .radial-glow-light {
+            width: 200px;
+            height: 2px;
+            background: radial-gradient(ellipse at center, 
+                rgba(255,255,255,1) 0%, 
+                rgba(255,255,255,.8) 20%, 
+                rgba(255,255,255,.4) 40%, 
+                rgba(255,255,255,.1) 70%, 
+                transparent 100%);
+            animation: radial-pulse 2s ease-in-out infinite;
         }
-.services .section-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    opacity: 0.8;
-    color: rgba(255,255,255,0.65);
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
-    gap: 20px 30px;
-    max-width: 400px; /* kleinerer Container für Icons */
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.service-card {
-    padding: 0;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-    opacity: 1;
-    filter: none;
-    transform: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.service-card img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.service-card:hover img {
-    transform: scale(1.1);
-}
-
-
+        @keyframes radial-pulse {
+            0%, 100% { transform: scaleX(.8); opacity: .6; box-shadow: 0 0 20px rgba(255,255,255,.3); }
+            50% { transform: scaleX(1.2); opacity: 1; box-shadow: 0 0 40px rgba(255,255,255,.6); }
+        }
+        .services .section-subtitle {
+            font-size: .91rem;
+            color: rgba(255,255,255,.7);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .services-grid {
+            display: grid;
+            /* Angepasst für 2 Spalten auf größeren Bildschirmen */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px 30px; /* Vertikaler und horizontaler Abstand */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .service-card {
+            background: var(--apple-white);
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem; /* Etwas mehr Padding */
+            box-shadow: var(--apple-shadow);
+            border: 1px solid rgba(134,134,139,.11);
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(40px) scale(.97);
+            transition: all 1s cubic-bezier(.25,.8,.25,1), filter 1s cubic-bezier(.25,.8,.25,1);
+            text-decoration: none;
+            color: inherit;
+            position: relative; /* Für den glow-border */
+            /* max-width entfernt, da das Grid die Breite steuert */
+            margin: 0; /* Margin im Grid wird durch Gap gesteuert */
         }
         @property --angle {
             syntax: "<angle>";
@@ -393,7 +357,7 @@
                 #b06dff 80%,
                 #ff5f7e 100%
             );
-            filter: blur(4px) brightness(1.2);
+            filter: blur(4px) brightness(1.2); /* blur leicht reduziert */
             opacity: .85;
             animation: glow-spin 5.5s linear infinite;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -409,39 +373,30 @@
             filter: blur(0);
         }
         .service-icon {
-            width: 36px;
-            height: 36px;
-            object-fit: contain;
-            margin-bottom: 9px;
-            transition: transform 0.3s var(--apple-easing);
-        }
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
+            font-size: 2.2rem; /* Etwas größer */
+            margin-bottom: 9px; /* Mehr Abstand */
         }
         .service-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 7px;
+            font-size: 1.05rem; /* Etwas größer */
+            font-weight: 700; /* Stärkerer Font-Gewicht */
+            margin-bottom: 7px; /* Mehr Abstand */
             color: var(--apple-dark);
         }
         .service-card p {
             color: var(--apple-gray);
-            font-size: .97rem;
+            font-size: .97rem; /* Etwas größer */
             line-height: 1.4;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 768px) { /* Angepasste Breakpoint für 1 Spalte */
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Eine Spalte auf kleineren Bildschirmen */
                 padding: 0 4vw;
                 gap: 15px;
             }
-            .section-title-social { font-size: clamp(2rem, 10vw, 3.5rem); }
-            .glow-line { width: 150px; }
-            .service-icon { width: 30px; height: 30px; }
         }
+        /* Media Query für noch kleinere Bildschirme, falls nötig */
         @media (max-width: 480px) {
             .service-card { padding: 1.2rem 1.5rem; }
-            .service-icon { width: 28px; height: 28px; }
         }
 
         .stats {
@@ -472,7 +427,8 @@
         .counter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.2rem;
+            /* Abstand enger gemacht */
+            gap: 1.2rem; 
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -546,14 +502,16 @@
             color: #fff;
             text-shadow: 0 0 10px rgba(255,255,255,.3);
         }
+        /* Aktualisierte Texte für die Counter */
         .counter-1 .counter-label::after { content: "Follower Gesamt"; }
         .counter-2 .counter-label::after { content: "Monatliche Videoaufrufe"; }
         .counter-3 .counter-label::after { content: "Engagement Rate"; }
         .counter-4 .counter-label::after { content: "Beiträge Veröffentlicht"; }
+
         @media (max-width: 768px) {
             .counter-number { font-size: 3rem; }
             .counter-base { padding: 2rem 1.5rem; }
-            .counter-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .counter-grid { grid-template-columns: 1fr; gap: 1rem; } /* Auch hier enger */
         }
         @media (max-width: 480px) {
             .counter-number { font-size: 2.5rem; }
@@ -591,18 +549,18 @@
 
         .sticky-container {
             position: relative;
-            height: 180vh;
+            height: 180vh; 
         }
         .sticky-section {
             position: sticky;
-            top: 0;
-            height: 100vh;
+            top: 0; 
+            height: 100vh; 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background: #fff;
-            overflow: hidden;
+            overflow: hidden; 
         }
         .lusion-title {
             font-family: 'Space Grotesk', sans-serif;
@@ -621,7 +579,7 @@
             z-index: 10;
             margin-bottom: .5rem;
             text-align: center;
-            position: relative;
+            position: relative; 
         }
         .lusion-title::before {
             content: attr(data-text);
@@ -711,11 +669,11 @@
             height: clamp(360px, 45vw, 520px);
             border-radius: 50%;
             object-fit: cover;
-            position: absolute;
+            position: absolute; 
             top: 52%;
             left: 50%;
             transform: translate(-50%, -50%);
-            opacity: 0;
+            opacity: 0; 
             z-index: 10;
             border: 4px solid rgba(29,29,31,.08);
             box-shadow: 0 20px 60px rgba(29,29,31,.15);
@@ -966,33 +924,51 @@
 
         <div class="hero-to-social"></div>
 
-   <section class="services" id="social" aria-label="Unsere Social Media Plattformen">
+<section class="services" id="social" aria-label="Unsere Social Media Plattformen">
   <div class="diagonal-layers">
     <div class="diagonal-layer"></div>
     <div class="diagonal-layer"></div>
     <div class="diagonal-layer"></div>
     <div class="diagonal-layer"></div>
   </div>
- <div class="services-grid">
-  <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/tiktok.png" alt="TikTok Icon" class="service-icon" />
-  </a>
-  <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/instagram.png" alt="Instagram Icon" class="service-icon" />
-  </a>
-  <a href="https://facebook.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/facebook.png" alt="Facebook Icon" class="service-icon" />
-  </a>
-  <a href="https://youtube.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/youtube.png" alt="YouTube Icon" class="service-icon" />
-  </a>
-  <a href="https://threads.net/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/threads.png" alt="Threads Icon" class="service-icon" />
-  </a>
-  <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/x.png" alt="X Icon" class="service-icon" />
-  </a>
-</div>
+  <div class="container">
+    <h2 class="section-title-social">Social Media</h2>
+    <div class="glow-line"></div>
+    <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
+    <div class="services-grid">
+      <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/tiktok.png" alt="TikTok Icon" class="service-icon">
+        <h3>TikTok</h3>
+        <p>Virale Hundecontent und Trends</p>
+      </a>
+      <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/instagram.png" alt="Instagram Icon" class="service-icon">
+        <h3>Instagram</h3>
+        <p>Professionelle Hundefotos & Stories</p>
+      </a>
+      <a href="https://facebook.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/facebook.png" alt="Facebook Icon" class="service-icon">
+        <h3>Facebook</h3>
+        <p>Community Building für Hundeliebhaber</p>
+      </a>
+      <a href="https://youtube.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/youtube.png" alt="YouTube Icon" class="service-icon">
+        <h3>YouTube</h3>
+        <p>Hundetraining & Lifestyle Videos</p>
+      </a>
+      <a href="https://threads.net/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/threads.png" alt="Threads Icon" class="service-icon">
+        <h3>Threads</h3>
+        <p>Professionelle Hundebetreuung</p>
+      </a>
+      <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
+        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/x.png" alt="X Icon" class="service-icon">
+        <h3>X (Twitter)</h3>
+        <p>Aktuelle News & Updates</p>
+      </a>
+    </div>
+  </div>
+</section>
 
         <section class="stats" id="stats" aria-label="Unsere Erfolge">
             <div class="stats-container">
@@ -1094,8 +1070,6 @@
     </div>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-
         // Scroll Indicator
         window.addEventListener('scroll', () => {
             const scrollIndicator = document.getElementById('scroll-indicator');
@@ -1103,60 +1077,6 @@
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercentage = (scrollTop / scrollHeight) * 100;
             scrollIndicator.style.width = `${scrollPercentage}%`;
-        });
-
-        // GSAP-Animation für die diagonalen Ebenen
-        gsap.to(".diagonal-layer:nth-child(1)", {
-            yPercent: 120,
-            xPercent: 10,
-            opacity: 0.3,
-            ease: "power2.inOut",
-            repeat: -1,
-            yoyo: true,
-            duration: 10,
-            delay: 0,
-        });
-
-        gsap.to(".diagonal-layer:nth-child(2)", {
-            yPercent: -110,
-            xPercent: -15,
-            opacity: 0.25,
-            ease: "power2.inOut",
-            repeat: -1,
-            yoyo: true,
-            duration: 12,
-            delay: 3,
-        });
-
-        gsap.to(".diagonal-layer:nth-child(3)", {
-            xPercent: 120,
-            yPercent: 20,
-            opacity: 0.2,
-            ease: "power2.inOut",
-            repeat: -1,
-            yoyo: true,
-            duration: 14,
-            delay: 6,
-        });
-
-        gsap.to(".diagonal-layer:nth-child(4)", {
-            yPercent: -80,
-            xPercent: 80,
-            opacity: 0.15,
-            ease: "power2.inOut",
-            repeat: -1,
-            yoyo: true,
-            duration: 16,
-            delay: 9,
-        });
-
-        // GSAP-Animation für den Titel
-        gsap.to(".section-title-social", {
-            backgroundPosition: "0% 100%",
-            duration: 6,
-            ease: "power2.inOut",
-            repeat: -1,
-            yoyo: true,
         });
 
         // Contact Form and Service Card Animations
@@ -1234,9 +1154,11 @@
             }
 
             formatNumber(num) {
+                // Anpassen der Formatierung je nach Label
                 if (this.label === "Engagement Rate") {
                     return new Intl.NumberFormat('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(num) + '%';
                 } else {
+                    // Für Follower und Views, etc. in Millionen/Tausend formatieren
                     if (num >= 1000000) {
                         return (num / 1000000).toFixed(1).replace('.', ',') + 'M+';
                     } else if (num >= 1000) {
@@ -1281,9 +1203,11 @@
 
             startContinuousCounting() {
                 setInterval(() => {
+                    // Logik für kontinuierliches Zählen anpassen, falls zutreffend für Prozentwerte
                     if (this.label === "Engagement Rate") {
-                        this.currentValue += (Math.random() * 0.05);
-                        if (this.currentValue > 100) this.currentValue = 100;
+                        // Engagement Rate erhöht sich langsamer und in kleineren Schritten
+                        this.currentValue += (Math.random() * 0.05); // Z.B. 0.01 bis 0.05 Prozentpunkte
+                        if (this.currentValue > 100) this.currentValue = 100; // Max 100%
                     } else {
                         this.currentValue += Math.floor(Math.random() * 8) + 1;
                     }
@@ -1294,22 +1218,24 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const counters = [
+                // Angepasste Startwerte und Labels
                 new LiquidMetalCounter('count1', 2100000, 'Follower Gesamt'),
                 new LiquidMetalCounter('count2', 1850000, 'Monatliche Videoaufrufe'),
-                new LiquidMetalCounter('count3', 8.2, 'Engagement Rate'),
+                new LiquidMetalCounter('count3', 8.2, 'Engagement Rate'), // Beispiel: 8.2%
                 new LiquidMetalCounter('count4', 750, 'Beiträge Veröffentlicht')
             ];
+            // Counters should be observed for animation start when visible
             counters.forEach(counter => {
                 const counterObserver = new IntersectionObserver(
                     (entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting && !counter.isAnimating) {
                                 counter.animate();
-                                counterObserver.unobserve(entry.target);
+                                counterObserver.unobserve(entry.target); // Unobserve after animation starts
                             }
                         });
                     },
-                    { threshold: 0.5 }
+                    { threshold: 0.5 } // Trigger when 50% of the element is visible
                 );
                 counterObserver.observe(counter.element.closest('.counter-container'));
             });
@@ -1332,7 +1258,7 @@
                 const progress = self.progress;
                 
                 if (progress <= 0.4) {
-                    const textFade = progress * 2.5;
+                    const textFade = progress * 2.5; 
                     gsap.set(modernText, {
                         opacity: Math.max(0, 1 - textFade),
                         y: textFade * 40,
@@ -1356,7 +1282,7 @@
                         willChange: 'transform, opacity, filter'
                     });
                     gsap.set(profileImage, {
-                        opacity: 0,
+                        opacity: 0, 
                         scale: 0.8,
                         rotation: -30,
                         y: 50,
@@ -1370,13 +1296,13 @@
                         filter: "blur(44px)",
                         willChange: 'transform, opacity, filter'
                     });
-                    const imageProgress = (progress - 0.6) / 0.4;
-                    const easeOut = 1 - Math.pow(1 - imageProgress, 3);
+                    const imageProgress = (progress - 0.6) / 0.4; 
+                    const easeOut = 1 - Math.pow(1 - imageProgress, 3); 
                     gsap.set(profileImage, {
                         opacity: easeOut,
-                        scale: 0.8 + easeOut * 0.2,
-                        rotation: -30 + easeOut * 30,
-                        y: 50 - easeOut * 50,
+                        scale: 0.8 + easeOut * 0.2, 
+                        rotation: -30 + easeOut * 30, 
+                        y: 50 - easeOut * 50, 
                         willChange: 'transform, opacity'
                     });
                 }
