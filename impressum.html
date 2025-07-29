@@ -1,57 +1,1342 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum – DADDYOFDOGS</title>
-  <meta name="description" content="Impressum und rechtliche Informationen zu DADDYOFDOGS." />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .legal-main { animation: fadein 1.2s cubic-bezier(.3,.93,.5,1.08); max-width:650px; margin:8vh auto 4vh; background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 8px 32px rgba(20,22,28,0.12); padding:3rem 2rem 2rem; }
-    @keyframes fadein { 0% {opacity:0; transform:translateY(40px);} 100% {opacity:1; transform:translateY(0);} }
-    @media (max-width:540px){ .legal-main {padding:1.1rem 0.9rem 1.8rem;} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DADDYOFDOGS: Die größte Hunde-Community mit Reichweite auf TikTok, Instagram und mehr. Professionelles Social Media Management für Hundeliebhaber.">
+    <meta property="og:title" content="DADDYOFDOGS – Big Family">
+    <meta property="og:description" content="Social Media mit Herz: Hundevideos, Expertenwissen und Community-Building.">
+    <meta property="og:image" content="https://i.ibb.co/Kz2WRFf7/IMG-1311.jpg">
+    <title>DADDYOFDOGS – Big Family 🐶</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --accent: #ff3366;
+            --accent-2: #00ffff;
+            --apple-dark: #1d1d1f;
+            --apple-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-white: #fbfbfd;
+            --apple-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --apple-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --footer-bg: #18181a;
+            --footer-text: #f2f2f2;
+            --footer-link: #bdbdbd;
+            --footer-link-hover: #fff;
+            font-size: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', 'Inter', 'Space Grotesk', Arial, 'Segoe UI', sans-serif;
+            background-color: var(--apple-white);
+            color: var(--apple-dark);
+            line-height: 1.5;
+            overflow-x: hidden;
+            min-height: 400vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            z-index: 9999;
+            transition: width 0.4s ease-out;
+        }
+
+        section {
+            margin: 38px 0;
+        }
+        section:first-of-type {
+            margin-top: 0;
+        }
+        section.services, section.stats, section.about, section.contact {
+            margin: 0;
+        }
+        @media (max-width: 700px) {
+            section {
+                margin: 26px 0;
+            }
+            section.services, section.stats, section.about, section.contact {
+                margin: 0;
+            }
+        }
+
+        nav {
+            background: linear-gradient(to bottom, #1d1d1f, #4A4A4A);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2px 0;
+            border-bottom: 1px solid rgba(134,134,139,0.11);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            height: 46px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            height: 36px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 1px 0;
+            transition: color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            height: 36px;
+        }
+        .nav-links a:hover, .nav-links a:focus {
+            color: #E0E0E0;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 700px) {
+            .nav-container { height: 40px; padding: 0 4vw; }
+            .logo { font-size: 0.88rem; height: 28px; }
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 0.67rem; height: 28px; }
+        }
+        @media (max-width: 420px) {
+            .logo { font-size: 0.76rem; height: 24px; }
+            .nav-links { gap: 7px; }
+            .nav-links a { font-size: 0.63rem; height: 24px; }
+            .nav-container { padding: 0 2vw; }
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--apple-white);
+            position: relative;
+            padding-top: 48px;
+        }
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .floating-emoji {
+            position: absolute;
+            font-size: 2.2rem;
+            opacity: 0.13;
+            filter: blur(0.5px);
+            animation: floatFlow 10s infinite ease-in-out;
+        }
+        .emoji-1 { top: 14%; left: 10%; }
+        .emoji-2 { top: 22%; right: 13%; }
+        .emoji-3 { bottom: 19%; left: 18%; }
+        .emoji-4 { top: 54%; left: 6%; }
+        .emoji-5 { bottom: 10%; right: 9%; }
+        .emoji-6 { top: 42%; right: 20%; }
+        @keyframes floatFlow {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-5px, -5px) scale(1.05); }
+        }
+        @media (max-width: 600px) {
+            .floating-emoji { font-size: 2.9rem; }
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 18px;
+            z-index: 2;
+        }
+        .hero-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, transparent 0%, var(--apple-dark) 25%, var(--apple-dark) 75%, transparent 100%);
+            background-size: 400% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: continuousReveal 8s ease-in-out infinite;
+            letter-spacing: -0.045em;
+            margin-bottom: 8px;
+        }
+        @keyframes continuousReveal {
+            0% { background-position: -150% 0; }
+            50% { background-position: 150% 0; }
+            100% { background-position: -150% 0; }
+        }
+        @media (max-width: 768px) { .hero-title { font-size: 1.8rem; } }
+        @media (max-width: 480px) { .hero-title { font-size: 1.5rem; } }
+        @media (max-width: 360px) { .hero-title { font-size: 1.2rem; } }
+        .hero-subtitle {
+            font-size: 1.01rem;
+            color: var(--apple-gray);
+            margin-bottom: 1rem;
+            animation: fadeIn 1.2s var(--apple-easing);
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--apple-dark);
+            color: var(--apple-white);
+            padding: 9px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .93rem;
+            transition: all .37s var(--apple-easing);
+            box-shadow: var(--apple-shadow);
+            animation: fadeIn .75s ease-out;
+        }
+        .cta-button:hover {
+            background: #232324;
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 10px 30px rgba(0,0,0,.16);
+        }
+
+        .hero-to-social {
+            height: 20vh;
+            background: linear-gradient(180deg, #ffffff 0%, #1d1d1f 80%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-to-social::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(86,86,91,0.2) 25%, 
+                rgba(86,86,91,0.4) 50%, 
+                rgba(86,86,91,0.2) 75%, 
+                transparent 100%);
+            filter: blur(60px);
+            animation: lusion-morph 12s ease-in-out infinite;
+        }
+        @keyframes lusion-morph {
+            0%, 100% { transform: scaleY(1) translateY(0); opacity: .6; }
+            33% { transform: scaleY(1.2) translateY(-20px); opacity: .8; }
+            66% { transform: scaleY(.8) translateY(20px); opacity: .5; }
+        }
+
+        .services {
+            background: #1d1d1f;
+            color: #fff;
+            padding: 6rem 0;
+            position: relative;
+        }
+        .services .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 10px;
+            z-index: 2;
+        }
+        .section-title-social {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 0 1px rgba(255,255,255,.1);
+        }
+        .radial-glow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 4px;
+            margin-bottom: 3rem;
+        }
+        .radial-glow-light {
+            width: 200px;
+            height: 2px;
+            background: radial-gradient(ellipse at center, 
+                rgba(255,255,255,1) 0%, 
+                rgba(255,255,255,.8) 20%, 
+                rgba(255,255,255,.4) 40%, 
+                rgba(255,255,255,.1) 70%, 
+                transparent 100%);
+            animation: radial-pulse 2s ease-in-out infinite;
+        }
+        @keyframes radial-pulse {
+            0%, 100% { transform: scaleX(.8); opacity: .6; box-shadow: 0 0 20px rgba(255,255,255,.3); }
+            50% { transform: scaleX(1.2); opacity: 1; box-shadow: 0 0 40px rgba(255,255,255,.6); }
+        }
+        .services .section-subtitle {
+            font-size: .91rem;
+            color: rgba(255,255,255,.7);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .services-grid {
+            display: grid;
+            /* Angepasst für 2 Spalten auf größeren Bildschirmen */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px 30px; /* Vertikaler und horizontaler Abstand */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .service-card {
+            background: var(--apple-white);
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem; /* Etwas mehr Padding */
+            box-shadow: var(--apple-shadow);
+            border: 1px solid rgba(134,134,139,.11);
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(40px) scale(.97);
+            transition: all 1s cubic-bezier(.25,.8,.25,1), filter 1s cubic-bezier(.25,.8,.25,1);
+            text-decoration: none;
+            color: inherit;
+            position: relative; /* Für den glow-border */
+            /* max-width entfernt, da das Grid die Breite steuert */
+            margin: 0; /* Margin im Grid wird durch Gap gesteuert */
+        }
+        @property --angle {
+            syntax: "<angle>";
+            inherits: false;
+            initial-value: 0deg;
+        }
+        .service-card.glow-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 3.2px;
+            background: conic-gradient(
+                from var(--angle),
+                #ff5f7e 0%,
+                #ffcc5c 22%,
+                #4fffdf 43%,
+                #5aacff 65%,
+                #b06dff 80%,
+                #ff5f7e 100%
+            );
+            filter: blur(4px) brightness(1.2); /* blur leicht reduziert */
+            opacity: .85;
+            animation: glow-spin 5.5s linear infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+        @keyframes glow-spin {
+            to { --angle: 360deg; }
+        }
+        .service-card.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1.01);
+            filter: blur(0);
+        }
+        .service-icon {
+            font-size: 2.2rem; /* Etwas größer */
+            margin-bottom: 9px; /* Mehr Abstand */
+        }
+        .service-card h3 {
+            font-size: 1.05rem; /* Etwas größer */
+            font-weight: 700; /* Stärkerer Font-Gewicht */
+            margin-bottom: 7px; /* Mehr Abstand */
+            color: var(--apple-dark);
+        }
+        .service-card p {
+            color: var(--apple-gray);
+            font-size: .97rem; /* Etwas größer */
+            line-height: 1.4;
+        }
+        @media (max-width: 768px) { /* Angepasste Breakpoint für 1 Spalte */
+            .services-grid {
+                grid-template-columns: 1fr; /* Eine Spalte auf kleineren Bildschirmen */
+                padding: 0 4vw;
+                gap: 15px;
+            }
+        }
+        /* Media Query für noch kleinere Bildschirme, falls nötig */
+        @media (max-width: 480px) {
+            .service-card { padding: 1.2rem 1.5rem; }
+        }
+
+        .stats {
+            background: #1d1d1f;
+            color: #fff;
+            padding: 6rem 0 0;
+            margin: 0;
+        }
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .stats-title {
+            text-align: center;
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 3rem;
+            animation: titleFloat 6s ease-in-out infinite;
+        }
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* Abstand enger gemacht */
+            gap: 1.2rem; 
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .counter-container {
+            width: 100%;
+            padding: 1rem;
+        }
+        .counter-base {
+            position: relative;
+            padding: 3rem 2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            transition: all .5s cubic-bezier(.25,.8,.25,1);
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+        }
+        .counter-base:hover {
+            transform: translateY(-15px) scale(1.02);
+        }
+        .counter-base::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                #ff6b6b 0deg,
+                #4ecdc4 60deg,
+                #45b7d1 120deg,
+                #96ceb4 180deg,
+                #ffeaa7 240deg,
+                #dda0dd 300deg,
+                #ff6b6b 360deg
+            );
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+        .counter-base::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: 
+                linear-gradient(135deg, #1a1a1a, #2d2d2d),
+                repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,.03) 2px, rgba(255,255,255,.03) 4px);
+            border-radius: 27px;
+            z-index: -1;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .counter-number {
+            font-size: 4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(255,107,107,.3));
+        }
+        .counter-label {
+            text-align: center;
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            opacity: .9;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,.3);
+        }
+        /* Aktualisierte Texte für die Counter */
+        .counter-1 .counter-label::after { content: "Follower Gesamt"; }
+        .counter-2 .counter-label::after { content: "Monatliche Videoaufrufe"; }
+        .counter-3 .counter-label::after { content: "Engagement Rate"; }
+        .counter-4 .counter-label::after { content: "Beiträge Veröffentlicht"; }
+
+        @media (max-width: 768px) {
+            .counter-number { font-size: 3rem; }
+            .counter-base { padding: 2rem 1.5rem; }
+            .counter-grid { grid-template-columns: 1fr; gap: 1rem; } /* Auch hier enger */
+        }
+        @media (max-width: 480px) {
+            .counter-number { font-size: 2.5rem; }
+            .counter-base { padding: 1.5rem 1rem; }
+        }
+
+        .stats-to-content {
+            height: 20vh;
+            background: linear-gradient(180deg, #1d1d1f 0%, #ffffff 80%);
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+        }
+        .stats-to-content::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(86,86,91,.2) 25%, 
+                rgba(86,86,91,.4) 50%, 
+                rgba(86,86,91,.2) 75%, 
+                transparent 100%);
+            filter: blur(60px);
+            animation: lusion-morph-reverse 12s ease-in-out infinite;
+        }
+        @keyframes lusion-morph-reverse {
+            0%, 100% { transform: scaleY(1) translateY(0); opacity: .6; }
+            33% { transform: scaleY(.8) translateY(20px); opacity: .5; }
+            66% { transform: scaleY(1.2) translateY(-20px); opacity: .8; }
+        }
+
+        .sticky-container {
+            position: relative;
+            height: 180vh; 
+        }
+        .sticky-section {
+            position: sticky;
+            top: 0; 
+            height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            overflow: hidden; 
+        }
+        .lusion-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -.05em;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: plasmaFlow 4s ease-in-out infinite;
+            cursor: pointer;
+            white-space: nowrap;
+            z-index: 10;
+            margin-bottom: .5rem;
+            text-align: center;
+            position: relative; 
+        }
+        .lusion-title::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,.9), transparent);
+            background-size: 20% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: energySweep 2s linear infinite;
+            opacity: 0;
+        }
+        .lusion-title:hover::before {
+            opacity: 1;
+        }
+        @keyframes plasmaFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes energySweep {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .elegant-line {
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(45deg, #1d1d1f, #666, #333, #1d1d1f, #888);
+            background-size: 300% 300%;
+            margin: 20px auto;
+            border-radius: 1px;
+            animation: holographicShift 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        .elegant-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent);
+            animation: holographicSweep 4s linear infinite;
+        }
+        @keyframes holographicShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 0% 50%; }
+        }
+        @keyframes holographicSweep {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        .modern-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            font-weight: 500;
+            line-height: 1.8;
+            color: #4a4a4a;
+            max-width: 700px;
+            text-align: justify;
+            text-align-last: center;
+            letter-spacing: .2px;
+            z-index: 10;
+            position: relative;
+            margin: 0 auto;
+        }
+        .modern-text .text-line {
+            display: block;
+            margin-bottom: 1rem;
+            opacity: .95;
+            transition: all .3s ease;
+        }
+        .modern-text .text-line:hover {
+            opacity: 1;
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        .profile-image {
+            width: clamp(360px, 45vw, 520px);
+            height: clamp(360px, 45vw, 520px);
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute; 
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0; 
+            z-index: 10;
+            border: 4px solid rgba(29,29,31,.08);
+            box-shadow: 0 20px 60px rgba(29,29,31,.15);
+            filter: grayscale(0%) contrast(1.1);
+            transition: all .4s ease;
+        }
+        .profile-image:hover {
+            border-color: rgba(255,0,110,.3);
+            box-shadow: 0 15px 60px rgba(255,0,110,.15);
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .modern-text {
+                font-size: .9rem;
+                max-width: 320px;
+                padding: 0 1rem;
+                line-height: 1.6;
+            }
+            .profile-image {
+                width: clamp(180px, 40vw, 240px);
+                height: clamp(180px, 40vw, 240px);
+            }
+        }
+
+        .contact {
+            text-align: center;
+            background: var(--apple-white);
+            padding: 6rem 0;
+        }
+        .contact-container {
+            max-width: 370px;
+            margin: 0 auto;
+            padding: 0 12px;
+        }
+        .contact-form {
+            display: grid;
+            gap: 7px;
+            margin-top: 10px;
+            opacity: 0;
+            transform: translateY(30px) scale(.97);
+            transition: all .7s var(--apple-easing);
+        }
+        .contact-form.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .form-group label {
+            margin-bottom: 2px;
+            font-weight: 500;
+            color: var(--apple-dark);
+            font-size: .92rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 6px 10px;
+            border: 1px solid #d8d8d8;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fafafc;
+            color: var(--apple-dark);
+        }
+        .form-group textarea {
+            min-height: 44px;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--apple-dark);
+            box-shadow: 0 0 0 2px rgba(29,29,31,.07);
+        }
+        .submit-button {
+            background: var(--apple-dark);
+            color: var(--apple-white);
+            border: none;
+            padding: 8px 0;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: .93rem;
+            cursor: pointer;
+            transition: all .18s var(--apple-easing);
+            box-shadow: var(--apple-shadow);
+        }
+        .submit-button:hover {
+            background: #232324;
+            transform: scale(1.03);
+        }
+        @media (max-width: 700px) {
+            .contact-container { max-width: 97vw; padding: 0 3vw; }
+            .contact-form { padding: 8px 2vw; }
+        }
+
+        .footer-info {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 7px 0 11px;
+            border-top: 1px solid #222;
+            font-size: .79rem;
+        }
+        .footer-info-wrapper {
+            max-width: 610px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 10px;
+        }
+        .footer-heading {
+            color: #fff;
+            font-size: .85rem;
+            margin-bottom: 2px;
+            font-weight: 600;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 8px;
+            justify-content: center;
+            list-style: none;
+        }
+        .footer-links a {
+            color: var(--footer-link);
+            text-decoration: none;
+            font-size: .73rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            transition: all .2s;
+        }
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: var(--footer-link-hover);
+            background: #23232444;
+        }
+        .footer-copyright {
+            font-size: .68rem;
+            color: #bdbdbd;
+            margin-top: 7px;
+        }
+        @media (max-width: 600px) {
+            .footer-info-wrapper { max-width: 99vw; }
+            .footer-links { flex-direction: column; align-items: center; }
+        }
+
+        .cookie-banner {
+            background: var(--apple-white);
+            color: var(--apple-dark);
+            border-radius: 9px;
+            padding: 10px 8px;
+            box-shadow: var(--apple-shadow);
+            max-width: 94vw;
+            position: fixed;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1010;
+            font-size: .95rem;
+            text-align: center;
+            display: none;
+        }
+        .cookie-banner.show {
+            display: block;
+            animation: slideUp .5s var(--apple-easing);
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 6px;
+        }
+        .cookie-button {
+            padding: 6px 13px;
+            font-size: .91rem;
+            border: 1px solid var(--apple-gray);
+            border-radius: 7px;
+            background: #f5f5f7;
+            color: var(--apple-dark);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all .14s var(--apple-easing);
+        }
+        .cookie-button.primary {
+            background: var(--apple-dark);
+            color: var(--apple-white);
+            border-color: var(--apple-dark);
+        }
+        .cookie-button:hover {
+            background: var(--apple-light-gray);
+            border-color: var(--apple-dark);
+            color: var(--apple-dark);
+        }
+        .cookie-button.primary:hover {
+            background: #232324;
+            color: var(--apple-white);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100px) translateX(-50%); opacity: 0; }
+            to { transform: translateY(0) translateX(-50%); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-  <nav aria-label="Hauptnavigation">
-    <div class="nav-container">
-      <a href="index.html" class="logo" aria-label="Startseite von DADDYOFDOGS">DADDYOFDOGS</a>
-      <ul class="nav-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#services">Social Media</a></li>
-        <li><a href="index.html#about">Über uns</a></li>
-        <li><a href="index.html#contact">Kontakt</a></li>
-      </ul>
+    <div id="scroll-indicator"></div>
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--apple-dark)" />
+                <stop offset="100%" stop-color="var(--apple-gray)" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <nav aria-label="Hauptnavigation">
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="Startseite von DADDYOFDOGS">DADDYOFDOGS</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#social">Social Media</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home" aria-label="Einstieg DADDYOFDOGS">
+            <div class="floating-elements" aria-hidden="true">
+                <span class="floating-emoji emoji-1">🐾</span>
+                <span class="floating-emoji emoji-2">🦴</span>
+                <span class="floating-emoji emoji-3">🐕</span>
+                <span class="floating-emoji emoji-4">🦮</span>
+                <span class="floating-emoji emoji-5">🐩</span>
+                <span class="floating-emoji emoji-6">🐕‍🦺</span>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">DADDYOFDOGS</h1>
+                <p class="hero-subtitle">Big Family 🐶</p>
+                <a href="#contact" class="cta-button">Kontakt</a>
+            </div>
+        </section>
+
+        <div class="hero-to-social"></div>
+
+        <section class="services" id="social" aria-label="Unsere Social Media Plattformen">
+            <div class="container">
+                <h2 class="section-title-social">Social Media</h2>
+                <div class="radial-glow-container">
+                    <div class="radial-glow-light"></div>
+                </div>
+                <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
+                <div class="services-grid">
+                    <a href="#" class="service-card glow-border">
+                        <span class="service-icon">🎵</span>
+                        <h3>TikTok</h3>
+                        <p>Virale Hundecontent und Trends</p>
+                    </a>
+                    <a href="#" class="service-card glow-border">
+                        <span class="service-icon">📷</span>
+                        <h3>Instagram</h3>
+                        <p>Professionelle Hundefotos & Stories</p>
+                    </a>
+                    <a href="#" class="service-card glow-border">
+                        <span class="service-icon">👥</span>
+                        <h3>Facebook</h3>
+                        <p>Community Building für Hundeliebhaber</p>
+                    </a>
+                    <a href="#" class="service-card glow-border">
+                        <span class="service-icon">🎥</span>
+                        <h3>YouTube</h3>
+                        <p>Hundetraining & Lifestyle Videos</p>
+                    </a>
+                    <a href="#" class="service-card glow-border">
+                        <span class="service-icon">💬</span>
+                        <h3>Threads</h3>
+                        <p>Professionelle Hundebetreuung</p>
+                    </a>
+                    <a href="#" class="service-card glow-border">
+                        <span class="service-icon">🐦</span>
+                        <h3>X (Twitter)</h3>
+                        <p>Aktuelle News & Updates</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats" id="stats" aria-label="Unsere Erfolge">
+            <div class="stats-container">
+                <h2 class="stats-title">Unsere Zahlen sprechen für sich</h2>
+                <div class="counter-grid">
+                    <div class="counter-container">
+                        <div class="counter-base counter-1">
+                            <div class="counter-number" id="count1">0</div>
+                            <div class="counter-label"></div>
+                        </div>
+                    </div>
+                    <div class="counter-container">
+                        <div class="counter-base counter-2">
+                            <div class="counter-number" id="count2">0</div>
+                            <div class="counter-label"></div>
+                        </div>
+                    </div>
+                    <div class="counter-container">
+                        <div class="counter-base counter-3">
+                            <div class="counter-number" id="count3">0</div>
+                            <div class="counter-label"></div>
+                        </div>
+                    </div>
+                    <div class="counter-container">
+                        <div class="counter-base counter-4">
+                            <div class="counter-number" id="count4">0</div>
+                            <div class="counter-label"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="stats-to-content"></div>
+
+        <section class="about" id="about" aria-label="Über DADDYOFDOGS">
+            <div class="sticky-container">
+                <section class="sticky-section">
+                    <h1 class="lusion-title" data-text="ABOUT ME">ABOUT ME</h1>
+                    <div class="elegant-line"></div>
+                    <div class="modern-text" id="modernText">
+                        <span class="text-line">I'm daddyofdogs, and for years I've been sharing the joy that dogs bring to our lives through social media.</span>
+                        <span class="text-line">With Puki—our CEO and the soul of our team—we celebrate the special bond between people and dogs every day.</span>
+                        <span class="text-line">My goal is to help create a better world together with dogs, where their presence inspires happiness, compassion, and community.</span>
+                        <span class="text-line">Thank you for being part of our journey!</span>
+                    </div>
+                    <img src="https://i.ibb.co/Kz2WRFf7/IMG-1311.jpg" alt="Profile" class="profile-image" id="profileImage">
+                </section>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-label="Kontaktformular">
+            <div class="contact-container">
+                <h2 class="section-title">Kontakt</h2>
+                <p class="section-subtitle">Starten Sie noch heute Ihr Social Media Projekt</p>
+                <form class="contact-form animated">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Betreff</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Nachricht senden</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-info">
+        <div class="footer-info-wrapper">
+            <h2 class="footer-heading">Information</h2>
+            <ul class="footer-links">
+                <li><a href="#barrierefreiheit">Barrierefreiheit</a></li>
+                <li><a href="#impressum">Impressum</a></li>
+                <li><a href="#datenschutz">Datenschutz</a></li>
+                <li><a href="#agb">AGB</a></li>
+                <li><a href="#cookie-richtlinie">Cookie-Richtlinie</a></li>
+            </ul>
+            <p class="footer-copyright">© 2025 DADDYOFDOGS. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <div class="cookie-banner">
+        <p>Wir verwenden Cookies, um Ihre Erfahrung zu verbessern.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-button primary">Akzeptieren</button>
+            <button class="cookie-button">Ablehnen</button>
+        </div>
     </div>
-  </nav>
-  <main class="legal-main">
-    <h1>Impressum</h1>
-    <p>DADDYOFDOGS<br>
-    Musterstraße 123<br>
-    40210 Düsseldorf<br>
-    Deutschland</p>
-    <p><strong>Vertreten durch:</strong> Max Mustermann</p>
-    <p><strong>Kontakt:</strong><br>
-    Telefon: 01234 / 567890<br>
-    E-Mail: info@daddyofdogs.de</p>
-    <p><strong>Umsatzsteuer-ID:</strong> DE123456789</p>
-    <p>Verantwortlich nach §55 Abs.2 RStV:<br>
-    Max Mustermann, Anschrift wie oben</p>
-  </main>
-  <footer class="footer-info">
-    <div class="footer-info-wrapper">
-      <h3 class="footer-heading">Information</h3>
-      <ul class="footer-links">
-        <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
-        <li><a href="impressum.html" aria-current="page">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="agb.html">AGB</a></li>
-        <li><a href="cookie.html">Cookie-Richtlinie</a></li>
-      </ul>
-      <div class="footer-copyright">
-        © 2025 DADDYOFDOGS. Alle Rechte vorbehalten.
-      </div>
-    </div>
-  </footer>
+
+    <script>
+        // Scroll Indicator
+        window.addEventListener('scroll', () => {
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            const scrollTop = window.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            scrollIndicator.style.width = `${scrollPercentage}%`;
+        });
+
+        // Contact Form and Service Card Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.querySelector('.contact-form');
+            contactForm.classList.add('animated');
+
+            const animatedElements = document.querySelectorAll('.service-card');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animated');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.2 }
+            );
+            animatedElements.forEach(el => observer.observe(el));
+
+            const form = document.querySelector('.contact-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Vielen Dank! Wir melden uns bald.');
+                    this.reset();
+                });
+            }
+
+            const cookieBanner = document.querySelector('.cookie-banner');
+            const acceptBtn = document.querySelector('.cookie-button.primary');
+            const declineBtn = document.querySelector('.cookie-button:not(.primary)');
+
+            function showCookieBanner() {
+                if (!sessionStorage.getItem("cookieConsent") && cookieBanner) {
+                    cookieBanner.classList.add('show');
+                }
+            }
+
+            function acceptCookies() {
+                sessionStorage.setItem("cookieConsent", "true");
+                cookieBanner.classList.remove('show');
+            }
+
+            function declineCookies() {
+                sessionStorage.setItem("cookieConsent", "false");
+                cookieBanner.classList.remove('show');
+            }
+
+            if (acceptBtn) acceptBtn.addEventListener('click', acceptCookies);
+            if (declineBtn) declineBtn.addEventListener('click', declineCookies);
+
+            setTimeout(showCookieBanner, 2000);
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+
+        // Liquid Metal Counter Animation
+        class LiquidMetalCounter {
+            constructor(elementId, targetValue, label) {
+                this.element = document.getElementById(elementId);
+                this.targetValue = targetValue;
+                this.currentValue = 0;
+                this.isAnimating = false;
+                this.label = label;
+            }
+
+            formatNumber(num) {
+                // Anpassen der Formatierung je nach Label
+                if (this.label === "Engagement Rate") {
+                    return new Intl.NumberFormat('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(num) + '%';
+                } else {
+                    // Für Follower und Views, etc. in Millionen/Tausend formatieren
+                    if (num >= 1000000) {
+                        return (num / 1000000).toFixed(1).replace('.', ',') + 'M+';
+                    } else if (num >= 1000) {
+                        return (num / 1000).toFixed(0) + 'K+';
+                    }
+                    return new Intl.NumberFormat('de-DE').format(Math.floor(num)) + '+';
+                }
+            }
+
+            easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+
+            animate() {
+                if (this.isAnimating) return;
+                this.isAnimating = true;
+
+                const duration = 5000;
+                const startTime = performance.now();
+                const startValue = this.currentValue;
+
+                const animationFrame = (currentTime) => {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = this.easeOutCubic(progress);
+
+                    this.currentValue = startValue + (this.targetValue - startValue) * easedProgress;
+                    this.element.textContent = this.formatNumber(this.currentValue);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animationFrame);
+                    } else {
+                        this.currentValue = this.targetValue;
+                        this.element.textContent = this.formatNumber(this.currentValue);
+                        this.isAnimating = false;
+                        this.startContinuousCounting();
+                    }
+                };
+
+                requestAnimationFrame(animationFrame);
+            }
+
+            startContinuousCounting() {
+                setInterval(() => {
+                    // Logik für kontinuierliches Zählen anpassen, falls zutreffend für Prozentwerte
+                    if (this.label === "Engagement Rate") {
+                        // Engagement Rate erhöht sich langsamer und in kleineren Schritten
+                        this.currentValue += (Math.random() * 0.05); // Z.B. 0.01 bis 0.05 Prozentpunkte
+                        if (this.currentValue > 100) this.currentValue = 100; // Max 100%
+                    } else {
+                        this.currentValue += Math.floor(Math.random() * 8) + 1;
+                    }
+                    this.element.textContent = this.formatNumber(this.currentValue);
+                }, 3000 + Math.random() * 2000);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = [
+                // Angepasste Startwerte und Labels
+                new LiquidMetalCounter('count1', 2100000, 'Follower Gesamt'),
+                new LiquidMetalCounter('count2', 1850000, 'Monatliche Videoaufrufe'),
+                new LiquidMetalCounter('count3', 8.2, 'Engagement Rate'), // Beispiel: 8.2%
+                new LiquidMetalCounter('count4', 750, 'Beiträge Veröffentlicht')
+            ];
+            // Counters should be observed for animation start when visible
+            counters.forEach(counter => {
+                const counterObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && !counter.isAnimating) {
+                                counter.animate();
+                                counterObserver.unobserve(entry.target); // Unobserve after animation starts
+                            }
+                        });
+                    },
+                    { threshold: 0.5 } // Trigger when 50% of the element is visible
+                );
+                counterObserver.observe(counter.element.closest('.counter-container'));
+            });
+        });
+
+        // GSAP ScrollTrigger for About Section
+        gsap.registerPlugin(ScrollTrigger);
+
+        const modernText = document.getElementById('modernText');
+        const profileImage = document.getElementById('profileImage');
+        const title = document.querySelector('.lusion-title');
+        const line = document.querySelector('.elegant-line');
+
+        ScrollTrigger.create({
+            trigger: ".sticky-container",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.5,
+            onUpdate: (self) => {
+                const progress = self.progress;
+                
+                if (progress <= 0.4) {
+                    const textFade = progress * 2.5; 
+                    gsap.set(modernText, {
+                        opacity: Math.max(0, 1 - textFade),
+                        y: textFade * 40,
+                        scale: 1 - textFade * 0.15,
+                        filter: `blur(${textFade * 4}px)`,
+                        willChange: 'transform, opacity, filter'
+                    });
+                    gsap.set(profileImage, {
+                        opacity: 0,
+                        scale: 0.6,
+                        rotation: -60,
+                        y: 80,
+                        willChange: 'transform, opacity'
+                    });
+                } else if (progress <= 0.6) {
+                    gsap.set(modernText, {
+                        opacity: 0,
+                        y: 40,
+                        scale: 0.85,
+                        filter: "blur(4px)",
+                        willChange: 'transform, opacity, filter'
+                    });
+                    gsap.set(profileImage, {
+                        opacity: 0, 
+                        scale: 0.8,
+                        rotation: -30,
+                        y: 50,
+                        willChange: 'transform, opacity'
+                    });
+                } else {
+                    gsap.set(modernText, {
+                        opacity: 0,
+                        y: 40,
+                        scale: 0.85,
+                        filter: "blur(44px)",
+                        willChange: 'transform, opacity, filter'
+                    });
+                    const imageProgress = (progress - 0.6) / 0.4; 
+                    const easeOut = 1 - Math.pow(1 - imageProgress, 3); 
+                    gsap.set(profileImage, {
+                        opacity: easeOut,
+                        scale: 0.8 + easeOut * 0.2, 
+                        rotation: -30 + easeOut * 30, 
+                        y: 50 - easeOut * 50, 
+                        willChange: 'transform, opacity'
+                    });
+                }
+
+                const titleScale = 1 + progress * 0.05;
+                const titleRotation = progress * 1;
+                gsap.set(title, {
+                    scale: titleScale,
+                    rotation: titleRotation,
+                    willChange: 'transform'
+                });
+                gsap.set(line, {
+                    scaleX: 1 + progress * 0.3,
+                    opacity: 1 - progress * 0.2,
+                    willChange: 'transform, opacity'
+                });
+            }
+        });
+
+        profileImage.addEventListener('mouseenter', () => {
+            gsap.to(profileImage, {
+                scale: 1.1,
+                rotation: 5,
+                filter: "grayscale(0%) contrast(1.2) brightness(1.05)",
+                duration: 0.4,
+                ease: "power2.out"
+            });
+        });
+
+        profileImage.addEventListener('mouseleave', () => {
+            gsap.to(profileImage, {
+                scale: 1,
+                rotation: 0,
+                filter: "grayscale(0%) contrast(1.1)",
+                duration: 0.4,
+                ease: "power2.out"
+            });
+        });
+    </script>
 </body>
 </html>
