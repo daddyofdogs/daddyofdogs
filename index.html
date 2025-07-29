@@ -327,37 +327,58 @@
             0% { transform: scaleX(0.7); opacity: 0.5; filter: blur(1.5px); }
             100% { transform: scaleX(1); opacity: 0.9; filter: blur(2.5px); }
         }
-        .services .section-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 0.12em;
-            opacity: 0.8;
-            color: rgba(255,255,255,0.65);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-        .service-card {
-            background: var(--apple-white);
-            border-radius: 20px;
-            padding: 1.5rem 1.8rem;
-            box-shadow: var(--apple-shadow);
-            border: 1px solid rgba(134,134,139,.11);
-            opacity: 0;
-            filter: blur(10px);
-            transform: translateY(40px) scale(.97);
-            transition: all 1s cubic-bezier(.25,.8,.25,1), filter 1s cubic-bezier(.25,.8,.25,1);
-            text-decoration: none;
-            color: inherit;
-            position: relative;
+.services .section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.services-grid {
+    display: flex !important;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.service-card {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
         }
         @property --angle {
             syntax: "<angle>";
@@ -959,45 +980,26 @@
     <div class="diagonal-layer"></div>
     <div class="diagonal-layer"></div>
   </div>
-  <div class="container">
-    <h2 class="section-title-social">Social Media</h2>
-    <div class="glow-line"></div>
-    <p class="section-subtitle">Unsere Expertise in den sozialen Medien</p>
-    <div class="services-grid">
-      <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/tiktok.png" alt="TikTok Icon" class="service-icon">
-        <h3>TikTok</h3>
-        <p>Virale Hundecontent und Trends</p>
-      </a>
-      <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/instagram.png" alt="Instagram Icon" class="service-icon">
-        <h3>Instagram</h3>
-        <p>Professionelle Hundefotos & Stories</p>
-      </a>
-      <a href="https://facebook.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/facebook.png" alt="Facebook Icon" class="service-icon">
-        <h3>Facebook</h3>
-        <p>Community Building für Hundeliebhaber</p>
-      </a>
-      <a href="https://youtube.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/youtube.png" alt="YouTube Icon" class="service-icon">
-        <h3>YouTube</h3>
-        <p>Hundetraining & Lifestyle Videos</p>
-      </a>
-      <a href="https://threads.net/@daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/threads.png" alt="Threads Icon" class="service-icon">
-        <h3>Threads</h3>
-        <p>Professionelle Hundebetreuung</p>
-      </a>
-      <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" class="service-card glow-border">
-        <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/x.png" alt="X Icon" class="service-icon">
-        <h3>X (Twitter)</h3>
-        <p>Aktuelle News & Updates</p>
-      </a>
-    </div>
-  </div>
-</section>
-
+  <div class="services-grid" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+  <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" style="display: block;">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/tiktok.png" alt="TikTok" style="width:48px; height:48px; object-fit: contain;"/>
+  </a>
+  <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" style="display: block;">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/instagram.png" alt="Instagram" style="width:48px; height:48px; object-fit: contain;"/>
+  </a>
+  <a href="https://facebook.com/daddyofdogs" target="_blank" rel="noopener" style="display: block;">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/facebook.png" alt="Facebook" style="width:48px; height:48px; object-fit: contain;"/>
+  </a>
+  <a href="https://youtube.com/@daddyofdogs" target="_blank" rel="noopener" style="display: block;">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/youtube.png" alt="YouTube" style="width:48px; height:48px; object-fit: contain;"/>
+  </a>
+  <a href="https://threads.net/@daddyofdogs" target="_blank" rel="noopener" style="display: block;">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/threads.png" alt="Threads" style="width:48px; height:48px; object-fit: contain;"/>
+  </a>
+  <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" style="display: block;">
+    <img src="https://raw.githubusercontent.com/daddyofdogs/newwebsite/main/images/x.png" alt="X" style="width:48px; height:48px; object-fit: contain;"/>
+  </a>
+</div>
 
         <section class="stats" id="stats" aria-label="Unsere Erfolge">
             <div class="stats-container">
