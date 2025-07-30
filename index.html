@@ -326,13 +326,13 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
-    justify-items: center; /* Icons und Cards mittig ausrichten */
+    justify-items: center; /* Mittig alle Elemente */
 }
 
 .service-card {
     background: var(--apple-white);
     border-radius: 20px;
-    padding: 1.5rem 1.8rem;
+    padding: 0;              /* Padding raus, da feste Größe */
     box-shadow: var(--apple-shadow);
     border: 1px solid rgba(134,134,139,.11);
     opacity: 0;
@@ -343,8 +343,8 @@
     color: inherit;
     position: relative;
     margin: 0;
-    width: 80px;       /* Feste Breite */
-    height: 80px;      /* Feste Höhe */
+    width: 80px;             /* Feste Größe für die Card */
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,7 +389,7 @@
 }
 
 .service-card img {
-    max-width: 48px;
+    max-width: 48px;    /* max 48x48 für Icons */
     max-height: 48px;
     width: auto;
     height: auto;
@@ -409,11 +409,11 @@
 
 @media (max-width: 480px) {
     .service-card {
-        padding: 1.2rem 1.5rem;
         width: 70px;
         height: 70px;
     }
 }
+
         .stats {
             background: #1d1d1f;
             color: #fff;
