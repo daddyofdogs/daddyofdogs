@@ -260,152 +260,151 @@
             66% { transform: scaleY(.8) translateY(20px); opacity: .5; }
         }
 
-        .services {
-            background: #1d1d1f;
-            color: #fff;
-            padding: 6rem 0;
-            position: relative;
-        }
-        .services .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 10px;
-            z-index: 2;
-        }
-        .section-title-social {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(1.8rem, 6vw, 3rem);
-            font-weight: 300;
-            color: #fff;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            text-align: center;
-            text-shadow: 0 0 1px rgba(255,255,255,.1);
-        }
-        .radial-glow-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 4px;
-            margin-bottom: 3rem;
-        }
-        .radial-glow-light {
-            width: 200px;
-            height: 2px;
-            background: radial-gradient(ellipse at center, 
-                rgba(255,255,255,1) 0%, 
-                rgba(255,255,255,.8) 20%, 
-                rgba(255,255,255,.4) 40%, 
-                rgba(255,255,255,.1) 70%, 
-                transparent 100%);
-            animation: radial-pulse 2s ease-in-out infinite;
-        }
-        @keyframes radial-pulse {
-            0%, 100% { transform: scaleX(.8); opacity: .6; box-shadow: 0 0 20px rgba(255,255,255,.3); }
-            50% { transform: scaleX(1.2); opacity: 1; box-shadow: 0 0 40px rgba(255,255,255,.6); }
-        }
-        .services .section-subtitle {
-            font-size: .91rem;
-            color: rgba(255,255,255,.7);
-            text-align: center;
-            margin-bottom: 14px;
-        }
-        .services-grid {
-            display: grid;
-            /* Angepasst für 2 Spalten auf größeren Bildschirmen */
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 20px 30px; /* Vertikaler und horizontaler Abstand */
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-        .service-card {
-            background: var(--apple-white);
-            border-radius: 20px;
-            padding: 1.5rem 1.8rem; /* Etwas mehr Padding */
-            box-shadow: var(--apple-shadow);
-            border: 1px solid rgba(134,134,139,.11);
-            opacity: 0;
-            filter: blur(10px);
-            transform: translateY(40px) scale(.97);
-            transition: all 1s cubic-bezier(.25,.8,.25,1), filter 1s cubic-bezier(.25,.8,.25,1);
-            text-decoration: none;
-            color: inherit;
-            position: relative; /* Für den glow-border */
-            /* max-width entfernt, da das Grid die Breite steuert */
-            margin: 0; /* Margin im Grid wird durch Gap gesteuert */
-        }
-        @property --angle {
-            syntax: "<angle>";
-            inherits: false;
-            initial-value: 0deg;
-        }
-        .service-card.glow-border::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            padding: 3.2px;
-            background: conic-gradient(
-                from var(--angle),
-                #ff5f7e 0%,
-                #ffcc5c 22%,
-                #4fffdf 43%,
-                #5aacff 65%,
-                #b06dff 80%,
-                #ff5f7e 100%
-            );
-            filter: blur(4px) brightness(1.2); /* blur leicht reduziert */
-            opacity: .85;
-            animation: glow-spin 5.5s linear infinite;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-        }
-        @keyframes glow-spin {
-            to { --angle: 360deg; }
-        }
-        .service-card.animated {
-            opacity: 1;
-            transform: translateY(0) scale(1.01);
-            filter: blur(0);
-        }
-        .service-icon {
-            font-size: 2.2rem; /* Etwas größer */
-            margin-bottom: 9px; /* Mehr Abstand */
-        }
-        .service-card h3 {
-            font-size: 1.05rem; /* Etwas größer */
-            font-weight: 700; /* Stärkerer Font-Gewicht */
-            margin-bottom: 7px; /* Mehr Abstand */
-            color: var(--apple-dark);
-        }
-        .service-card p {
-            color: var(--apple-gray);
-            font-size: .97rem; /* Etwas größer */
-            line-height: 1.4;
-        }
-        .service-card img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  display: block;
+.services {
+    background: #1d1d1f;
+    color: #fff;
+    padding: 6rem 0;
+    position: relative;
 }
-        @media (max-width: 768px) { /* Angepasste Breakpoint für 1 Spalte */
-            .services-grid {
-                grid-template-columns: 1fr; /* Eine Spalte auf kleineren Bildschirmen */
-                padding: 0 4vw;
-                gap: 15px;
-            }
-        }
-        /* Media Query für noch kleinere Bildschirme, falls nötig */
-        @media (max-width: 480px) {
-            .service-card { padding: 1.2rem 1.5rem; }
-        }
-
+.services .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+    z-index: 2;
+}
+.section-title-social {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 1px rgba(255,255,255,.1);
+}
+.radial-glow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4px;
+    margin-bottom: 3rem;
+}
+.radial-glow-light {
+    width: 200px;
+    height: 2px;
+    background: radial-gradient(ellipse at center, 
+        rgba(255,255,255,1) 0%, 
+        rgba(255,255,255,.8) 20%, 
+        rgba(255,255,255,.4) 40%, 
+        rgba(255,255,255,.1) 70%, 
+        transparent 100%);
+    animation: radial-pulse 2s ease-in-out infinite;
+}
+@keyframes radial-pulse {
+    0%, 100% { transform: scaleX(.8); opacity: .6; box-shadow: 0 0 20px rgba(255,255,255,.3); }
+    50% { transform: scaleX(1.2); opacity: 1; box-shadow: 0 0 40px rgba(255,255,255,.6); }
+}
+.services .section-subtitle {
+    font-size: .91rem;
+    color: rgba(255,255,255,.7);
+    text-align: center;
+    margin-bottom: 14px;
+}
+.services-grid {
+    display: grid;
+    /* Angepasst für 2 Spalten auf größeren Bildschirmen */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px 30px; /* Vertikaler und horizontaler Abstand */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.service-card {
+    background: var(--apple-white);
+    border-radius: 20px;
+    padding: 1.5rem 1.8rem; /* Etwas mehr Padding */
+    box-shadow: var(--apple-shadow);
+    border: 1px solid rgba(134,134,139,.11);
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(40px) scale(.97);
+    transition: all 1s cubic-bezier(.25,.8,.25,1), filter 1s cubic-bezier(.25,.8,.25,1);
+    text-decoration: none;
+    color: inherit;
+    position: relative; /* Für den glow-border */
+    /* max-width entfernt, da das Grid die Breite steuert */
+    margin: 0; /* Margin im Grid wird durch Gap gesteuert */
+}
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+.service-card.glow-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 3.2px;
+    background: conic-gradient(
+        from var(--angle),
+        #ff5f7e 0%,
+        #ffcc5c 22%,
+        #4fffdf 43%,
+        #5aacff 65%,
+        #b06dff 80%,
+        #ff5f7e 100%
+    );
+    filter: blur(4px) brightness(1.2); /* blur leicht reduziert */
+    opacity: .85;
+    animation: glow-spin 5.5s linear infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+@keyframes glow-spin {
+    to { --angle: 360deg; }
+}
+.service-card.animated {
+    opacity: 1;
+    transform: translateY(0) scale(1.01);
+    filter: blur(0);
+}
+.service-icon {
+    font-size: 2.2rem; /* Etwas größer */
+    margin-bottom: 9px; /* Mehr Abstand */
+}
+.service-card h3 {
+    font-size: 1.05rem; /* Etwas größer */
+    font-weight: 700; /* Stärkerer Font-Gewicht */
+    margin-bottom: 7px; /* Mehr Abstand */
+    color: var(--apple-dark);
+}
+.service-card p {
+    color: var(--apple-gray);
+    font-size: .97rem; /* Etwas größer */
+    line-height: 1.4;
+}
+.service-card img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+}
+@media (max-width: 768px) { /* Angepasste Breakpoint für 1 Spalte */
+    .services-grid {
+        grid-template-columns: 1fr; /* Eine Spalte auf kleineren Bildschirmen */
+        padding: 0 4vw;
+        gap: 15px;
+    }
+}
+/* Media Query für noch kleinere Bildschirme, falls nötig */
+@media (max-width: 480px) {
+    .service-card { padding: 1.2rem 1.5rem; }
+}
         .stats {
             background: #1d1d1f;
             color: #fff;
