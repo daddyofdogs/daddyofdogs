@@ -326,13 +326,13 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
-    justify-items: center; /* Mittig alle Elemente */
+    justify-items: center; /* Alles mittig im Grid */
 }
 
 .service-card {
     background: var(--apple-white);
     border-radius: 20px;
-    padding: 0;              /* Padding raus, da feste Größe */
+    padding: 0;                /* Padding raus für klare Größe */
     box-shadow: var(--apple-shadow);
     border: 1px solid rgba(134,134,139,.11);
     opacity: 0;
@@ -343,8 +343,8 @@
     color: inherit;
     position: relative;
     margin: 0;
-    width: 80px;             /* Feste Größe für die Card */
-    height: 80px;
+    width: 80px;               /* Feste Breite */
+    height: 80px;              /* Feste Höhe */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,7 +389,7 @@
 }
 
 .service-card img {
-    max-width: 48px;    /* max 48x48 für Icons */
+    max-width: 48px;
     max-height: 48px;
     width: auto;
     height: auto;
