@@ -332,7 +332,7 @@
 .service-card {
     background: var(--apple-white);
     border-radius: 20px;
-    padding: 0;                /* Padding raus für klare Größe */
+    padding: 0;
     box-shadow: var(--apple-shadow);
     border: 1px solid rgba(134,134,139,.11);
     opacity: 0;
@@ -343,8 +343,8 @@
     color: inherit;
     position: relative;
     margin: 0;
-    width: 80px;               /* Feste Breite */
-    height: 80px;              /* Feste Höhe */
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,13 +389,11 @@
 }
 
 .service-card img {
-    max-width: 48px;
-    max-height: 48px;
-    width: auto;
-    height: auto;
+    width: 48px !important;    /* Fixe Breite */
+    height: 48px !important;   /* Fixe Höhe */
     object-fit: contain;
     display: block;
-    margin: 0 auto;
+    margin: auto;
     transition: transform 0.3s ease;
 }
 
@@ -413,6 +411,7 @@
         height: 70px;
     }
 }
+
 
         .stats {
             background: #1d1d1f;
