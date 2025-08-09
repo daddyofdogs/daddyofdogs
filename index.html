@@ -8,38 +8,9 @@
     <meta property="og:description" content="Social Media mit Herz: Hundevideos, Expertenwissen und Community-Building.">
     <meta property="og:image" content="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/profilbild.png">
     <title>DADDYOFDOGS – Big Family 🐶</title>
-    <style>
-    @font-face {
-        font-family: 'Inter';
-        src: url('./fonts/Inter-Regular.woff2') format('woff2');
-        font-weight: 400;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'Inter';
-        src: url('./fonts/Inter-SemiBold.woff2') format('woff2');
-        font-weight: 600;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'Inter';
-        src: url('./fonts/Inter-Bold.woff2') format('woff2');
-        font-weight: 700;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'Inter';
-        src: url('./fonts/Inter-ExtraBold.woff2') format('woff2');
-        font-weight: 800;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'Great Vibes';
-        src: url('./fonts/GreatVibes.woff2') format('woff2');
-        font-weight: 400;
-        font-display: swap;
-    }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
@@ -528,6 +499,7 @@
             height: auto;
             transform: translate(-50%, -50%);
             object-fit: cover;
+            object-position: center;
         }
         .hero-overlay {
             position: absolute;
@@ -725,10 +697,11 @@
             letter-spacing: 0.05em;
             overflow: hidden;
             text-align: center;
-            margin: 0 auto 2rem;
+            margin: 0 auto 3rem; /* Erhöhter Abstand nach unten */
             width: 100%;
             margin-top: -3rem;
             position: relative;
+            line-height: 1.2;
         }
         .text-1 .char {
             display: inline-block;
@@ -744,12 +717,6 @@
         .text-1.animate .char:nth-child(4) { transition-delay: 0.4s; }
         .text-1.animate .char:nth-child(5) { transition-delay: 0.5s; }
         .text-1.animate .char:nth-child(6) { transition-delay: 0.6s; }
-        .text-1.animate .char:nth-child(7) { transition-delay: 0.7s; }
-        .text-1.animate .char:nth-child(8) { transition-delay: 0.8s; }
-        .text-1.animate .char:nth-child(9) { transition-delay: 0.9s; }
-        .text-1.animate .char:nth-child(10) { transition-delay: 1.0s; }
-        .text-1.animate .char:nth-child(11) { transition-delay: 1.1s; }
-        .text-1.animate .char:nth-child(12) { transition-delay: 1.2s; }
         
         /* Slide Split Animation */
         .text-1.slide-split .char:nth-child(odd) {
@@ -765,7 +732,7 @@
         @media (max-width: 768px) {
             .text-1 {
                 font-size: clamp(1.5rem, 8vw, 3rem);
-                margin-bottom: 1rem;
+                margin-bottom: 2rem; /* Erhöhter Abstand auf mobilen Geräten */
                 margin-top: -2rem;
             }
         }
@@ -990,6 +957,16 @@
             animation: gradientShift 8s linear infinite;
             will-change: background-position;
             transform: translateZ(0);
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(40px) scale(.97);
+            transition: all 1.2s cubic-bezier(.25,.8,.25,1), filter 1.2s cubic-bezier(.25,.8,.25,1);
+        }
+
+        .counter-wrapper.animate {
+            opacity: 1;
+            transform: translateY(0) scale(1.01);
+            filter: blur(0);
         }
 
         @keyframes gradientShift {
@@ -1234,37 +1211,17 @@
             width: min(90vw, 1000px);
             padding: 2px;
             border-radius: 32px;
-            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            background: #e0e0e0;
             box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(0, 0, 0, 0.05),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            opacity: 0;
-            transform: translateY(60px) scale(0.95);
-            transition: var(--transition-stagger);
-            margin: 2rem auto;
-        }
-        .elegant-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 32px;
-            padding: 2px;
-            background: linear-gradient(45deg, 
-                rgba(255, 255, 255, 0.8), 
-                rgba(230, 230, 230, 0.6), 
-                rgba(255, 255, 255, 0.8));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: destination-out;
-            mask-composite: exclude;
-            z-index: -1;
-        }
-        .elegant-container.is-loaded {
+                20px 20px 40px #bebebe,
+                -20px -20px 40px #ffffff;
             opacity: 1;
             transform: translateY(0) scale(1);
+            margin: 2rem auto;
         }
+
         .content-card {
-            background: var(--card-bg);
+            background: #e0e0e0;
             border-radius: 30px;
             padding: 3rem 2rem;
             display: flex;
@@ -1276,6 +1233,7 @@
             overflow: hidden;
             z-index: 1;
         }
+
         .image-section {
             position: relative;
             max-width: 350px;
@@ -1284,61 +1242,38 @@
             aspect-ratio: 1 / 1;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05),
-                        0 0 0 4px var(--card-bg),
-                        0 0 0 6px rgba(0, 0, 0, 0.1),
-                        0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: var(--transition-smooth);
-            opacity: 0;
-            transform: translateY(40px) rotateX(15deg);
-            background: var(--card-bg-secondary);
+            box-shadow: 
+                inset 8px 8px 16px #bebebe,
+                inset -8px -8px 16px #ffffff;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+            background: #e0e0e0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .elegant-container.is-loaded .image-section {
-            opacity: 1;
-            transform: translateY(0) rotateX(0deg);
-            transition-delay: 0.1s;
-        }
+
         .profile-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(15px) saturate(0.6) brightness(0.8);
-            transition: var(--transition-blur);
-            transform: scale(1.1);
-        }
-        .image-section.is-loaded .profile-image {
             filter: blur(0) saturate(1.1) brightness(1);
             transform: scale(1);
         }
+
         .text-area {
-            color: var(--text-light);
+            color: #333;
             text-align: center;
             position: relative;
             z-index: 3;
         }
+
         .main-title, .description-container, .closing-note {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: var(--transition-stagger);
-        }
-        .elegant-container.is-loaded .main-title {
             opacity: 1;
             transform: translateY(0);
-            transition-delay: 0.2s;
         }
-        .elegant-container.is-loaded .description-container {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.3s;
-        }
-        .elegant-container.is-loaded .closing-note {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.4s;
-        }
+
         .main-title {
             font-family: 'Inter', sans-serif;
             font-size: clamp(1.8rem, 4.5vw, 3rem);
@@ -1347,21 +1282,20 @@
             letter-spacing: -0.02em;
             text-transform: uppercase;
             position: relative;
-            transition: var(--transition-smooth);
-            color: var(--text-light);
-            background: linear-gradient(135deg, var(--text-light) 0%, var(--text-medium) 50%, var(--text-light) 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            color: #333;
+            background: #e0e0e0;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            box-shadow: 
+                8px 8px 16px #bebebe,
+                -8px -8px 16px #ffffff;
         }
-        .main-title::after {
-            display: none;
-        }
+
         .description-container {
             font-family: 'Inter', sans-serif;
             font-size: clamp(0.8rem, 1.3vw, 1rem);
-            color: var(--text-medium);
+            color: #555;
             margin-bottom: 0;
             max-width: 600px;
             font-weight: 400;
@@ -1370,15 +1304,24 @@
             flex-direction: column;
             gap: 0.4rem;
             text-align: center;
+            background: #e0e0e0;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 
+                inset 6px 6px 12px #bebebe,
+                inset -6px -6px 12px #ffffff;
         }
+
         .description-container p {
             margin: 0;
             line-height: 1.5;
         }
+
         .description-container .section-start {
             margin-top: 0.4rem;
             margin-bottom: 0.4rem;
         }
+
         .description-container strong {
             font-family: 'Great Vibes', cursive;
             font-weight: 500;
@@ -1389,19 +1332,27 @@
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             cursor: default;
             display: inline-block;
-            color: var(--text-light);
+            color: #333;
             letter-spacing: -1px;
         }
+
         .closing-note {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-            color: var(--text-medium);
+            color: #555;
             font-style: italic;
             font-weight: 500;
             position: relative;
             transition: none;
             margin-top: 2rem;
+            background: #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 
+                6px 6px 12px #bebebe,
+                -6px -6px 12px #ffffff;
         }
+
         .ambient-light {
             position: absolute;
             top: 20px;
@@ -1411,8 +1362,9 @@
             background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, transparent 70%);
             border-radius: 50%;
             opacity: 0.6;
-            transition: var(--transition-smooth);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
+
         @media (min-width: 992px) {
             .content-card {
                 flex-direction: column;
@@ -1422,6 +1374,7 @@
                 text-align: center;
             }
         }
+
         @media (max-width: 768px) {
             .content-card {
                 padding: 2rem 1.5rem;
@@ -1430,6 +1383,7 @@
                 font-size: clamp(1.8rem, 5vw, 2.5rem);
             }
         }
+
         .elegant-container,
         .image-section,
         .profile-image {
@@ -1437,6 +1391,7 @@
             transform: translateZ(0);
             backface-visibility: hidden;
         }
+
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -1444,10 +1399,59 @@
                 transition-duration: 0.01ms !important;
             }
         }
+        
+        /* Video Section Styles */
+        .video-section {
+            background: #000;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.8rem, 4.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: #333;
+        }
+        
         .contact {
             text-align: center;
             background: var(--apple-white);
-            padding: 2rem 0 6rem;
+            padding: 2cm 0;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin-top: 0;
+        }
+        .contact.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
         .contact-container {
             max-width: 370px;
@@ -1628,11 +1632,12 @@
 
         .contact-section {
             background: #ffffff;
-            padding: 2rem 2rem 6rem;
+            padding: 2cm 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: auto;
+            margin-top: 0;
         }
 
         .contact-wrapper {
@@ -1649,6 +1654,7 @@
                 0 0 90px rgba(168, 85, 247, 0.2),
                 0 20px 40px -10px rgba(0, 0, 0, 0.25);
             animation: softBoxGlow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            margin: 0 auto;
         }
 
         @keyframes softBoxGlow {
@@ -1886,11 +1892,15 @@
             .about {
                 padding: 2rem 1rem 3rem;
             }
+            .video-section {
+                padding: 0;
+            }
             .contact-section {
-                padding: 2rem 1rem 4rem;
+                padding: 2cm 1rem;
             }
             .contact-wrapper {
                 padding: 1.5rem 1.2rem;
+                margin: 0 auto;
             }
             .contact-title {
                 font-size: 2.5rem;
@@ -1928,6 +1938,49 @@
             .footer-bottom {
                 font-size: 0.65rem;
             }
+        }
+        
+        /* New Video Section for intro2.mp4 */
+        .intro2-video-section {
+            background: #000;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .intro2-video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .intro2-video-wrapper video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* Optimized video loading */
+        .video-preload {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
         }
     </style>
 </head>
@@ -1989,7 +2042,7 @@
     <main>
         <section class="hero" id="home" aria-label="Einstieg DADDYOFDOGS">
             <div class="hero-video-wrapper">
-                <video class="hero-video" autoplay muted loop playsinline>
+                <video class="hero-video" autoplay muted loop playsinline preload="auto">
                     <source src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/intro.mp4" type="video/mp4" />
                     Dein Browser unterstützt kein Video.
                 </video>
@@ -2019,8 +2072,7 @@
                         <span class="char">C</span>
                         <span class="char">I</span>
                         <span class="char">A</span>
-                        <span class="char">L</span>
-                        <span class="char"> </span>
+                        <span class="char">L</span><br>
                         <span class="char">M</span>
                         <span class="char">E</span>
                         <span class="char">D</span>
@@ -2028,22 +2080,22 @@
                         <span class="char">A</span>
                     </h2>
                     <div class="services-grid">
-                        <a href="https://m.facebook.com/@daddyofdogsofficial/" target="_blank" rel="noopener" class="service-card holographic">
+                        <a href="https://m.facebook.com/@daddyofdogsofficial/" target="_blank" rel="noopener" class="service-card holographic" style="transition-delay: 0s;">
                             <img src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/facebook.png" alt="Facebook" />
                         </a>
-                        <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" class="service-card holographic">
+                        <a href="https://instagram.com/daddyofdogs" target="_blank" rel="noopener" class="service-card holographic" style="transition-delay: 0.2s;">
                             <img src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/instagram.png" alt="Instagram" />
                         </a>
-                        <a href="https://www.threads.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card holographic">
+                        <a href="https://www.threads.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card holographic" style="transition-delay: 0.4s;">
                             <img src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/threads.png" alt="Threads" />
                         </a>
-                        <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card holographic">
+                        <a href="https://www.tiktok.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card holographic" style="transition-delay: 0.6s;">
                             <img src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/tiktok.png" alt="TikTok" />
                         </a>
-                        <a href="https://www.youtube.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card holographic">
+                        <a href="https://www.youtube.com/@daddyofdogs" target="_blank" rel="noopener" class="service-card holographic" style="transition-delay: 0.8s;">
                             <img src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/youtube.png" alt="YouTube" />
                         </a>
-                        <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" class="service-card holographic">
+                        <a href="https://x.com/daddyofdogs" target="_blank" rel="noopener" class="service-card holographic" style="transition-delay: 1.0s;">
                             <img src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/x.png" alt="X" />
                         </a>
                     </div>
@@ -2063,7 +2115,7 @@
                 </div>
                 <div class="counter-grid">
                     <div class="counter-container">
-                        <div class="counter-wrapper">
+                        <div class="counter-wrapper" style="transition-delay: 0s;">
                             <div class="counter-base counter-1">
                                 <div class="counter-number" id="count1">1M+</div>
                                 <div class="counter-label-row">
@@ -2073,7 +2125,7 @@
                         </div>
                     </div>
                     <div class="counter-container">
-                        <div class="counter-wrapper">
+                        <div class="counter-wrapper" style="transition-delay: 0.2s;">
                             <div class="counter-base counter-2">
                                 <div class="counter-number" id="count2">580M+</div>
                                 <div class="counter-label-row">
@@ -2083,7 +2135,7 @@
                         </div>
                     </div>
                     <div class="counter-container">
-                        <div class="counter-wrapper">
+                        <div class="counter-wrapper" style="transition-delay: 0.4s;">
                             <div class="counter-base counter-3">
                                 <div class="counter-number" id="count3">100M+</div>
                                 <div class="counter-label-row">
@@ -2093,7 +2145,7 @@
                         </div>
                     </div>
                     <div class="counter-container">
-                        <div class="counter-wrapper">
+                        <div class="counter-wrapper" style="transition-delay: 0.6s;">
                             <div class="counter-base counter-4">
                                 <div class="counter-content">
                                     <div class="counter-image-container">
@@ -2112,7 +2164,7 @@
         <section class="about" id="about" aria-label="Über DADDYOFDOGS">
             <div class="about-content">
                 <div class="crystal-frame">
-                    <div class="elegant-container neon-border-glow">
+                    <div class="elegant-container">
                         <div class="content-card">
                             <div class="ambient-light"></div>
                             <h1 class="main-title">ABOUT ME</h1>
@@ -2122,7 +2174,7 @@
                                     alt="Profilbild von Daddyofdogs mit Hund Puki" 
                                     class="profile-image" 
                                     loading="lazy" 
-                                    onerror="this.onerror=null;this.src='https://placehold.co/300x300/f5f5f5/555555?text=Puki';">
+                                    onerror="this.onerror=null;this.src='https://placehold.co/300x300/e0e0e0/555555?text=Puki';">
                             </div>
                             <div class="text-area">
                                 <div class="description-container">
@@ -2161,6 +2213,17 @@
                 </div>
             </div>
         </section>
+        
+        <!-- New Video Section for intro2.mp4 -->
+        <section class="intro2-video-section" id="intro2-video" aria-label="Intro Video 2">
+            <div class="intro2-video-wrapper">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/intro2.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        
         <section class="contact-section" id="contact" aria-label="Kontaktformular">
             <div class="contact-wrapper">
                 <div class="contact-content">
@@ -2177,7 +2240,7 @@
                     <button type="button" class="btn">Send E-Mail</button>
                     
                     <div class="privacy-note">
-                        <strong>Privacy:</strong> Clicking opens your email program. Communication occurs directly via your email provider. <a href="#">Privacy Policy</a>
+                        <strong>Privacy:</strong> Clicking opens your email program. Communication occurs directly via your email provider. <a href="./datenschutz.html">Privacy Policy</a>
                     </div>
                 </div>
             </div>
@@ -2197,10 +2260,10 @@
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="#impressum">Impressum</a></li>
-                    <li><a href="#datenschutz">Datenschutz</a></li>
-                    <li><a href="#agb">AGB</a></li>
-                    <li><a href="#cookie-policy">Cookie Policy</a></li>
+                    <li><a href="./impressum.html">Impressum</a></li>
+                    <li><a href="./datenschutz.html">Datenschutz</a></li>
+                    <li><a href="./agb.html">AGB</a></li>
+                    <li><a href="./cookie.html">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -2209,6 +2272,71 @@
         </div>
     </footer>
     <script>
+        // Preload videos for better performance
+        function preloadVideos() {
+            const videoSources = [
+                'https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/intro.mp4',
+                'https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/intro2.mp4'
+            ];
+            
+            videoSources.forEach(src => {
+                const video = document.createElement('video');
+                video.preload = 'auto';
+                video.muted = true;
+                video.loop = true;
+                const source = document.createElement('source');
+                source.src = src;
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                document.body.appendChild(video);
+                video.load();
+                video.style.display = 'none';
+                video.className = 'video-preload';
+            });
+        }
+        
+        // Initialize videos with better performance
+        function initVideos() {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.muted = true;
+                video.playsInline = true;
+                video.autoplay = true;
+                video.loop = true;
+                video.preload = 'auto';
+                
+                // Handle video play with error handling
+                const playVideo = () => {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log('Video autoplay failed:', error);
+                            // Try again after a short delay
+                            setTimeout(() => {
+                                video.play().catch(e => console.log('Second attempt failed:', e));
+                            }, 1000);
+                        });
+                    }
+                };
+                
+                // Play immediately if ready
+                if (video.readyState >= 2) {
+                    playVideo();
+                } else {
+                    video.addEventListener('loadeddata', playVideo);
+                }
+                
+                // Handle visibility change for better performance
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        video.pause();
+                    } else {
+                        playVideo();
+                    }
+                });
+            });
+        }
+        
         const hamburger = document.getElementById('hamburger');
         const dropdown = document.getElementById('dropdown');
         
@@ -2254,6 +2382,12 @@
         }
         
         document.addEventListener('DOMContentLoaded', () => {
+            // Preload videos for better performance
+            preloadVideos();
+            
+            // Initialize videos
+            initVideos();
+            
             const socialMediaTitle = document.querySelector('.social-media-title');
             if (socialMediaTitle) {
                 const observer = new IntersectionObserver((entries) => {
@@ -2320,6 +2454,38 @@
                     { threshold: 0.2 }
                 );
                 animatedElements.forEach(el => cardObserver.observe(el));
+            }
+            
+            const counterWrappers = document.querySelectorAll('.counter-wrapper');
+            if (counterWrappers.length > 0) {
+                const counterObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate');
+                                counterObserver.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { threshold: 0.2 }
+                );
+                counterWrappers.forEach(el => counterObserver.observe(el));
+            }
+            
+            const contactSection = document.querySelector('.contact');
+            if (contactSection) {
+                const contactObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate');
+                                contactObserver.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { threshold: 0.1 }
+                );
+                contactObserver.observe(contactSection);
             }
             
             const form = document.querySelector('.contact-form');
@@ -2421,14 +2587,6 @@
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const heroVideo = document.querySelector('.hero-video');
-            if (heroVideo) {
-                heroVideo.muted = true;
-                heroVideo.play().catch(e => console.log("Autoplay fehlgeschlagen:", e));
-            }
-        });
-
         document.addEventListener('DOMContentLoaded', () => {
             const words = document.querySelectorAll('.flipping-text .word');
             if (words.length > 0) {
@@ -2475,6 +2633,12 @@
 
                 setInterval(updateWord, 2500);
             }
+        });
+        
+        // Handle window resize for better video performance
+        window.addEventListener('resize', () => {
+            // Reinitialize videos on resize for better performance
+            initVideos();
         });
     </script>
 </body>
