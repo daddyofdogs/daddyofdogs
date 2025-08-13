@@ -1,51 +1,1436 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cookie-Richtlinie – DADDYOFDOGS</title>
-  <meta name="description" content="Cookie-Richtlinie der DADDYOFDOGS-Website." />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .legal-main { animation: fadein 1.2s cubic-bezier(.3,.93,.5,1.08); max-width:650px; margin:8vh auto 4vh; background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 8px 32px rgba(20,22,28,0.12); padding:3rem 2rem 2rem; }
-    @keyframes fadein { 0% {opacity:0; transform:translateY(40px);} 100% {opacity:1; transform:translateY(0);} }
-    @media (max-width:540px){ .legal-main {padding:1.1rem 0.9rem 1.8rem;} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Premium Cookie Banners - Next Gen</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Banner 1: Holographic Chrome */
+        #banner1 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: linear-gradient(145deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        #banner1 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner1 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+        }
+        #banner1 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            flex-grow: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        #banner1 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        #banner1 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner1 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(0);
+        }
+        #banner1 .cookie-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        #banner1 .cookie-buttons button:hover::before {
+            transform: translateX(100%);
+        }
+        #banner1 .cookie-buttons button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        #banner1 .cookie-buttons button:active {
+            transform: translateY(0) scale(0.95);
+        }
+        #banner1 .btn-accept {
+            background: linear-gradient(45deg, #00c9ff, #92fe9d);
+            color: #1a1a2e;
+            position: relative;
+        }
+        #banner1 .btn-accept::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00c9ff, #92fe9d, #00c9ff);
+            border-radius: 50px;
+            z-index: -1;
+            animation: borderAnimation 2s linear infinite;
+            background-size: 300% 300%;
+        }
+        #banner1 .btn-decline {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+        }
+        #banner1 .btn-settings {
+            background: linear-gradient(45deg, #8e2de2, #4a00e0);
+            color: white;
+        }
+
+        /* Banner 2: Liquid Glass */
+        #banner2 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.25),
+                inset 0 0 30px rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        #banner2 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner2 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+        #banner2 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            flex-grow: 1;
+        }
+        #banner2 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner2 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner2 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        #banner2 .cookie-buttons button:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        #banner2 .cookie-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        #banner2 .cookie-buttons button:hover::before {
+            transform: translateX(100%);
+        }
+        #banner2 .btn-accept {
+            background: linear-gradient(45deg, rgba(0, 201, 255, 0.3), rgba(146, 254, 157, 0.3));
+            border: 1px solid rgba(0, 201, 255, 0.5);
+        }
+        #banner2 .btn-decline {
+            background: linear-gradient(45deg, rgba(255, 65, 108, 0.3), rgba(255, 75, 43, 0.3));
+            border: 1px solid rgba(255, 65, 108, 0.5);
+        }
+        #banner2 .btn-settings {
+            background: linear-gradient(45deg, rgba(142, 45, 226, 0.3), rgba(74, 0, 224, 0.3));
+            border: 1px solid rgba(142, 45, 226, 0.5);
+        }
+
+        /* Banner 3: Neo Chrome */
+        #banner3 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: linear-gradient(145deg, #2c3e50, #1a1a2e);
+            border-radius: 20px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 2px #00c9ff,
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        #banner3::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00c9ff, #92fe9d, #00c9ff);
+            border-radius: 22px;
+            z-index: -1;
+            background-size: 300% 300%;
+            animation: borderAnimation 3s linear infinite;
+        }
+        #banner3 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner3 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #00c9ff;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(0, 201, 255, 0.5));
+        }
+        #banner3 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #00c9ff;
+            flex-grow: 1;
+            text-shadow: 0 0 10px rgba(0, 201, 255, 0.5);
+        }
+        #banner3 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner3 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner3 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
+            background: linear-gradient(145deg, #2c3e50, #1a1a2e);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        #banner3 .cookie-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        #banner3 .cookie-buttons button:hover::before {
+            transform: translateX(100%);
+        }
+        #banner3 .cookie-buttons button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+        }
+        #banner3 .btn-accept {
+            border: 2px solid #00c9ff;
+            box-shadow: 0 0 20px rgba(0, 201, 255, 0.3);
+        }
+        #banner3 .btn-decline {
+            border: 2px solid #ff416c;
+            box-shadow: 0 0 20px rgba(255, 65, 108, 0.3);
+        }
+        #banner3 .btn-settings {
+            border: 2px solid #8e2de2;
+            box-shadow: 0 0 20px rgba(142, 45, 226, 0.3);
+        }
+
+        /* Banner 4: Cyberpunk White */
+        #banner4 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.3),
+                0 0 20px #ff00ff,
+                inset 0 0 30px rgba(255, 0, 255, 0.1);
+            z-index: 1000;
+            border: 1px solid #ff00ff;
+        }
+        #banner4 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner4 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #00ffff;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+        }
+        #banner4 .banner-header h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #00ffff;
+            flex-grow: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+        #banner4 p {
+            font-size: 1rem;
+            color: #333;
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        #banner4 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner4 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
+            border-radius: 0;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid;
+            background: transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        #banner4 .cookie-buttons button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+        #banner4 .btn-accept {
+            color: #00ff00;
+            border-color: #00ff00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+        }
+        #banner4 .btn-decline {
+            color: #ff0000;
+            border-color: #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+        #banner4 .btn-settings {
+            color: #ffff00;
+            border-color: #ffff00;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+        }
+
+        /* Banner 5: Aurora Glass */
+        #banner5 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.3),
+                inset 0 0 40px rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        #banner5::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 150, 0.1),
+                rgba(0, 255, 255, 0.1),
+                rgba(255, 255, 0, 0.1),
+                rgba(0, 255, 0, 0.1));
+            background-size: 400% 400%;
+            animation: aurora 8s ease infinite;
+            z-index: -1;
+            border-radius: 30px;
+        }
+        #banner5 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner5 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+        }
+        #banner5 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            flex-grow: 1;
+        }
+        #banner5 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner5 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner5 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        #banner5 .cookie-buttons button:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        #banner5 .cookie-buttons button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20px;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: rotate(30deg);
+            transition: all 0.8s;
+        }
+        #banner5 .cookie-buttons button:hover::after {
+            left: 120%;
+        }
+        #banner5 .btn-accept {
+            background: linear-gradient(45deg, rgba(0, 255, 150, 0.3), rgba(0, 200, 255, 0.3));
+        }
+        #banner5 .btn-decline {
+            background: linear-gradient(45deg, rgba(255, 50, 100, 0.3), rgba(255, 100, 50, 0.3));
+        }
+        #banner5 .btn-settings {
+            background: linear-gradient(45deg, rgba(150, 50, 255, 0.3), rgba(255, 50, 150, 0.3));
+        }
+
+        /* Banner 6: Quantum Field */
+        #banner6 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 20px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(100, 255, 218, 0.3);
+            z-index: 1000;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        #banner6::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(100, 255, 218, 0.1) 0%, transparent 20%);
+            z-index: -1;
+        }
+        #banner6 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner6 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #64ffda;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.5));
+        }
+        #banner6 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #64ffda;
+            flex-grow: 1;
+        }
+        #banner6 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner6 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner6 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        #banner6 .cookie-buttons button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+            border-color: #64ffda;
+        }
+        #banner6 .cookie-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        #banner6 .cookie-buttons button:hover::before {
+            transform: translateX(100%);
+        }
+        #banner6 .btn-accept {
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+        }
+        #banner6 .btn-decline {
+            box-shadow: 0 0 20px rgba(255, 100, 100, 0.2);
+        }
+        #banner6 .btn-settings {
+            box-shadow: 0 0 20px rgba(100, 100, 255, 0.2);
+        }
+
+        /* Banner 7: Prismatic */
+        #banner7 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            border-radius: 25px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            position: relative;
+            overflow: hidden;
+        }
+        #banner7::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                #ff0000,
+                #ff9900,
+                #ffff00,
+                #00ff00,
+                #00ffff,
+                #0000ff,
+                #ff00ff,
+                #ff0000
+            );
+            animation: rotate 4s linear infinite;
+            z-index: -2;
+        }
+        #banner7::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+            border-radius: 23px;
+            z-index: -1;
+        }
+        #banner7 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner7 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+        }
+        #banner7 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            flex-grow: 1;
+        }
+        #banner7 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner7 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner7 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        #banner7 .cookie-buttons button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        #banner7 .cookie-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        #banner7 .cookie-buttons button:hover::before {
+            transform: translateX(100%);
+        }
+        #banner7 .btn-accept {
+            background: linear-gradient(45deg, #00c9ff, #92fe9d);
+            color: #1a1a2e;
+        }
+        #banner7 .btn-decline {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+        }
+        #banner7 .btn-settings {
+            background: linear-gradient(45deg, #8e2de2, #4a00e0);
+            color: white;
+        }
+
+        /* Banner 8: Hologram */
+        #banner8 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(100, 255, 218, 0.3);
+            z-index: 1000;
+            border: 1px solid rgba(100, 255, 218, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        #banner8::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent),
+                linear-gradient(0deg, transparent, rgba(255, 100, 218, 0.1), transparent);
+            z-index: -1;
+        }
+        #banner8 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner8 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #64ffda;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.7));
+        }
+        #banner8 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #64ffda;
+            flex-grow: 1;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+        }
+        #banner8 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner8 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner8 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        #banner8 .cookie-buttons button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+            background: rgba(100, 255, 218, 0.2);
+            border-color: #64ffda;
+        }
+        #banner8 .cookie-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(100, 255, 218, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        #banner8 .cookie-buttons button:hover::before {
+            transform: translateX(100%);
+        }
+        #banner8 .btn-accept {
+            background: linear-gradient(45deg, rgba(0, 201, 255, 0.3), rgba(146, 254, 157, 0.3));
+        }
+        #banner8 .btn-decline {
+            background: linear-gradient(45deg, rgba(255, 65, 108, 0.3), rgba(255, 75, 43, 0.3));
+        }
+        #banner8 .btn-settings {
+            background: linear-gradient(45deg, rgba(142, 45, 226, 0.3), rgba(74, 0, 224, 0.3));
+        }
+
+        /* Banner 9: Neon Pulse */
+        #banner9 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+            border-radius: 20px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 2px #ff0080;
+            z-index: 1000;
+            border: 2px solid #ff0080;
+            position: relative;
+            overflow: hidden;
+        }
+        #banner9::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080);
+            border-radius: 22px;
+            z-index: -1;
+            background-size: 300% 300%;
+            animation: borderAnimation 2s linear infinite;
+        }
+        #banner9 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner9 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #ff0080;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.7));
+        }
+        #banner9 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ff0080;
+            flex-grow: 1;
+            text-shadow: 0 0 10px rgba(255, 0, 128, 0.7);
+        }
+        #banner9 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner9 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner9 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
+            background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        #banner9 .cookie-buttons button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+        }
+        #banner9 .btn-accept {
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            animation: pulseCyan 2s infinite;
+        }
+        #banner9 .btn-decline {
+            border-color: #ff0080;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+            animation: pulsePink 2s infinite;
+        }
+        #banner9 .btn-settings {
+            border-color: #ffff00;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+            animation: pulseYellow 2s infinite;
+        }
+
+        /* Banner 10: Quantum Glass */
+        #banner10 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            padding: 25px;
+            background: rgba(10, 10, 20, 0.9);
+            border-radius: 25px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                inset 0 0 40px rgba(100, 255, 218, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        #banner10::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(100, 255, 218, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 70% 60%, rgba(255, 100, 218, 0.05) 0%, transparent 30%);
+            z-index: -1;
+        }
+        #banner10 .banner-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #banner10 .banner-header svg {
+            width: 28px;
+            height: 28px;
+            fill: none;
+            stroke: #64ffda;
+            stroke-width: 3;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.5));
+        }
+        #banner10 .banner-header h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #64ffda;
+            flex-grow: 1;
+        }
+        #banner10 p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+        #banner10 .cookie-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        #banner10 .cookie-buttons button {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            flex: none;
+            width: auto;
+            min-width: unset;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            color: white;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        #banner10 .cookie-buttons button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        #banner10 .cookie-buttons button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        #banner10 .cookie-buttons button:hover::before {
+            transform: translateX(100%);
+        }
+        #banner10 .btn-accept {
+            background: linear-gradient(45deg, rgba(0, 201, 255, 0.2), rgba(146, 254, 157, 0.2));
+            border: 1px solid rgba(0, 201, 255, 0.5);
+        }
+        #banner10 .btn-decline {
+            background: linear-gradient(45deg, rgba(255, 65, 108, 0.2), rgba(255, 75, 43, 0.2));
+            border: 1px solid rgba(255, 65, 108, 0.5);
+        }
+        #banner10 .btn-settings {
+            background: linear-gradient(45deg, rgba(142, 45, 226, 0.2), rgba(74, 0, 224, 0.2));
+            border: 1px solid rgba(142, 45, 226, 0.5);
+        }
+
+        /* Animations */
+        @keyframes borderAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes aurora {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseCyan {
+            0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+        }
+
+        @keyframes pulsePink {
+            0% { box-shadow: 0 0 20px rgba(255, 0, 128, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 0, 128, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(255, 0, 128, 0.3); }
+        }
+
+        @keyframes pulseYellow {
+            0% { box-shadow: 0 0 20px rgba(255, 255, 0, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 255, 0, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(255, 255, 0, 0.3); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cookie-banner {
+                margin: 0 1rem;
+                width: calc(100% - 2rem);
+                left: 50%;
+                transform: translateX(-50%) translateY(0) !important;
+                bottom: 10px;
+                padding: 20px;
+            }
+            .cookie-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .cookie-buttons button {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav aria-label="Hauptnavigation">
-    <div class="nav-container">
-      <a href="index.html" class="logo" aria-label="Startseite von DADDYOFDOGS">DADDYOFDOGS</a>
-      <ul class="nav-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#services">Social Media</a></li>
-        <li><a href="index.html#about">Über uns</a></li>
-        <li><a href="index.html#contact">Kontakt</a></li>
-      </ul>
+
+    <!-- Banner 1: Holographic Chrome -->
+    <div id="banner1" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(1)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(1)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(1)">Settings</button>
+        </div>
     </div>
-  </nav>
-  <main class="legal-main">
-    <h1>Cookie-Richtlinie</h1>
-    <p>Unsere Webseite verwendet Cookies, um die Nutzererfahrung zu verbessern. Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden.</p>
-    <h2>Einsatz von Cookies</h2>
-    <p>Wir nutzen Cookies zur anonymen Analyse, für Login-Funktionen und die Seitennavigation. Sie können Cookies in Ihrem Browser jederzeit einschränken oder löschen.</p>
-    <h2>Widerspruch</h2>
-    <p>Durch die weitere Nutzung unserer Seite stimmen Sie dem Einsatz von Cookies zu. Sie können Ihre Einwilligung jederzeit widerrufen.</p>
-  </main>
-  <footer class="footer-info">
-    <div class="footer-info-wrapper">
-      <h3 class="footer-heading">Information</h3>
-      <ul class="footer-links">
-        <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="agb.html">AGB</a></li>
-        <li><a href="cookie.html" aria-current="page">Cookie-Richtlinie</a></li>
-      </ul>
-      <div class="footer-copyright">
-        © 2025 DADDYOFDOGS. Alle Rechte vorbehalten.
-      </div>
+
+    <!-- Banner 2: Liquid Glass -->
+    <div id="banner2" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(2)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(2)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(2)">Settings</button>
+        </div>
     </div>
-  </footer>
+
+    <!-- Banner 3: Neo Chrome -->
+    <div id="banner3" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(3)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(3)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(3)">Settings</button>
+        </div>
+    </div>
+
+    <!-- Banner 4: Cyberpunk White -->
+    <div id="banner4" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>COOKIE SETTINGS</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(4)">ACCEPT ALL</button>
+            <button class="btn-decline" onclick="declineCookies(4)">DECLINE</button>
+            <button class="btn-settings" onclick="cookieSettings(4)">SETTINGS</button>
+        </div>
+    </div>
+
+    <!-- Banner 5: Aurora Glass -->
+    <div id="banner5" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(5)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(5)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(5)">Settings</button>
+        </div>
+    </div>
+
+    <!-- Banner 6: Quantum Field -->
+    <div id="banner6" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(6)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(6)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(6)">Settings</button>
+        </div>
+    </div>
+
+    <!-- Banner 7: Prismatic -->
+    <div id="banner7" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(7)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(7)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(7)">Settings</button>
+        </div>
+    </div>
+
+    <!-- Banner 8: Hologram -->
+    <div id="banner8" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(8)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(8)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(8)">Settings</button>
+        </div>
+    </div>
+
+    <!-- Banner 9: Neon Pulse -->
+    <div id="banner9" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(9)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(9)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(9)">Settings</button>
+        </div>
+    </div>
+
+    <!-- Banner 10: Quantum Glass -->
+    <div id="banner10" class="cookie-banner">
+        <div class="banner-header">
+            <svg viewBox="0 0 48 48">
+                <path d="M18.2838 43.1713C14.9327 42.1736 11.9498 40.3213 9.58787 37.867C10.469 36.8227 11 35.4734 11 34.0001C11 30.6864 8.31371 28.0001 5 28.0001C4.79955 28.0001 4.60139 28.01 4.40599 28.0292C4.13979 26.7277 4 25.3803 4 24.0001C4 21.9095 4.32077 19.8938 4.91579 17.9995C4.94381 17.9999 4.97188 18.0001 5 18.0001C8.31371 18.0001 11 15.3138 11 12.0001C11 11.0488 10.7786 10.1493 10.3846 9.35011C12.6975 7.1995 15.5205 5.59002 18.6521 4.72314C19.6444 6.66819 21.6667 8.00013 24 8.00013C26.3333 8.00013 28.3556 6.66819 29.3479 4.72314C32.4795 5.59002 35.3025 7.1995 37.6154 9.35011C37.2214 10.1493 37 11.0488 37 12.0001C37 15.3138 39.6863 18.0001 43 18.0001C43.0281 18.0001 43.0562 17.9999 43.0842 17.9995C43.6792 19.8938 44 21.9095 44 24.0001C44 25.3803 43.8602 26.7277 43.594 28.0292C43.3986 28.01 43.2005 28.0001 43 28.0001C39.6863 28.0001 37 30.6864 37 34.0001C37 35.4734 37.531 36.8227 38.4121 37.867C36.0502 40.3213 33.0673 42.1736 29.7162 43.1713C28.9428 40.752 26.676 39.0001 24 39.0001C21.324 39.0001 19.0572 40.752 18.2838 43.1713Z"/>
+                <path d="M24 31C27.866 31 31 27.866 31 24C31 20.134 27.866 17 24 17C20.134 17 17 20.134 17 24C17 27.866 20.134 31 24 31Z"/>
+            </svg>
+            <h4>Cookie Settings</h4>
+        </div>
+        <p>We use cookies to provide you with the best experience on our website. Some are necessary, while others help us improve the website.</p>
+        <div class="cookie-buttons">
+            <button class="btn-accept" onclick="acceptCookies(10)">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies(10)">Decline</button>
+            <button class="btn-settings" onclick="cookieSettings(10)">Settings</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptCookies(bannerId) {
+            console.log(`✅ Banner ${bannerId} - Cookies accepted`);
+            document.getElementById(`banner${bannerId}`).style.display = 'none';
+        }
+
+        function declineCookies(bannerId) {
+            console.log(`❌ Banner ${bannerId} - Cookies declined`);
+            document.getElementById(`banner${bannerId}`).style.display = 'none';
+        }
+
+        function cookieSettings(bannerId) {
+            console.log(`⚙️ Banner ${bannerId} - Settings opened`);
+        }
+    </script>
 </body>
 </html>
