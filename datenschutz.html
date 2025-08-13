@@ -1,60 +1,2057 @@
-<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Datenschutzerklärung – DADDYOFDOGS</title>
-  <meta name="description" content="Datenschutzhinweise von DADDYOFDOGS." />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .legal-main { animation: fadein 1.2s cubic-bezier(.3,.93,.5,1.08); max-width:650px; margin:8vh auto 4vh; background:rgba(255,255,255,0.95); border-radius:2rem; box-shadow:0 8px 32px rgba(20,22,28,0.12); padding:3rem 2rem 2rem; }
-    @keyframes fadein { 0% {opacity:0; transform:translateY(40px);} 100% {opacity:1; transform:translateY(0);} }
-    @media (max-width:540px){ .legal-main {padding:1.1rem 0.9rem 1.8rem;} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DADDYOFDOGS: Privacy Policy. Learn about how we collect, use, and protect your personal data.">
+    <meta property="og:title" content="DADDYOFDOGS – Privacy Policy">
+    <meta property="og:description" content="Our comprehensive privacy policy explaining data collection, usage, and protection practices.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/daddyofdogs/daddyofdogs/main/images/profilbild.png">
+    <title>DADDYOFDOGS – Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ff3366;
+            --accent-2: #00ffff;
+            --apple-dark: #1d1d1f;
+            --apple-gray: #86868b;
+            --apple-light-gray: #f5f5f7;
+            --apple-white: #fbfbfd;
+            --apple-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --apple-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --footer-bg: #18181a;
+            --footer-text: #f2f2f2;
+            --footer-link: #bdbdbd;
+            --footer-link-hover: #fff;
+            --text-primary: #ffffff;
+            font-size: 16px;
+        }
+
+        * {
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+            background-color: var(--apple-white);
+            color: var(--apple-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            margin: 0;
+        }
+
+        /* Header */
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .header {
+            width: 95%;
+            max-width: 800px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border-radius: 9999px;
+            padding: 0 2rem;
+            background-color: transparent;
+            backdrop-filter: blur(8px) saturate(180%);
+            -webkit-backdrop-filter: blur(8px) saturate(180%);
+            box-shadow: inset 0 0 3px rgba(160, 196, 255, 0.3), 0 0 10px rgba(160, 196, 255, 0.6), 0 0 20px rgba(160, 196, 255, 0.2);
+            border: none;
+            overflow: visible;
+        }
+
+        .logo {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            z-index: 1001;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .nav-container {
+            position: relative;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 32px;
+            height: 24px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            background: linear-gradient(90deg, #ff0066, #ff3366, #ff6666, #ff9966, #ffcc66, #ffff66, #ccff66, #99ff66, #66ff66, #66ff99, #66ffcc, #66ffff, #66ccff, #6699ff, #6666ff, #9966ff, #cc66ff, #ff66ff, #ff66cc, #ff6699, #ff0066);
+            background-size: 400% 100%;
+            animation: smooth-rainbow 20s ease-in-out infinite;
+        }
+
+        .hamburger span:nth-child(2) {
+            background: linear-gradient(90deg, #00ffff, #1aebff, #33d7ff, #4dc3ff, #66afff, #809bff, #9987ff, #b373ff, #cc5fff, #e64bff, #ff37ff, #ff4be6, #ff5fcc, #ff73b3, #ff8799, #ff9b80, #ffaf66, #ffc34d, #ffd733, #ffeb1a, #00ffff);
+            background-size: 600% 100%;
+            animation: smooth-neon 25s ease-in-out infinite;
+        }
+
+        .hamburger span:nth-child(3) {
+            background: linear-gradient(90deg, #ffd700, #ffcc11, #ffc122, #ffb633, #ffab44, #ffa055, #ff9566, #ff8a77, #ff7f88, #ff7499, #ff69aa, #ff5ebb, #ff53cc, #ff48dd, #ff3dee, #ff32ff, #ee32ff, #dd48ff, #cc53ff, #bb5eff, #ffd700);
+            background-size: 800% 100%;
+            animation: smooth-hologram 30s ease-in-out infinite;
+        }
+
+        @keyframes smooth-rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 200% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
+        @keyframes smooth-neon {
+            0% { background-position: 0% 50%; }
+            33% { background-position: 200% 50%; }
+            66% { background-position: 400% 50%; }
+            100% { background-position: 600% 50%; }
+        }
+
+        @keyframes smooth-hologram {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 200% 50%; }
+            50% { background-position: 400% 50%; }
+            75% { background-position: 600% 50%; }
+            100% { background-position: 800% 50%; }
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 60px;
+            right: -12px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-radius: 18px;
+            padding: 8px 0;
+            width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transform: translateY(-25px) scale(0.8) rotateX(-10deg) translateZ(0);
+            transform-origin: top right;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 1002;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        .dropdown.show {
+            transform: translateY(0) scale(1) rotateX(0deg) translateZ(0);
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dropdown a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            margin: 2px 8px;
+            border-radius: 12px;
+            will-change: transform;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            border: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .dropdown a span {
+            display: inline-block;
+            color: #1a202c;
+            background: linear-gradient(45deg, #1a202c 0%, #2d3748 20%, #4a5568 40%, #718096 60%, #4a5568 80%, #1a202c 100%);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            font-weight: 600;
+            animation: chromeShine 8s linear infinite;
+            will-change: transform, filter;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            text-align: left;
+            flex: 1;
+        }
+
+        @keyframes chromeShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        .dropdown a:hover span {
+            transform: translateX(-4px) scale(1.008) translateZ(0);
+            letter-spacing: 0.2px;
+            filter: brightness(1.03) contrast(1.05);
+            background: linear-gradient(45deg, #000000 0%, #1a202c 15%, #2d3748 30%, #4a5568 45%, #6b7280 60%, #4a5568 75%, #2d3748 85%, #000000 100%);
+            background-size: 400% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: chromeShineHover 6s linear infinite;
+        }
+
+        @keyframes chromeShineHover {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
+        .dropdown a .icon-container {
+            width: 18px;
+            height: 18px;
+            opacity: 0;
+            transform: translateX(20px) translateY(5px) scale(0.3) rotate(90deg);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            flex-shrink: 0;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            margin-left: 10px;
+            text-align: right;
+        }
+
+        .dropdown a:hover .icon-container {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dropdown a .icon-container svg {
+            width: 100%;
+            height: 100%;
+            stroke: #9ca3af;
+            stroke-width: 1.5;
+            transition: all 0.5s ease-out;
+            filter: drop-shadow(0 0 0px rgba(0,0,0,0));
+        }
+
+        .dropdown a:nth-child(1):hover .icon-container svg {
+            stroke: #ef4444;
+            filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4));
+            animation: homeGlowBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes homeGlowBounce {
+            0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4)); }
+            50% { transform: translateY(-2px) scale(1.1); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.6)); }
+        }
+
+        .dropdown a:nth-child(2):hover .icon-container svg {
+            stroke: #10b981;
+            filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));
+            animation: phonePulseGlow 1.8s ease-in-out infinite;
+        }
+
+        @keyframes phonePulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4)); }
+            50% { transform: scale(1.15); filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.7)); }
+        }
+
+        .dropdown a:nth-child(3):hover .icon-container svg {
+            stroke: #8b5cf6;
+            filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
+            animation: bookFlipShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes bookFlipShimmer {
+            0%, 100% { transform: rotateY(0deg) scale(1); filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4)); }
+            25% { transform: rotateY(15deg) scale(1.05); filter: drop-shadow(2px 0 12px rgba(139, 92, 246, 0.6)); }
+            50% { transform: rotateY(0deg) scale(1.1); filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.8)); }
+            75% { transform: rotateY(-15deg) scale(1.05); filter: drop-shadow(-2px 0 12px rgba(139, 92, 246, 0.6)); }
+        }
+
+        .dropdown a:nth-child(4):hover .icon-container svg {
+            stroke: #f59e0b;
+            filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+            animation: mailFloatTrail 2.5s ease-in-out infinite;
+        }
+
+        @keyframes mailFloatTrail {
+            0%, 100% { transform: translateX(0) translateY(0) scale(1); filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4)); }
+            25% { transform: translateX(-3px) translateY(-2px) scale(1.05); filter: drop-shadow(3px 2px 12px rgba(245, 158, 11, 0.6)); }
+            50% { transform: translateX(-5px) translateY(-3px) scale(1.1); filter: drop-shadow(5px 3px 16px rgba(245, 158, 11, 0.8)); }
+            75% { transform: translateX(-3px) translateY(-2px) scale(1.05); filter: drop-shadow(3px 2px 12px rgba(245, 158, 11, 0.6)); }
+        }
+
+        .dropdown a .icon-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.4s ease-out;
+        }
+
+        .dropdown a:hover .icon-container::before {
+            opacity: 1;
+            transform: scale(1);
+            animation: iconRipple 0.6s ease-out;
+        }
+
+        @keyframes iconRipple {
+            0% { transform: scale(0); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 0.2; }
+        }
+
+        .dropdown a:hover {
+            transform: translateX(2px) scale(1.005) translateZ(0);
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.4), rgba(241, 245, 249, 0.2));
+        }
+
+        .dropdown.show a:nth-child(1) {
+            animation: slideInModern 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s both;
+        }
+
+        .dropdown.show a:nth-child(2) {
+            animation: slideInModern 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s both;
+        }
+
+        .dropdown.show a:nth-child(3) {
+            animation: slideInModern 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+        }
+
+        .dropdown.show a:nth-child(4) {
+            animation: slideInModern 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s both;
+        }
+
+        @keyframes slideInModern {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .dropdown:not(.show) a {
+            animation: slideOutModern 0.3s ease both;
+        }
+
+        @keyframes slideOutModern {
+            to {
+                opacity: 0;
+                transform: translateY(-15px) scale(0.9);
+            }
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .hamburger:not(.active) span {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Main Content */
+        .privacy-content {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .privacy-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, var(--apple-dark), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .language-button {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 2px solid #8b5cf6;
+            background: transparent;
+            color: #8b5cf6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-button:hover {
+            background: #8b5cf6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .language-button.active {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .privacy-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: var(--apple-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .privacy-section {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--apple-dark);
+        }
+
+        .section-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .section-content p {
+            margin-bottom: 20px;
+        }
+
+        .section-content ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .section-content li {
+            margin-bottom: 12px;
+        }
+
+        .section-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 25px 0 15px;
+            color: var(--apple-dark);
+        }
+
+        .section-content strong {
+            font-weight: 700;
+            color: var(--apple-dark);
+        }
+
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .commitment-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .commitment-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--apple-dark);
+        }
+
+        .commitment-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .privacy-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 20px;
+        }
+
+        .footer-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--apple-dark);
+        }
+
+        .footer-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 -25px 50px rgba(0, 0, 0, 0.1), 0 -8px 16px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+        .footer-content-main {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .footer-section h3 {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #1a202c 0%, #2d3748 20%, #4a5568 40%, #718096 60%, #4a5568 80%, #1a202c 100%);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: chromeShine 8s linear infinite;
+        }
+        .footer-section ul {
+            list-style: none;
+        }
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .footer-section ul li a {
+            font-family: 'Inter', sans-serif;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .footer-section ul li a:hover {
+            color: #1f2937;
+            transform: translateX(4px);
+        }
+        .footer-section ul li a:hover::before {
+            content: '•';
+            position: absolute;
+            left: -15px;
+            color: #3b82f6;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .footer-bottom {
+            font-family: 'Inter', sans-serif;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(107, 114, 128, 0.2);
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 768px) {
+            .footer-content-main {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Focus Styles */
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 3px solid #8b5cf6;
+            outline-offset: 2px;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8b5cf6;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 10000;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .privacy-content {
+                margin: 100px auto 40px;
+                padding: 0 15px;
+            }
+
+            .privacy-section {
+                padding: 25px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-content {
+                font-size: 1rem;
+            }
+
+            .commitment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-container {
+                padding: 1rem;
+            }
+
+            .header {
+                height: 70px;
+                padding: 0 1.5rem;
+            }
+            
+            .privacy-title {
+                font-size: 2.5rem;
+            }
+            
+            .language-buttons {
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+            
+            .language-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .privacy-content {
+                margin: 90px auto 30px;
+            }
+
+            .privacy-title {
+                font-size: 2rem;
+            }
+
+            .privacy-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .commitment-card {
+                padding: 20px;
+            }
+            
+            .privacy-section {
+                padding: 20px;
+            }
+            
+            .language-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .footer-content-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            .footer-section h3 {
+                font-size: 0.8rem;
+            }
+            .footer-section ul li a {
+                font-size: 0.7rem;
+            }
+            .footer-bottom {
+                font-size: 0.65rem;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .privacy-section {
+                border: 2px solid black;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav aria-label="Hauptnavigation">
-    <div class="nav-container">
-      <a href="index.html" class="logo" aria-label="Startseite von DADDYOFDOGS">DADDYOFDOGS</a>
-      <ul class="nav-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#services">Social Media</a></li>
-        <li><a href="index.html#about">Über uns</a></li>
-        <li><a href="index.html#contact">Kontakt</a></li>
-      </ul>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="header-container">
+        <header class="header">
+            <a href="#" class="logo">DADDYOFDOGS</a>
+            <div class="nav-container">
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="dropdown" id="dropdown" aria-label="Main navigation">
+                    <a href="./index.html">
+                        <span>Home</span>
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-1.125 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./index.html#social">
+                        <span>Social Media</span>
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./index.html#about">
+                        <span>About Me</span>
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="./index.html#contact">
+                        <span>Contact</span>
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                            </svg>
+                        </div>
+                    </a>
+                </nav>
+            </div>
+        </header>
     </div>
-  </nav>
-  <main class="legal-main">
-    <h1>Datenschutzerklärung</h1>
-    <p>Wir nehmen den Schutz Ihrer Daten sehr ernst. Ihre personenbezogenen Daten werden vertraulich nach den gesetzlichen Datenschutzvorschriften behandelt.</p>
-    <h2>Verantwortlicher</h2>
-    <p>DADDYOFDOGS, Musterstraße 123, 40210 Düsseldorf<br>
-    E-Mail: info@daddyofdogs.de</p>
-    <h2>Erhebung und Speicherung personenbezogener Daten</h2>
-    <p>Personenbezogene Daten werden nur erhoben, soweit sie für die Nutzung dieser Webseite erforderlich sind (z.B. Kontaktformular, Cookies).</p>
-    <h2>Ihre Rechte</h2>
-    <ul>
-      <li>Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung</li>
-      <li>Widerspruchsrecht gegen die Verarbeitung</li>
-      <li>Beschwerderecht bei einer Aufsichtsbehörde</li>
-    </ul>
-    <h2>Kontakt für Datenschutz</h2>
-    <p>Kontaktieren Sie uns jederzeit unter der oben angegebenen Adresse oder per E-Mail, wenn Sie Fragen zum Datenschutz haben.</p>
-  </main>
-  <footer class="footer-info">
-    <div class="footer-info-wrapper">
-      <h3 class="footer-heading">Information</h3>
-      <ul class="footer-links">
-        <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html" aria-current="page">Datenschutz</a></li>
-        <li><a href="agb.html">AGB</a></li>
-        <li><a href="cookie.html">Cookie-Richtlinie</a></li>
-      </ul>
-      <div class="footer-copyright">
-        © 2025 DADDYOFDOGS. Alle Rechte vorbehalten.
-      </div>
-    </div>
-  </footer>
+
+    <main id="main-content">
+        <div class="privacy-content">
+            <header class="privacy-header">
+                <h1 class="privacy-title">Privacy Policy</h1>
+                <div class="language-buttons">
+                    <button class="language-button active" id="english-button">English</button>
+                    <button class="language-button" id="german-button">Deutsch</button>
+                </div>
+                <p class="privacy-subtitle">Our comprehensive privacy policy explaining data collection, usage, and protection practices</p>
+            </header>
+
+            <!-- English Content -->
+            <div id="english-content">
+                <section class="privacy-section">
+                    <h2 class="section-title">Privacy Policy</h2>
+                    <div class="section-content">
+                        <p><strong>Effective Date:</strong> August 13, 2025<br>
+                        <strong>Last Updated:</strong> August 13, 2025</p>
+                        
+                        <h3>1. Data Controller and Contact Information</h3>
+                        <p><strong>Data Controller:</strong><br>
+                        DADDYOFDOGS<br>
+                        Musterstraße 123<br>
+                        40210 Düsseldorf, Germany<br>
+                        Email: info@daddyofdogs.de<br>
+                        Phone: +49 211 555 0123</p>
+                        
+                        <p><strong>Representative:</strong> Max Mustermann<br>
+                        <strong>Commercial Register:</strong> Amtsgericht Düsseldorf, HRB 12345</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Types of Data We Collect</h2>
+                    <div class="section-content">
+                        <h3>2.1 Information You Provide Directly</h3>
+                        <ul>
+                            <li><strong>Contact Information:</strong> Name, email address, phone number, postal address</li>
+                            <li><strong>Communication Data:</strong> Messages sent through contact forms, email correspondence</li>
+                            <li><strong>Account Information:</strong> Registration details, preferences, settings</li>
+                            <li><strong>Business Information:</strong> Company name, industry, business inquiries</li>
+                        </ul>
+                        
+                        <h3>2.2 Information Collected Automatically</h3>
+                        <ul>
+                            <li><strong>Technical Data:</strong> IP address, browser type and version, operating system</li>
+                            <li><strong>Usage Data:</strong> Pages visited, time spent on site, click-through rates, referring websites</li>
+                            <li><strong>Device Information:</strong> Device type, screen resolution, language settings</li>
+                            <li><strong>Location Data:</strong> General location based on IP address (country/city level)</li>
+                            <li><strong>Cookies and Similar Technologies:</strong> See our Cookie Policy section below</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Legal Basis for Processing</h2>
+                    <div class="section-content">
+                        <p>We process your personal data based on the following legal grounds under Article 6 GDPR:</p>
+                        <ul>
+                            <li><strong>Consent (Art. 6(1)(a)):</strong> For newsletter subscriptions, marketing communications, and non-essential cookies</li>
+                            <li><strong>Contract Performance (Art. 6(1)(b)):</strong> To provide services you have requested or prepare contracts</li>
+                            <li><strong>Legal Obligation (Art. 6(1)(c)):</strong> To comply with tax laws, commercial law, and data protection regulations</li>
+                            <li><strong>Legitimate Interest (Art. 6(1)(f)):</strong> For website functionality, security, business operations, and fraud prevention</li>
+                        </ul>
+                        
+                        <p><strong>Legitimate Interest Assessment:</strong> Where we rely on legitimate interest, we have balanced our business needs against your privacy rights and determined that processing is necessary and proportionate.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Purposes of Data Processing</h2>
+                    <div class="section-content">
+                        <p>We use your personal data for the following purposes:</p>
+                        <ul>
+                            <li><strong>Service Provision:</strong> To provide and maintain our website and services</li>
+                            <li><strong>Communication:</strong> To respond to inquiries and provide customer support</li>
+                            <li><strong>Marketing:</strong> To send newsletters and promotional content (with your consent)</li>
+                            <li><strong>Analytics:</strong> To understand website usage and improve our services</li>
+                            <li><strong>Legal Compliance:</strong> To meet regulatory requirements (tax, commercial law)</li>
+                            <li><strong>Security:</strong> To protect against fraud, abuse, and security threats</li>
+                            <li><strong>Business Development:</strong> To analyze market trends and improve our offerings</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Social Media Links and External Platform Notice</h2>
+                    <div class="section-content">
+                        <p><strong>IMPORTANT NOTICE:</strong> Our website contains links to social media platforms including Facebook, Instagram, Twitter/X, LinkedIn, TikTok, and YouTube.</p>
+                        
+                        <p><strong>Data Transfer Warning:</strong> When you click on social media links, you will be redirected directly to external platforms without additional warning. This redirection involves:</p>
+                        <ul>
+                            <li><strong>Immediate Data Sharing:</strong> Your IP address, browser information, and referral data are automatically shared with the social media platform</li>
+                            <li><strong>External Processing:</strong> The social media platform will process your data under their own privacy policies</li>
+                            <li><strong>International Transfers:</strong> Your data may be transferred to countries outside the EU/EEA, including the United States</li>
+                            <li><strong>Different Privacy Standards:</strong> External platforms operate under different privacy frameworks than our website</li>
+                            <li><strong>Tracking:</strong> Social media platforms may track your visit and create user profiles</li>
+                        </ul>
+                        
+                        <p><strong>Legal Basis:</strong> We share this referral data based on our legitimate interest in maintaining social media presence and enabling user engagement.</p>
+                        
+                        <p><strong>Your Options:</strong></p>
+                        <ul>
+                            <li>View our social media content by visiting platforms directly</li>
+                            <li>Use privacy-focused browsers or ad blockers</li>
+                            <li>Adjust your social media privacy settings independently</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Cookie Policy and Consent Management</h2>
+                    <div class="section-content">
+                        <h3>6.1 Cookie Types</h3>
+                        <p>We use the following categories of cookies:</p>
+                        
+                        <p><strong>Essential Cookies:</strong> Required for basic website functionality</p>
+                        <ul>
+                            <li>Purpose: Enable core website features, security, accessibility, shopping cart</li>
+                            <li>Legal Basis: Legitimate interest (Art. 6(1)(f) GDPR)</li>
+                            <li>Examples: Session cookies, CSRF protection, language preferences</li>
+                            <li>Retention: Session or up to 1 year</li>
+                        </ul>
+                        
+                        <p><strong>Analytical Cookies:</strong> Help us understand website usage</p>
+                        <ul>
+                            <li>Purpose: Website performance analysis, user behavior insights, error tracking</li>
+                            <li>Legal Basis: Your consent (Art. 6(1)(a) GDPR)</li>
+                            <li>Examples: Google Analytics, Hotjar, internal analytics</li>
+                            <li>Retention: Up to 26 months</li>
+                        </ul>
+                        
+                        <p><strong>Marketing Cookies:</strong> Enable personalized advertising</p>
+                        <ul>
+                            <li>Purpose: Targeted advertising, conversion tracking, retargeting</li>
+                            <li>Legal Basis: Your consent (Art. 6(1)(a) GDPR)</li>
+                            <li>Examples: Google Ads, Facebook Pixel, affiliate tracking</li>
+                            <li>Retention: Up to 24 months</li>
+                        </ul>
+                        
+                        <p><strong>Preference Cookies:</strong> Remember your choices and settings</p>
+                        <ul>
+                            <li>Purpose: User experience enhancement, personalization</li>
+                            <li>Legal Basis: Legitimate interest or consent</li>
+                            <li>Examples: Theme preferences, cookie consent status</li>
+                            <li>Retention: Up to 2 years</li>
+                        </ul>
+                        
+                        <h3>6.2 Cookie Management</h3>
+                        <p>You can manage your cookie preferences through:</p>
+                        <ul>
+                            <li><strong>Cookie Banner:</strong> Available on first visit and accessible via site footer</li>
+                            <li><strong>Browser Settings:</strong> Configure cookie acceptance in your browser</li>
+                            <li><strong>Third-Party Opt-Outs:</strong> Direct opt-out links for advertising networks</li>
+                            <li><strong>Cookie Preference Center:</strong> Granular control over different cookie types</li>
+                        </ul>
+                        
+                        <p><strong>Consent Withdrawal:</strong> You can withdraw cookie consent at any time through our cookie preference center without affecting essential website functionality.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Third-Party Services and Data Sharing</h2>
+                    <div class="section-content">
+                        <h3>7.1 Service Providers</h3>
+                        <p>We share data with the following third parties:</p>
+                        
+                        <p><strong>Website Analytics:</strong><br>
+                        Google Analytics 4 (Google Ireland Limited)<br>
+                        Purpose: Website performance analysis, user behavior tracking<br>
+                        Data Protection: EU Standard Contractual Clauses, IP anonymization enabled<br>
+                        Retention: 26 months maximum<br>
+                        Location: EU/USA</p>
+                        
+                        <p><strong>Email Services:</strong><br>
+                        Mailchimp (Intuit Inc.) or similar email service provider<br>
+                        Purpose: Newsletter delivery, email marketing campaigns<br>
+                        Data Protection: EU Standard Contractual Clauses, GDPR compliance<br>
+                        Retention: Until unsubscribed or account deletion<br>
+                        Location: EU/USA</p>
+                        
+                        <p><strong>Hosting and CDN:</strong><br>
+                        Cloudflare (Cloudflare Inc.)<br>
+                        Purpose: Website hosting, security, performance optimization<br>
+                        Data Protection: EU Standard Contractual Clauses<br>
+                        Retention: Logs deleted after 72 hours<br>
+                        Location: EU/USA</p>
+                        
+                        <p><strong>Payment Processing:</strong> (if applicable)<br>
+                        Stripe (Stripe Inc.) / PayPal (PayPal Holdings Inc.)<br>
+                        Purpose: Payment processing, fraud prevention<br>
+                        Data Protection: PCI-DSS compliance, encrypted transmission<br>
+                        Retention: 7 years for accounting purposes<br>
+                        Location: EU/USA</p>
+                        
+                        <h3>7.2 International Data Transfers</h3>
+                        <p>Some service providers are located outside the EU/EEA. We ensure adequate protection through:</p>
+                        <ul>
+                            <li><strong>EU Standard Contractual Clauses:</strong> EU-approved contractual safeguards</li>
+                            <li><strong>Adequacy Decisions:</strong> For transfers to UK and other adequate countries</li>
+                            <li><strong>Data Processing Agreements:</strong> Comprehensive protection measures</li>
+                            <li><strong>Encryption:</strong> All international transfers are encrypted</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Data Retention Periods</h2>
+                    <div class="section-content">
+                        <p>We retain personal data for the following periods:</p>
+                        <ul>
+                            <li><strong>Contact Form Inquiries:</strong> 3 years from last communication</li>
+                            <li><strong>Newsletter Subscriptions:</strong> Until you unsubscribe plus 30 days</li>
+                            <li><strong>Customer Contracts:</strong> 10 years (German commercial law requirement)</li>
+                            <li><strong>Website Analytics:</strong> 26 months maximum (Google Analytics setting)</li>
+                            <li><strong>Marketing Consent:</strong> Until withdrawn or 3 years of inactivity</li>
+                            <li><strong>Accounting Data:</strong> 10 years (German tax law requirement)</li>
+                            <li><strong>Server Logs:</strong> 7 days maximum</li>
+                        </ul>
+                        
+                        <p><strong>Retention Criteria:</strong> We determine retention periods based on legal requirements, business needs, and the purpose for which data was collected.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Your Data Protection Rights</h2>
+                    <div class="section-content">
+                        <p>Under the GDPR, you have the following rights:</p>
+                        
+                        <h3>9.1 Access Right (Article 15)</h3>
+                        <ul>
+                            <li>Request confirmation of data processing</li>
+                            <li>Obtain copies of your personal data</li>
+                            <li>Receive information about processing activities</li>
+                            <li>Response time: Within 1 month (extendable by 2 months)</li>
+                        </ul>
+                        
+                        <h3>9.2 Rectification Right (Article 16)</h3>
+                        <ul>
+                            <li>Correct inaccurate personal data</li>
+                            <li>Complete incomplete data</li>
+                            <li>Update outdated information</li>
+                        </ul>
+                        
+                        <h3>9.3 Erasure Right (Article 17)</h3>
+                        <ul>
+                            <li>Request deletion of personal data</li>
+                            <li>"Right to be forgotten" under specific circumstances</li>
+                            <li>Exceptions for legal obligations and legitimate interests</li>
+                        </ul>
+                        
+                        <h3>9.4 Restriction Right (Article 18)</h3>
+                        <ul>
+                            <li>Limit processing during accuracy disputes</li>
+                            <li>Restrict processing for certain periods</li>
+                            <li>Mark data for restricted processing</li>
+                        </ul>
+                        
+                        <h3>9.5 Portability Right (Article 20)</h3>
+                        <ul>
+                            <li>Receive data in structured, machine-readable format (JSON/CSV)</li>
+                            <li>Transfer data to another controller</li>
+                            <li>Available for consent and contract-based processing</li>
+                        </ul>
+                        
+                        <h3>9.6 Objection Right (Article 21)</h3>
+                        <ul>
+                            <li>Object to processing based on legitimate interest</li>
+                            <li>Absolute right to object to direct marketing</li>
+                            <li>Right to object to profiling</li>
+                        </ul>
+                        
+                        <h3>9.7 Automated Decision-Making Protection (Article 22)</h3>
+                        <ul>
+                            <li>Right not to be subject to solely automated decisions</li>
+                            <li>Request human intervention and explanation</li>
+                            <li>Challenge automated decisions</li>
+                        </ul>
+                        
+                        <p><strong>Exercising Your Rights:</strong> Contact us at privacy@daddyofdogs.de or info@daddyofdogs.de to exercise any rights. We will respond within one month.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Contact Forms and Communication</h2>
+                    <div class="section-content">
+                        <p>When you use our contact forms, we collect:</p>
+                        
+                        <p><strong>Required Information:</strong></p>
+                        <ul>
+                            <li>Name (first and last name)</li>
+                            <li>Email address</li>
+                            <li>Message content</li>
+                            <li>Subject/inquiry type</li>
+                        </ul>
+                        
+                        <p><strong>Optional Information:</strong></p>
+                        <ul>
+                            <li>Phone number</li>
+                            <li>Company name</li>
+                            <li>Website URL</li>
+                            <li>Industry/business type</li>
+                        </ul>
+                        
+                        <p><strong>Technical Data (automatically collected):</strong></p>
+                        <ul>
+                            <li>IP address: 192.168.xxx.xxx (anonymized after 30 days)</li>
+                            <li>Timestamp</li>
+                            <li>Browser information</li>
+                            <li>Referrer URL</li>
+                        </ul>
+                        
+                        <p><strong>Processing Details:</strong></p>
+                        <ul>
+                            <li><strong>Purpose:</strong> Responding to inquiries, customer support, business communication</li>
+                            <li><strong>Legal Basis:</strong> Legitimate interest in customer communication (Art. 6(1)(f) GDPR)</li>
+                            <li><strong>Retention:</strong> 3 years from last communication</li>
+                            <li><strong>Recipients:</strong> Internal customer service team</li>
+                            <li><strong>Storage:</strong> EU-based servers with encryption</li>
+                        </ul>
+                        
+                        <p><strong>Consent for Additional Processing:</strong> We will request separate explicit consent for adding you to newsletters or marketing communications.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Security Measures</h2>
+                    <div class="section-content">
+                        <p>We implement comprehensive security measures:</p>
+                        
+                        <p><strong>Technical Measures:</strong></p>
+                        <ul>
+                            <li><strong>SSL/TLS Encryption:</strong> All data transmission encrypted (minimum TLS 1.2)</li>
+                            <li><strong>Server Security:</strong> Regular security updates, firewall protection</li>
+                            <li><strong>Database Encryption:</strong> Personal data encrypted at rest</li>
+                            <li><strong>Access Controls:</strong> Multi-factor authentication, role-based access</li>
+                            <li><strong>Regular Backups:</strong> Encrypted daily backups with tested recovery</li>
+                        </ul>
+                        
+                        <p><strong>Organizational Measures:</strong></p>
+                        <ul>
+                            <li><strong>Staff Training:</strong> Regular GDPR and security awareness training</li>
+                            <li><strong>Data Protection Procedures:</strong> Written policies and guidelines</li>
+                            <li><strong>Incident Response Plan:</strong> Documented breach response procedures</li>
+                            <li><strong>Vendor Assessment:</strong> Security evaluation of all service providers</li>
+                            <li><strong>Regular Audits:</strong> Annual security and compliance reviews</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Data Breach Notification</h2>
+                    <div class="section-content">
+                        <p>In case of a data breach affecting your personal data:</p>
+                        
+                        <p><strong>Authority Notification:</strong> Within 72 hours to relevant supervisory authority</p>
+                        <p><strong>Individual Notification:</strong> Within 72 hours when high risk to rights and freedoms</p>
+                        
+                        <p><strong>Information Provided:</strong></p>
+                        <ul>
+                            <li>Nature of the breach</li>
+                            <li>Data categories affected</li>
+                            <li>Approximate number of affected individuals</li>
+                            <li>Likely consequences</li>
+                            <li>Measures taken or proposed</li>
+                        </ul>
+                        
+                        <p><strong>Contact for Breaches:</strong> security@daddyofdogs.de or +49 211 555 0123</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Children's Privacy</h2>
+                    <div class="section-content">
+                        <ul>
+                            <li>Our services are not directed to children under 16 years</li>
+                            <li>We do not knowingly collect data from children without parental consent</li>
+                            <li>If we discover child data collection, we delete it immediately</li>
+                            <li>Parents can contact us to review, edit, or delete child data</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Complaint Rights and Supervisory Authorities</h2>
+                    <div class="section-content">
+                        <p><strong>Right to Lodge Complaints:</strong> You have the right to file complaints with supervisory authorities.</p>
+                        
+                        <p><strong>Competent German Authorities:</strong></p>
+                        
+                        <p><strong>For Federal Matters:</strong><br>
+                        Federal Commissioner for Data Protection and Freedom of Information (BfDI)<br>
+                        Husarenstraße 30<br>
+                        53117 Bonn, Germany<br>
+                        Phone: +49 228-997799-0<br>
+                        Email: poststelle@bfdi.bund.de<br>
+                        Website: www.bfdi.bund.de</p>
+                        
+                        <p><strong>For North Rhine-Westphalia (our location):</strong><br>
+                        State Commissioner for Data Protection and Freedom of Information NRW<br>
+                        Kavalleriestraße 2-4<br>
+                        40213 Düsseldorf, Germany<br>
+                        Phone: +49 211 38424-0<br>
+                        Email: poststelle@ldi.nrw.de<br>
+                        Website: www.ldi.nrw.de</p>
+                        
+                        <p><strong>European Level:</strong> You may contact any EU data protection authority or file complaints in your country of residence.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Marketing and Newsletter</h2>
+                    <div class="section-content">
+                        <p><strong>Newsletter Subscription:</strong></p>
+                        <ul>
+                            <li><strong>Double Opt-In:</strong> Confirmation email required</li>
+                            <li><strong>Content:</strong> Product updates, company news, special offers</li>
+                            <li><strong>Frequency:</strong> Weekly maximum, typically bi-weekly</li>
+                            <li><strong>Unsubscribe:</strong> One-click unsubscribe in every email</li>
+                            <li><strong>Legal Basis:</strong> Your explicit consent (Art. 6(1)(a) GDPR)</li>
+                        </ul>
+                        
+                        <p><strong>Marketing Communications:</strong></p>
+                        <ul>
+                            <li><strong>Business Communications:</strong> Based on legitimate interest</li>
+                            <li><strong>Promotional Content:</strong> Requires explicit consent</li>
+                            <li><strong>Personalization:</strong> Based on your interaction history</li>
+                            <li><strong>Opt-Out:</strong> Available in all marketing communications</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Changes to This Privacy Policy</h2>
+                    <div class="section-content">
+                        <p><strong>Update Reasons:</strong></p>
+                        <ul>
+                            <li>Changes in our data processing practices</li>
+                            <li>Legal or regulatory requirements</li>
+                            <li>New services or features</li>
+                            <li>Technology changes</li>
+                        </ul>
+                        
+                        <p><strong>Notification Methods:</strong></p>
+                        <ul>
+                            <li>Email notification to registered users (if email addresses available)</li>
+                            <li>Prominent website notice for 30 days</li>
+                            <li>Updated "Last Modified" date</li>
+                            <li>Social media announcements for major changes</li>
+                        </ul>
+                        
+                        <p><strong>Version History:</strong> Previous versions archived and available upon request.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Additional Legal Information</h2>
+                    <div class="section-content">
+                        <p><strong>Data Provision Requirements:</strong></p>
+                        <ul>
+                            <li>Contact information required for communication</li>
+                            <li>Business information may be required for services</li>
+                            <li>Certain data mandatory for legal compliance</li>
+                            <li>Failure to provide required data may prevent service delivery</li>
+                        </ul>
+                        
+                        <p><strong>Automated Decision-Making:</strong></p>
+                        <ul>
+                            <li>We do not use solely automated decision-making with legal effects</li>
+                            <li>Any automated processing includes human oversight</li>
+                            <li>Right to request human intervention available</li>
+                        </ul>
+                        
+                        <p><strong>Profiling:</strong></p>
+                        <ul>
+                            <li>Limited profiling for website optimization</li>
+                            <li>No automated decision-making based on profiles</li>
+                            <li>You can object to profiling at any time</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Contact Information for Privacy Matters</h2>
+                    <div class="section-content">
+                        <p><strong>Primary Contact:</strong><br>
+                        Email: privacy@daddyofdogs.de<br>
+                        Phone: +49 211 555 0123<br>
+                        Mail: DADDYOFDOGS - Privacy Department<br>
+                        Musterstraße 123<br>
+                        40210 Düsseldorf, Germany</p>
+                        
+                        <p><strong>Alternative Contact:</strong><br>
+                        Email: info@daddyofdogs.de<br>
+                        Business Hours: Monday-Friday, 9:00-17:00 CET</p>
+                        
+                        <p><strong>Response Commitments:</strong></p>
+                        <ul>
+                            <li>Acknowledgment within 3 business days</li>
+                            <li>Full response within 30 days</li>
+                            <li>Complex requests: Up to 90 days with explanation</li>
+                            <li>Urgent matters: 24-hour response</li>
+                        </ul>
+                        
+                        <p><strong>Languages:</strong> We handle requests in German, English, and other EU languages upon request.</p>
+                        
+                        <p><strong>This privacy policy complies with German GDPR implementation, BDSG, and TTDSG requirements. Effective August 13, 2025. Last updated August 13, 2025.</strong></p>
+                        
+                        <p><strong>Document ID:</strong> PP-DADDYOFDOGS-2025-001<br>
+                        <strong>Version:</strong> 1.0</p>
+                    </div>
+                </section>
+
+                <footer class="privacy-footer">
+                    <h3 class="footer-title">Your Privacy Matters to Us</h3>
+                    <div class="footer-content">
+                        <p>We are committed to protecting your personal data and ensuring transparency in how we collect, use, and safeguard your information. This privacy policy outlines our practices and your rights under data protection laws.</p>
+                        <p><em>Note: We continuously review and update our privacy practices to ensure compliance with applicable laws and to maintain the highest standards of data protection.</em></p>
+                    </div>
+                </footer>
+            </div>
+
+            <!-- German Content (Hidden by default) -->
+            <div id="german-content" style="display: none;">
+                <section class="privacy-section">
+                    <h2 class="section-title">Datenschutzerklärung</h2>
+                    <div class="section-content">
+                        <p><strong>Gültigkeitsdatum:</strong> 13. August 2025<br>
+                        <strong>Letzte Aktualisierung:</strong> 13. August 2025</p>
+                        
+                        <h3>1. Verantwortlicher und Kontaktinformationen</h3>
+                        <p><strong>Verantwortlicher:</strong><br>
+                        DADDYOFDOGS<br>
+                        Musterstraße 123<br>
+                        40210 Düsseldorf, Deutschland<br>
+                        E-Mail: info@daddyofdogs.de<br>
+                        Telefon: +49 211 555 0123</p>
+                        
+                        <p><strong>Vertretungsberechtigter:</strong> Max Mustermann<br>
+                        <strong>Handelsregister:</strong> Amtsgericht Düsseldorf, HRB 12345</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Arten der erhobenen Daten</h2>
+                    <div class="section-content">
+                        <h3>2.1 Von Ihnen direkt bereitgestellte Informationen</h3>
+                        <ul>
+                            <li><strong>Kontaktinformationen:</strong> Name, E-Mail-Adresse, Telefonnummer, Postanschrift</li>
+                            <li><strong>Kommunikationsdaten:</strong> Nachrichten über Kontaktformulare, E-Mail-Korrespondenz</li>
+                            <li><strong>Kontoinformationen:</strong> Registrierungsdaten, Präferenzen, Einstellungen</li>
+                            <li><strong>Geschäftsinformationen:</strong> Firmenname, Branche, Geschäftsanfragen</li>
+                        </ul>
+                        
+                        <h3>2.2 Automatisch erhobene Informationen</h3>
+                        <ul>
+                            <li><strong>Technische Daten:</strong> IP-Adresse, Browser-Typ und -Version, Betriebssystem</li>
+                            <li><strong>Nutzungsdaten:</strong> Besuchte Seiten, Verweildauer, Klickraten, verweisende Websites</li>
+                            <li><strong>Geräteinformationen:</strong> Gerätetyp, Bildschirmauflösung, Spracheinstellungen</li>
+                            <li><strong>Standortdaten:</strong> Allgemeine Standortinformation basierend auf IP-Adresse (Land/Stadt-Ebene)</li>
+                            <li><strong>Cookies und ähnliche Technologien:</strong> Siehe Abschnitt Cookie-Richtlinie</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Rechtsgrundlage für die Verarbeitung</h2>
+                    <div class="section-content">
+                        <p>Wir verarbeiten Ihre personenbezogenen Daten auf folgenden Rechtsgrundlagen nach Art. 6 DSGVO:</p>
+                        <ul>
+                            <li><strong>Einwilligung (Art. 6 Abs. 1 lit. a):</strong> Für Newsletter-Abonnements, Marketing-Kommunikation und nicht-essenzielle Cookies</li>
+                            <li><strong>Vertragserfüllung (Art. 6 Abs. 1 lit. b):</strong> Zur Erbringung angefragter Leistungen oder Vertragsvorbereitung</li>
+                            <li><strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 lit. c):</strong> Zur Einhaltung von Steuerrecht, Handelsrecht und Datenschutzvorschriften</li>
+                            <li><strong>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f):</strong> Für Website-Funktionalität, Sicherheit, Geschäftsbetrieb und Betrugsprävention</li>
+                        </ul>
+                        
+                        <p><strong>Interessenabwägung:</strong> Soweit wir uns auf berechtigte Interessen stützen, haben wir unsere Geschäftsinteressen gegen Ihre Datenschutzrechte abgewogen und festgestellt, dass die Verarbeitung erforderlich und verhältnismäßig ist.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Zwecke der Datenverarbeitung</h2>
+                    <div class="section-content">
+                        <p>Wir verwenden Ihre personenbezogenen Daten für folgende Zwecke:</p>
+                        <ul>
+                            <li><strong>Leistungserbringung:</strong> Bereitstellung und Wartung unserer Website und Dienste</li>
+                            <li><strong>Kommunikation:</strong> Beantwortung von Anfragen und Kundensupport</li>
+                            <li><strong>Marketing:</strong> Versendung von Newslettern und Werbeinhalten (mit Ihrer Einwilligung)</li>
+                            <li><strong>Analyse:</strong> Verständnis der Website-Nutzung und Verbesserung unserer Dienste</li>
+                            <li><strong>Rechtseinhaltung:</strong> Erfüllung regulatorischer Anforderungen (Steuer-, Handelsrecht)</li>
+                            <li><strong>Sicherheit:</strong> Schutz vor Betrug, Missbrauch und Sicherheitsbedrohungen</li>
+                            <li><strong>Geschäftsentwicklung:</strong> Marktanalyse und Verbesserung unserer Angebote</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Social Media Links und externe Plattform-Hinweis</h2>
+                    <div class="section-content">
+                        <p><strong>WICHTIGER HINWEIS:</strong> Unsere Website enthält Links zu Social Media-Plattformen einschließlich Facebook, Instagram, Twitter/X, LinkedIn, TikTok und YouTube.</p>
+                        
+                        <p><strong>Warnung vor Datenübertragung:</strong> Wenn Sie auf Social Media-Links klicken, werden Sie direkt ohne zusätzliche Warnung zu externen Plattformen weitergeleitet. Diese Weiterleitung beinhaltet:</p>
+                        <ul>
+                            <li><strong>Sofortige Datenübertragung:</strong> Ihre IP-Adresse, Browser-Informationen und Referrer-Daten werden automatisch an die Social Media-Plattform übertragen</li>
+                            <li><strong>Externe Verarbeitung:</strong> Die Social Media-Plattform verarbeitet Ihre Daten unter deren eigenen Datenschutzrichtlinien</li>
+                            <li><strong>Internationale Übertragungen:</strong> Ihre Daten können in Länder außerhalb der EU/EWR übertragen werden, einschließlich der USA</li>
+                            <li><strong>Unterschiedliche Datenschutzstandards:</strong> Externe Plattformen arbeiten unter anderen Datenschutz-Frameworks als unsere Website</li>
+                            <li><strong>Tracking:</strong> Social Media-Plattformen können Ihren Besuch verfolgen und Nutzerprofile erstellen</li>
+                        </ul>
+                        
+                        <p><strong>Rechtsgrundlage:</strong> Wir teilen diese Referrer-Daten basierend auf unserem berechtigten Interesse an der Aufrechterhaltung einer Social Media-Präsenz und der Ermöglichung von Nutzerinteraktionen.</p>
+                        
+                        <p><strong>Ihre Optionen:</strong></p>
+                        <ul>
+                            <li>Betrachten Sie unsere Social Media-Inhalte durch direkten Besuch der Plattformen</li>
+                            <li>Nutzen Sie datenschutzfreundliche Browser oder Ad-Blocker</li>
+                            <li>Passen Sie Ihre Social Media-Datenschutzeinstellungen unabhängig an</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Cookie-Richtlinie und Einwilligungsmanagement</h2>
+                    <div class="section-content">
+                        <h3>6.1 Cookie-Arten</h3>
+                        <p>Wir verwenden folgende Cookie-Kategorien:</p>
+                        
+                        <p><strong>Essenzielle Cookies:</strong> Erforderlich für grundlegende Website-Funktionalität</p>
+                        <ul>
+                            <li>Zweck: Ermöglichung von Kern-Website-Funktionen, Sicherheit, Barrierefreiheit, Warenkorb</li>
+                            <li>Rechtsgrundlage: Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)</li>
+                            <li>Beispiele: Sitzungs-Cookies, CSRF-Schutz, Sprachpräferenzen</li>
+                            <li>Speicherdauer: Sitzung oder bis zu 1 Jahr</li>
+                        </ul>
+                        
+                        <p><strong>Analytische Cookies:</strong> Helfen uns, die Website-Nutzung zu verstehen</p>
+                        <ul>
+                            <li>Zweck: Website-Performance-Analyse, Nutzerverhalten-Insights, Fehler-Tracking</li>
+                            <li>Rechtsgrundlage: Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
+                            <li>Beispiele: Google Analytics, Hotjar, interne Analyse</li>
+                            <li>Speicherdauer: Bis zu 26 Monate</li>
+                        </ul>
+                        
+                        <p><strong>Marketing-Cookies:</strong> Ermöglichen personalisierte Werbung</p>
+                        <ul>
+                            <li>Zweck: Zielgerichtete Werbung, Conversion-Tracking, Retargeting</li>
+                            <li>Rechtsgrundlage: Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
+                            <li>Beispiele: Google Ads, Facebook Pixel, Affiliate-Tracking</li>
+                            <li>Speicherdauer: Bis zu 24 Monate</li>
+                        </ul>
+                        
+                        <p><strong>Präferenz-Cookies:</strong> Merken sich Ihre Auswahlmöglichkeiten und Einstellungen</p>
+                        <ul>
+                            <li>Zweck: Nutzererfahrung-Verbesserung, Personalisierung</li>
+                            <li>Rechtsgrundlage: Berechtigtes Interesse oder Einwilligung</li>
+                            <li>Beispiele: Theme-Präferenzen, Cookie-Einwilligungsstatus</li>
+                            <li>Speicherdauer: Bis zu 2 Jahre</li>
+                        </ul>
+                        
+                        <h3>6.2 Cookie-Verwaltung</h3>
+                        <p>Sie können Ihre Cookie-Präferenzen verwalten über:</p>
+                        <ul>
+                            <li><strong>Cookie-Banner:</strong> Verfügbar beim ersten Besuch und über Site-Footer zugänglich</li>
+                            <li><strong>Browser-Einstellungen:</strong> Cookie-Akzeptanz in Ihrem Browser konfigurieren</li>
+                            <li><strong>Drittanbieter-Opt-Outs:</strong> Direkte Opt-Out-Links für Werbenetzwerke</li>
+                            <li><strong>Cookie-Präferenzzentrum:</strong> Granulare Kontrolle über verschiedene Cookie-Typen</li>
+                        </ul>
+                        
+                        <p><strong>Einwilligungswiderruf:</strong> Sie können die Cookie-Einwilligung jederzeit über unser Cookie-Präferenzzentrum widerrufen, ohne die essenziellen Website-Funktionen zu beeinträchtigen.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Drittanbieter-Dienste und Datenübertragung</h2>
+                    <div class="section-content">
+                        <h3>7.1 Dienstleister</h3>
+                        <p>Wir teilen Daten mit folgenden Dritten:</p>
+                        
+                        <p><strong>Website-Analyse:</strong><br>
+                        Google Analytics 4 (Google Ireland Limited)<br>
+                        Zweck: Website-Performance-Analyse, Nutzerverhalten-Tracking<br>
+                        Datenschutz: EU-Standardvertragsklauseln, IP-Anonymisierung aktiviert<br>
+                        Speicherdauer: Maximal 26 Monate<br>
+                        Standort: EU/USA</p>
+                        
+                        <p><strong>E-Mail-Services:</strong><br>
+                        Mailchimp (Intuit Inc.) oder ähnlicher E-Mail-Service-Provider<br>
+                        Zweck: Newsletter-Versand, E-Mail-Marketing-Kampagnen<br>
+                        Datenschutz: EU-Standardvertragsklauseln, DSGVO-Compliance<br>
+                        Speicherdauer: Bis zur Abmeldung oder Kontolöschung<br>
+                        Standort: EU/USA</p>
+                        
+                        <p><strong>Hosting und CDN:</strong><br>
+                        Cloudflare (Cloudflare Inc.)<br>
+                        Zweck: Website-Hosting, Sicherheit, Performance-Optimierung<br>
+                        Datenschutz: EU-Standardvertragsklauseln<br>
+                        Speicherdauer: Logs gelöscht nach 72 Stunden<br>
+                        Standort: EU/USA</p>
+                        
+                        <p><strong>Zahlungsabwicklung:</strong> (falls zutreffend)<br>
+                        Stripe (Stripe Inc.) / PayPal (PayPal Holdings Inc.)<br>
+                        Zweck: Zahlungsabwicklung, Betrugsprävention<br>
+                        Datenschutz: PCI-DSS-Compliance, verschlüsselte Übertragung<br>
+                        Speicherdauer: 7 Jahre für Buchhaltungszwecke<br>
+                        Standort: EU/USA</p>
+                        
+                        <h3>7.2 Internationale Datenübertragungen</h3>
+                        <p>Einige Dienstleister befinden sich außerhalb der EU/EWR. Wir gewährleisten angemessenen Schutz durch:</p>
+                        <ul>
+                            <li><strong>EU-Standardvertragsklauseln:</strong> EU-genehmigte vertragliche Schutzmaßnahmen</li>
+                            <li><strong>Angemessenheitsbeschlüsse:</strong> Für Übertragungen nach UK und andere angemessene Länder</li>
+                            <li><strong>Datenverarbeitungsverträge:</strong> Umfassende Schutzmaßnahmen</li>
+                            <li><strong>Verschlüsselung:</strong> Alle internationalen Übertragungen sind verschlüsselt</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Speicherdauer</h2>
+                    <div class="section-content">
+                        <p>Wir speichern personenbezogene Daten für folgende Zeiträume:</p>
+                        <ul>
+                            <li><strong>Kontaktformular-Anfragen:</strong> 3 Jahre ab letzter Kommunikation</li>
+                            <li><strong>Newsletter-Abonnements:</strong> Bis zur Abmeldung plus 30 Tage</li>
+                            <li><strong>Kundenverträge:</strong> 10 Jahre (deutsche handelsrechtliche Anforderung)</li>
+                            <li><strong>Website-Analyse:</strong> Maximal 26 Monate (Google Analytics-Einstellung)</li>
+                            <li><strong>Marketing-Einwilligung:</strong> Bis zum Widerruf oder 3 Jahre Inaktivität</li>
+                            <li><strong>Buchhaltungsdaten:</strong> 10 Jahre (deutsche steuerrechtliche Anforderung)</li>
+                            <li><strong>Server-Logs:</strong> Maximal 7 Tage</li>
+                        </ul>
+                        
+                        <p><strong>Speicherkriterien:</strong> Wir bestimmen Speicherfristen basierend auf gesetzlichen Anforderungen, Geschäftsbedürfnissen und dem Zweck der Datenerhebung.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Ihre Datenschutzrechte</h2>
+                    <div class="section-content">
+                        <p>Unter der DSGVO haben Sie folgende Rechte:</p>
+                        
+                        <h3>9.1 Auskunftsrecht (Artikel 15)</h3>
+                        <ul>
+                            <li>Bestätigung der Datenverarbeitung anfordern</li>
+                            <li>Kopien Ihrer personenbezogenen Daten erhalten</li>
+                            <li>Informationen über Verarbeitungsaktivitäten erhalten</li>
+                            <li>Antwortzeit: Innerhalb 1 Monat (verlängerbar um 2 Monate)</li>
+                        </ul>
+                        
+                        <h3>9.2 Berichtigungsrecht (Artikel 16)</h3>
+                        <ul>
+                            <li>Unrichtige personenbezogene Daten korrigieren</li>
+                            <li>Unvollständige Daten vervollständigen</li>
+                            <li>Veraltete Informationen aktualisieren</li>
+                        </ul>
+                        
+                        <h3>9.3 Löschungsrecht (Artikel 17)</h3>
+                        <ul>
+                            <li>Löschung personenbezogener Daten beantragen</li>
+                            <li>"Recht auf Vergessenwerden" unter bestimmten Umständen</li>
+                            <li>Ausnahmen für rechtliche Verpflichtungen und berechtigte Interessen</li>
+                        </ul>
+                        
+                        <h3>9.4 Einschränkungsrecht (Artikel 18)</h3>
+                        <ul>
+                            <li>Verarbeitung während Genauigkeitsstreitigkeiten begrenzen</li>
+                            <li>Verarbeitung für bestimmte Zeiträume einschränken</li>
+                            <li>Daten für eingeschränkte Verarbeitung markieren</li>
+                        </ul>
+                        
+                        <h3>9.5 Datenübertragbarkeitsrecht (Artikel 20)</h3>
+                        <ul>
+                            <li>Daten in strukturiertem, maschinenlesbarem Format erhalten (JSON/CSV)</li>
+                            <li>Daten an anderen Verantwortlichen übertragen</li>
+                            <li>Verfügbar für einwilligungs- und vertragsbasierte Verarbeitung</li>
+                        </ul>
+                        
+                        <h3>9.6 Widerspruchsrecht (Artikel 21)</h3>
+                        <ul>
+                            <li>Widerspruch gegen Verarbeitung auf Grundlage berechtigter Interessen</li>
+                            <li>Absolutes Recht auf Widerspruch gegen Direktmarketing</li>
+                            <li>Recht auf Widerspruch gegen Profiling</li>
+                        </ul>
+                        
+                        <h3>9.7 Schutz vor automatisierter Entscheidungsfindung (Artikel 22)</h3>
+                        <ul>
+                            <li>Recht, nicht ausschließlich automatisierten Entscheidungen unterworfen zu werden</li>
+                            <li>Menschliche Intervention und Erklärung anfordern</li>
+                            <li>Automatisierte Entscheidungen anfechten</li>
+                        </ul>
+                        
+                        <p><strong>Ausübung Ihrer Rechte:</strong> Kontaktieren Sie uns unter privacy@daddyofdogs.de oder info@daddyofdogs.de zur Ausübung von Rechten. Wir antworten innerhalb eines Monats.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Kontaktformulare und Kommunikation</h2>
+                    <div class="section-content">
+                        <p>Bei Nutzung unserer Kontaktformulare erheben wir:</p>
+                        
+                        <p><strong>Erforderliche Informationen:</strong></p>
+                        <ul>
+                            <li>Name (Vor- und Nachname)</li>
+                            <li>E-Mail-Adresse</li>
+                            <li>Nachrichteninhalt</li>
+                            <li>Betreff/Anfragetyp</li>
+                        </ul>
+                        
+                        <p><strong>Optionale Informationen:</strong></p>
+                        <ul>
+                            <li>Telefonnummer</li>
+                            <li>Firmenname</li>
+                            <li>Website-URL</li>
+                            <li>Branche/Geschäftstyp</li>
+                        </ul>
+                        
+                        <p><strong>Technische Daten (automatisch erhoben):</strong></p>
+                        <ul>
+                            <li>IP-Adresse: 192.168.xxx.xxx (anonymisiert nach 30 Tagen)</li>
+                            <li>Zeitstempel</li>
+                            <li>Browser-Informationen</li>
+                            <li>Referrer-URL</li>
+                        </ul>
+                        
+                        <p><strong>Verarbeitungsdetails:</strong></p>
+                        <ul>
+                            <li><strong>Zweck:</strong> Beantwortung von Anfragen, Kundensupport, Geschäftskommunikation</li>
+                            <li><strong>Rechtsgrundlage:</strong> Berechtigtes Interesse an Kundenkommunikation (Art. 6 Abs. 1 lit. f DSGVO)</li>
+                            <li><strong>Speicherdauer:</strong> 3 Jahre ab letzter Kommunikation</li>
+                            <li><strong>Empfänger:</strong> Internes Kundenservice-Team</li>
+                            <li><strong>Speicherung:</strong> EU-basierte Server mit Verschlüsselung</li>
+                        </ul>
+                        
+                        <p><strong>Einwilligung für zusätzliche Verarbeitung:</strong> Wir fragen separate ausdrückliche Einwilligung für Newsletter oder Marketing-Kommunikation an.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Sicherheitsmaßnahmen</h2>
+                    <div class="section-content">
+                        <p>Wir implementieren umfassende Sicherheitsmaßnahmen:</p>
+                        
+                        <p><strong>Technische Maßnahmen:</strong></p>
+                        <ul>
+                            <li><strong>SSL/TLS-Verschlüsselung:</strong> Alle Datenübertragungen verschlüsselt (mindestens TLS 1.2)</li>
+                            <li><strong>Server-Sicherheit:</strong> Regelmäßige Sicherheitsupdates, Firewall-Schutz</li>
+                            <li><strong>Datenbank-Verschlüsselung:</strong> Personenbezogene Daten verschlüsselt gespeichert</li>
+                            <li><strong>Zugriffskontrollen:</strong> Multi-Faktor-Authentifizierung, rollenbasierter Zugriff</li>
+                            <li><strong>Regelmäßige Backups:</strong> Verschlüsselte tägliche Backups mit getesteter Wiederherstellung</li>
+                        </ul>
+                        
+                        <p><strong>Organisatorische Maßnahmen:</strong></p>
+                        <ul>
+                            <li><strong>Mitarbeiterschulung:</strong> Regelmäßige DSGVO- und Sicherheitsbewusstseins-Schulungen</li>
+                            <li><strong>Datenschutzverfahren:</strong> Schriftliche Richtlinien und Leitfäden</li>
+                            <li><strong>Incident-Response-Plan:</strong> Dokumentierte Datenschutzverletzungs-Reaktionsverfahren</li>
+                            <li><strong>Lieferantenbewertung:</strong> Sicherheitsbewertung aller Dienstleister</li>
+                            <li><strong>Regelmäßige Audits:</strong> Jährliche Sicherheits- und Compliance-Überprüfungen</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Datenschutzverletzungsmeldung</h2>
+                    <div class="section-content">
+                        <p>Bei einer Datenschutzverletzung Ihrer personenbezogenen Daten:</p>
+                        
+                        <p><strong>Behördenmeldung:</strong> Innerhalb 72 Stunden an relevante Aufsichtsbehörde</p>
+                        <p><strong>Einzelpersonen-Benachrichtigung:</strong> Innerhalb 72 Stunden bei hohem Risiko für Rechte und Freiheiten</p>
+                        
+                        <p><strong>Bereitgestellte Informationen:</strong></p>
+                        <ul>
+                            <li>Art der Verletzung</li>
+                            <li>Betroffene Datenkategorien</li>
+                            <li>Ungefähre Anzahl betroffener Personen</li>
+                            <li>Wahrscheinliche Folgen</li>
+                            <li>Erfasste oder vorgeschlagene Maßnahmen</li>
+                        </ul>
+                        
+                        <p><strong>Kontakt für Verletzungen:</strong> security@daddyofdogs.de oder +49 211 555 0123</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Kinderdatenschutz</h2>
+                    <div class="section-content">
+                        <ul>
+                            <li>Unsere Dienste richten sich nicht an Kinder unter 16 Jahren</li>
+                            <li>Wir erheben nicht wissentlich Daten von Kindern ohne elterliche Einwilligung</li>
+                            <li>Falls wir Kinderdatenerhebung entdecken, löschen wir diese umgehend</li>
+                            <li>Eltern können uns kontaktieren, um Kinderdaten zu überprüfen, zu bearbeiten oder zu löschen</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Beschwerderechte und Aufsichtsbehörden</h2>
+                    <div class="section-content">
+                        <p><strong>Recht auf Beschwerdeeinlegung:</strong> Sie haben das Recht, Beschwerden bei Aufsichtsbehörden einzulegen.</p>
+                        
+                        <p><strong>Zuständige deutsche Behörden:</strong></p>
+                        
+                        <p><strong>Für Bundesangelegenheiten:</strong><br>
+                        Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)<br>
+                        Husarenstraße 30<br>
+                        53117 Bonn, Deutschland<br>
+                        Telefon: +49 228-997799-0<br>
+                        E-Mail: poststelle@bfdi.bund.de<br>
+                        Website: www.bfdi.bund.de</p>
+                        
+                        <p><strong>Für Nordrhein-Westfalen (unser Standort):</strong><br>
+                        Landesbeauftragte für Datenschutz und Informationsfreiheit NRW<br>
+                        Kavalleriestraße 2-4<br>
+                        40213 Düsseldorf, Deutschland<br>
+                        Telefon: +49 211 38424-0<br>
+                        E-Mail: poststelle@ldi.nrw.de<br>
+                        Website: www.ldi.nrw.de</p>
+                        
+                        <p><strong>Europäische Ebene:</strong> Sie können sich an jede EU-Datenschutzbehörde wenden oder Beschwerden in Ihrem Wohnsitzland einreichen.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Marketing und Newsletter</h2>
+                    <div class="section-content">
+                        <p><strong>Newsletter-Abonnement:</strong></p>
+                        <ul>
+                            <li><strong>Double Opt-In:</strong> Bestätigungs-E-Mail erforderlich</li>
+                            <li><strong>Inhalt:</strong> Produkt-Updates, Unternehmensnachrichten, Sonderangebote</li>
+                            <li><strong>Häufigkeit:</strong> Maximal wöchentlich, typisch zweiwöchentlich</li>
+                            <li><strong>Abmeldung:</strong> Ein-Klick-Abmeldung in jeder E-Mail</li>
+                            <li><strong>Rechtsgrundlage:</strong> Ihre ausdrückliche Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
+                        </ul>
+                        
+                        <p><strong>Marketing-Kommunikation:</strong></p>
+                        <ul>
+                            <li><strong>Geschäftskommunikation:</strong> Basierend auf berechtigtem Interesse</li>
+                            <li><strong>Werbeinhalte:</strong> Erfordern ausdrückliche Einwilligung</li>
+                            <li><strong>Personalisierung:</strong> Basierend auf Ihrem Interaktionsverlauf</li>
+                            <li><strong>Opt-Out:</strong> Verfügbar in allen Marketing-Kommunikationen</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Änderungen dieser Datenschutzerklärung</h2>
+                    <div class="section-content">
+                        <p><strong>Update-Gründe:</strong></p>
+                        <ul>
+                            <li>Änderungen in unseren Datenverarbeitungspraktiken</li>
+                            <li>Rechtliche oder regulatorische Anforderungen</li>
+                            <li>Neue Services oder Funktionen</li>
+                            <li>Technologie-Änderungen</li>
+                        </ul>
+                        
+                        <p><strong>Benachrichtigungsmethoden:</strong></p>
+                        <ul>
+                            <li>E-Mail-Benachrichtigung an registrierte Nutzer (falls E-Mail-Adressen verfügbar)</li>
+                            <li>Prominenter Website-Hinweis für 30 Tage</li>
+                            <li>Aktualisiertes "Zuletzt geändert"-Datum</li>
+                            <li>Social Media-Ankündigungen für größere Änderungen</li>
+                        </ul>
+                        
+                        <p><strong>Versionsverlauf:</strong> Vorherige Versionen archiviert und auf Anfrage verfügbar.</p>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Zusätzliche rechtliche Informationen</h2>
+                    <div class="section-content">
+                        <p><strong>Datenbereitstellungsanforderungen:</strong></p>
+                        <ul>
+                            <li>Kontaktinformationen erforderlich für Kommunikation</li>
+                            <li>Geschäftsinformationen können für Services erforderlich sein</li>
+                            <li>Bestimmte Daten zwingend für Gesetzeskonformität</li>
+                            <li>Versäumnis der erforderlichen Datenbereitstellung kann Serviceerbringung verhindern</li>
+                        </ul>
+                        
+                        <p><strong>Automatisierte Entscheidungsfindung:</strong></p>
+                        <ul>
+                            <li>Wir verwenden keine ausschließlich automatisierte Entscheidungsfindung mit Rechtswirkung</li>
+                            <li>Jede automatisierte Verarbeitung beinhaltet menschliche Aufsicht</li>
+                            <li>Recht auf menschliche Intervention verfügbar</li>
+                        </ul>
+                        
+                        <p><strong>Profiling:</strong></p>
+                        <ul>
+                            <li>Begrenztes Profiling für Website-Optimierung</li>
+                            <li>Keine automatisierte Entscheidungsfindung basierend auf Profilen</li>
+                            <li>Sie können jederzeit Profiling widersprechen</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="privacy-section">
+                    <h2 class="section-title">Kontaktinformationen für Datenschutzangelegenheiten</h2>
+                    <div class="section-content">
+                        <p><strong>Primärer Kontakt:</strong><br>
+                        E-Mail: privacy@daddyofdogs.de<br>
+                        Telefon: +49 211 555 0123<br>
+                        Post: DADDYOFDOGS - Datenschutzabteilung<br>
+                        Musterstraße 123<br>
+                        40210 Düsseldorf, Deutschland</p>
+                        
+                        <p><strong>Alternativer Kontakt:</strong><br>
+                        E-Mail: info@daddyofdogs.de<br>
+                        Geschäftszeiten: Montag-Freitag, 9:00-17:00 MEZ</p>
+                        
+                        <p><strong>Antwortverbindlichkeiten:</strong></p>
+                        <ul>
+                            <li>Bestätigung innerhalb 3 Werktage</li>
+                            <li>Vollständige Antwort innerhalb 30 Tage</li>
+                            <li>Komplexe Anfragen: Bis zu 90 Tage mit Erklärung</li>
+                            <li>Dringende Angelegenheiten: 24-Stunden-Antwort</li>
+                        </ul>
+                        
+                        <p><strong>Sprachen:</strong> Wir bearbeiten Anfragen auf Deutsch, Englisch und anderen EU-Sprachen auf Anfrage.</p>
+                        
+                        <p><strong>Diese Datenschutzerklärung entspricht der deutschen DSGVO-Umsetzung, BDSG und TTDSG-Anforderungen. Gültig ab 13. August 2025. Zuletzt aktualisiert 13. August 2025.</strong></p>
+                        
+                        <p><strong>Dokument-ID:</strong> DS-DADDYOFDOGS-2025-001<br>
+                        <strong>Version:</strong> 1.0</p>
+                    </div>
+                </section>
+
+                <footer class="privacy-footer">
+                    <h3 class="footer-title">Ihr Datenschutz liegt uns am Herzen</h3>
+                    <div class="footer-content">
+                        <p>Wir verpflichten uns zum Schutz Ihrer personenbezogenen Daten und zur Transparenz bei der Erhebung, Verwendung und Sicherung Ihrer Informationen. Diese Datenschutzerklärung legt unsere Praktiken und Ihre Rechte gemäß den Datenschutzgesetzen dar.</p>
+                        <p><em>Hinweis: Wir überprüfen und aktualisieren unsere Datenschutzpraktiken kontinuierlich, um die Einhaltung der geltenden Gesetze zu gewährleisten und höchste Standards des Datenschutzes zu wahren.</em></p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content-main">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="./index.html#home">Home</a></li>
+                    <li><a href="./index.html#about">About Me</a></li>
+                    <li><a href="./index.html#social">Social Media</a></li>
+                    <li><a href="./index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="./impressum.html">Impressum</a></li>
+                    <li><a href="./datenschutz.html">Datenschutz</a></li>
+                    <li><a href="./agb.html">AGB</a></li>
+                    <li><a href="./cookie.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DADDYOFDOGS. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        const hamburger = document.getElementById('hamburger');
+        const dropdown = document.getElementById('dropdown');
+        let isAnimating = false;
+
+        function closeDropdown() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            dropdown.classList.remove('show');
+            hamburger.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+        }
+
+        function openDropdown() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            dropdown.classList.add('show');
+            hamburger.classList.add('active');
+            hamburger.setAttribute('aria-expanded', 'true');
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+        }
+
+        // Language switching functionality
+        const englishButton = document.getElementById('english-button');
+        const germanButton = document.getElementById('german-button');
+        const englishContent = document.getElementById('english-content');
+        const germanContent = document.getElementById('german-content');
+
+        englishButton.addEventListener('click', function() {
+            englishContent.style.display = 'block';
+            germanContent.style.display = 'none';
+            englishButton.classList.add('active');
+            germanButton.classList.remove('active');
+        });
+
+        germanButton.addEventListener('click', function() {
+            germanContent.style.display = 'block';
+            englishContent.style.display = 'none';
+            germanButton.classList.add('active');
+            englishButton.classList.remove('active');
+        });
+
+        // Event listeners for navigation
+        if (hamburger && dropdown) {
+            hamburger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+
+                if (dropdown.classList.contains('show')) {
+                    closeDropdown();
+                } else {
+                    openDropdown();
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !dropdown.contains(e.target)) {
+                    if (dropdown.classList.contains('show')) {
+                        closeDropdown();
+                    }
+                }
+            });
+
+            dropdown.addEventListener('click', function(e) {
+                const link = e.target.closest('a');
+                if (link) {
+                    e.stopPropagation();
+                    closeDropdown();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && dropdown.classList.contains('show')) {
+                    closeDropdown();
+                }
+            });
+
+            let touchStartY = 0;
+            dropdown.addEventListener('touchstart', function(e) {
+                touchStartY = e.touches[0].clientY;
+            });
+
+            dropdown.addEventListener('touchend', function(e) {
+                const touchEndY = e.changedTouches[0].clientY;
+                const deltaY = touchStartY - touchEndY;
+
+                if (deltaY > 50) {
+                    closeDropdown();
+                }
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Focus management for skip link
+        const skipLink = document.querySelector('.skip-link');
+        if (skipLink) {
+            skipLink.addEventListener('blur', function() {
+                this.style.top = '-40px';
+            });
+        }
+
+        // Performance optimizations
+        document.body.style.opacity = '0';
+
+        // Visibility change handler
+        document.addEventListener('visibilitychange', () => {
+            const animations = document.getAnimations();
+            if (document.hidden) {
+                animations.forEach(anim => anim.pause());
+            } else {
+                animations.forEach(anim => anim.play());
+            }
+        });
+
+        // Smooth entry animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        });
+    </script>
 </body>
 </html>
