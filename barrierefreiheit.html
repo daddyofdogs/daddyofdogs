@@ -585,6 +585,82 @@
             margin: 0 auto;
         }
 
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 -25px 50px rgba(0, 0, 0, 0.1), 0 -8px 16px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+        .footer-content-main {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .footer-section h3 {
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #1a202c 0%, #2d3748 20%, #4a5568 40%, #718096 60%, #4a5568 80%, #1a202c 100%);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: chromeShine 8s linear infinite;
+        }
+        .footer-section ul {
+            list-style: none;
+        }
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .footer-section ul li a {
+            font-family: 'Inter', sans-serif;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .footer-section ul li a:hover {
+            color: #1f2937;
+            transform: translateX(4px);
+        }
+        .footer-section ul li a:hover::before {
+            content: '•';
+            position: absolute;
+            left: -15px;
+            color: #3b82f6;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .footer-bottom {
+            font-family: 'Inter', sans-serif;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(107, 114, 128, 0.2);
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 768px) {
+            .footer-content-main {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
         /* Focus Styles */
         a:focus, button:focus, input:focus, textarea:focus {
             outline: 3px solid #8b5cf6;
@@ -684,6 +760,20 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
+            }
+            
+            .footer-content-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            .footer-section h3 {
+                font-size: 0.8rem;
+            }
+            .footer-section ul li a {
+                font-size: 0.7rem;
+            }
+            .footer-bottom {
+                font-size: 0.65rem;
             }
         }
 
@@ -1063,6 +1153,32 @@
             </div>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="footer-content-main">
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="./index.html#home">Home</a></li>
+                    <li><a href="./index.html#about">About Me</a></li>
+                    <li><a href="./index.html#social">Social Media</a></li>
+                    <li><a href="./index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="./impressum.html">Impressum</a></li>
+                    <li><a href="./datenschutz.html">Datenschutz</a></li>
+                    <li><a href="./agb.html">AGB</a></li>
+                    <li><a href="./cookie.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DADDYOFDOGS. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
 
     <script>
         // Navigation functionality
